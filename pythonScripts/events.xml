@@ -1,0 +1,814 @@
+<XML>
+  <AllEvents>
+    <Events>
+      <EventName>IM_GENERAL_ALARM</EventName>
+      <EventDescription>GENERAL ALARM (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_POLLING_LOOP_OPEN</EventName>
+      <EventDescription>POLLING LOOP OPEN  (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_POLLING_LOOP_SHORT</EventName>
+      <EventDescription>POLLING LOOP SHORT (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_SENSOR_TAMPER</EventName>
+      <EventDescription>SENSOR TAMPER (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_ZONE_SUPERVISION_TROUBLE</EventName>
+      <EventDescription>ZONE SUPERVISION TROUBLE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_FOIL_BREAK</EventName>
+      <EventDescription>FOIL BREAK (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_DAY_TROUBLE</EventName>
+      <EventDescription>DAY TROUBLE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_FIRE_SUPERVISORY</EventName>
+      <EventDescription>FIRE SUPERVISORY (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LOW_WATER_PRESSIURE</EventName>
+      <EventDescription>LOW WATER PRESSIURE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LOW_CO2</EventName>
+      <EventDescription>LOW CO2 (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GATE_VALVE_SENSOR</EventName>
+      <EventDescription>GATE VALVE SENSOR (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PUMP_ACTIVATED</EventName>
+      <EventDescription>PUMP ACTIVATED (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PUMP_FAILURE</EventName>
+      <EventDescription>PUMP FAILURE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_SYSTEM_TROUBLE</EventName>
+      <EventDescription>SYSTEM TROUBLE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_AC_LOSS</EventName>
+      <EventDescription>AC LOSS (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LOW_SYSTEM_BATTERY</EventName>
+      <EventDescription>LOW SYSTEM BATTERY (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_RAM_CHECKSUM_BAD</EventName>
+      <EventDescription>RAM CHECKSUM BAD (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_ROM_CHECKSUM_BAD</EventName>
+      <EventDescription>ROM CHECKSUM BAD (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_SYSTEM_RESET</EventName>
+      <EventDescription>SYSTEM RESET (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PANEL_PROGRAMMING_CHANGED</EventName>
+      <EventDescription>PANEL PROGRAMMING CHANGED (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_SELF_TEST_FAILURE</EventName>
+      <EventDescription>SELF-TEST FAILURE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_SYSTEM_SHUTDOWN</EventName>
+      <EventDescription>SYSTEM SHUTDOWN (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_BATTERY_TEST_FAILURE</EventName>
+      <EventDescription>BATTERY TEST FAILURE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GROUND_FAULT</EventName>
+      <EventDescription>GROUND FAULT (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_SOUNDER_RELAY</EventName>
+      <EventDescription>SOUNDER/RELAY (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_BELL_1</EventName>
+      <EventDescription>BELL 1 (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_BELL_2</EventName>
+      <EventDescription>BELL 2 (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_TROUBLE_RELAY</EventName>
+      <EventDescription>TROUBLE RELAY (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_REVERSING_RELAY</EventName>
+      <EventDescription>REVERSING RELAY (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_SYSTEM_PERIPHERAL_TROUBLE</EventName>
+      <EventDescription>SYSTEM PERIPHERAL TROUBLE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_EXPANSION_MODULE_FAILURE</EventName>
+      <EventDescription>EXPANSION MODULE FAILURE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_REPEATER_FAILURE</EventName>
+      <EventDescription>REPEATER FAILURE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LOCAL_PRINTER_OUT_OF_PAPER</EventName>
+      <EventDescription>LOCAL PRINTER OUT OF PAPER (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LOCAL_PRINTER_FAILURE</EventName>
+      <EventDescription>LOCAL PRINTER FAILURE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_COMMUNICATIONS_TROUBLE</EventName>
+      <EventDescription>COMMUNICATIONS TROUBLE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_TELCO_FAULT_1</EventName>
+      <EventDescription>TELCO FAULT 1 (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_TELCO_FAULT_2</EventName>
+      <EventDescription>TELCO FAULT 2 (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LONG_RANGE_RADIO_TX_FAULT</EventName>
+      <EventDescription>LONG RANGE RADIO TX FAULT (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_FAILURE_TO_COMMUNICATE_EVENT</EventName>
+      <EventDescription>FAILURE TO COMMUNICATE EVENT (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LOSS_OF_RADIO_SUPERVISION</EventName>
+      <EventDescription>LOSS OF RADIO SUPERVISION (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LOSS_OF_CENTRAL_POLLING</EventName>
+      <EventDescription>LOSS OF CENTRAL POLLING (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PROTECTION_LOOP</EventName>
+      <EventDescription>PROTECTION LOOP (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PROTECTION_LOOP_OPEN</EventName>
+      <EventDescription>PROTECTION LOOP OPEN (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PROTECTION_LOOP_SHORT</EventName>
+      <EventDescription>PROTECTION LOOP SHORT (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_FIRE_TROUBLE</EventName>
+      <EventDescription>FIRE TROUBLE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_SENSOR_TROUBLE</EventName>
+      <EventDescription>SENSOR TROUBLE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LOSS_OF_SUPERVISION_RF</EventName>
+      <EventDescription>LOSS OF SUPERVISION-RF (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_LOSS_OF_SUPERVISION_RPM</EventName>
+      <EventDescription>LOSS OF SUPERVISION-RPM (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_RF_LOW_BATTERY</EventName>
+      <EventDescription>RF LOW BATTERY (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_OPEN_CLOSE</EventName>
+      <EventDescription>OPEN/CLOSE (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_OC_BY_USER</EventName>
+      <EventDescription>O/C BY USER (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GROUP_OC</EventName>
+      <EventDescription>GROUP O/C (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_AUTOMATIC_OC</EventName>
+      <EventDescription>AUTOMATIC O/C (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_DEFERRED_OC</EventName>
+      <EventDescription>DEFERRED O/C (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_CANCEL</EventName>
+      <EventDescription>CANCEL (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_REMOTE_ARM_DISARM</EventName>
+      <EventDescription>REMOTE ARM/DISARM (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_QUICK_ARM</EventName>
+      <EventDescription>QUICK ARM (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_KEYSWITCH_OC</EventName>
+      <EventDescription>KEYSWITCH O/C (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PARTIAL_ARM</EventName>
+      <EventDescription>PARTIAL ARM (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_DIALLER_DISABLED</EventName>
+      <EventDescription>DIALLER DISABLED (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_RADIO_TRANSMITTER_DISABLED</EventName>
+      <EventDescription>RADIO TRANSMITTER DISABLED (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_ZONE_SENSOR_BYPASS</EventName>
+      <EventDescription>ZONE/SENSOR BYPASS (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_FIRE_BYPASS</EventName>
+      <EventDescription>FIRE BYPASS (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_24_HOUR_ZONE_BYPASS</EventName>
+      <EventDescription>24 HOUR ZONE BYPASS (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_BURG_BYPASS</EventName>
+      <EventDescription>BURG. BYPASS (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GROUP_BYPASS</EventName>
+      <EventDescription>GROUP BYPASS (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_MANUAL_TEST_TRIGGER_REPORT</EventName>
+      <EventDescription>MANUAL TEST TRIGGER REPORT (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PERIODIC_TEST_REPORT</EventName>
+      <EventDescription>PERIODIC TEST REPORT (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_FIRE_TEST</EventName>
+      <EventDescription>FIRE TEST (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PROGRAM_MODE_ENTRY</EventName>
+      <EventDescription>PROGRAM MODE ENTRY (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PROGRAM_MODE_EXIT</EventName>
+      <EventDescription>PROGRAM MODE EXIT (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GUARD_FAIL_TO_START_TIMER_PATROL_LEAD_TIME</EventName>
+      <EventDescription>Guard fail to start timer (patrol lead time) (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PATROL_START_TAG</EventName>
+      <EventDescription>Patrol start tag (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_PATROL_START_TAG_LATE</EventName>
+      <EventDescription>Patrol start tag late (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GUARD_REQUESTED_ASSISTANCE</EventName>
+      <EventDescription>Guard requested assistance (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GUARD_FAIL_TO_RETURN_TIMER</EventName>
+      <EventDescription>Guard fail to return timer (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GUARD_LATE_RETURN_TAG</EventName>
+      <EventDescription>Guard late return tag (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GUARD_LATE_ON_DUTY</EventName>
+      <EventDescription>Guard late on duty (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_POINTS_READ,_POINTS_MISSED</EventName>
+      <EventDescription>Points read, points missed (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_POINTS_READ_POINTS_SLOW</EventName>
+      <EventDescription>Points read points slow (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_POINTS_READ_POINTS_FAST</EventName>
+      <EventDescription>Points read points fast (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_POINTS_READ_OVERALL_WALK_SLOW</EventName>
+      <EventDescription>Points read Overall walk slow (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_POINTS_READ_OVERALL_WALK_FAST</EventName>
+      <EventDescription>Points read Overall walk fast (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_POINTS_READ_POINTS_OK</EventName>
+      <EventDescription>Points read points OK (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GUARD_OFF_DUTY</EventName>
+      <EventDescription>Guard off duty (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GUARD_ON_DUTY</EventName>
+      <EventDescription>Guard on duty (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GUARD_OFF_DUTY_TIMER</EventName>
+      <EventDescription>Guard off duty timer (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_SUPERVISOR_ON_DUTY</EventName>
+      <EventDescription>SUPERVISOR ON DUTY (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_POWER_UP</EventName>
+      <EventDescription>Power up (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IM_GUARD_SYSTEM_POWER_UP</EventName>
+      <EventDescription>GUARD SYSTEM POWER-UP (IM)</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </AllEvents>
+</XML>

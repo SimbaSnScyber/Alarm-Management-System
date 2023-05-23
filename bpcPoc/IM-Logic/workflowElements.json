@@ -1,0 +1,460 @@
+{
+    "radioButtons": [
+        {
+            "startingElement": false,
+            "multiTasking": false,
+            "elementID": "dispatch_choice",
+            "label": "Is Dispatch Required: ",
+            "elements": [
+                "Yes",
+                "No"
+            ],
+            "defaultTransition": "",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "r24_choice",
+                    "macro": "",
+                    "selected": "1) Yes"
+                },
+                {
+                    "conditionalTransition": "no_dispatch_comment",
+                    "macro": "",
+                    "selected": "2) No"
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "finalize3",
+            "label": "Response Reference Number Received: ",
+            "elements": [
+                "Yes",
+                "No"
+            ],
+            "defaultTransition": "",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "finalize4",
+                    "macro": "",
+                    "selected": "1) Yes"
+                },
+                {
+                    "conditionalTransition": "finalize7",
+                    "macro": "",
+                    "selected": "2) No"
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "manual_finalize3",
+            "label": "Response Reference Number Received: ",
+            "elements": [
+                "Yes",
+                "No"
+            ],
+            "defaultTransition": "",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "manual_finalize4",
+                    "macro": "",
+                    "selected": "1) Yes"
+                },
+                {
+                    "conditionalTransition": "finalize5",
+                    "macro": "",
+                    "selected": "2) No"
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "investigator_required",
+            "label": "Is an Investigator Required? ",
+            "elements": [
+                "Yes",
+                "No"
+            ],
+            "defaultTransition": "",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "investigators",
+                    "macro": "",
+                    "selected": "1) Yes"
+                },
+                {
+                    "conditionalTransition": "report_review",
+                    "macro": "",
+                    "selected": "2) No"
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": false,
+            "elementID": "r24_choice",
+            "label": "Dispatch Method: ",
+            "elements": [
+                "Response24",
+                "Manual Dispatch"
+            ],
+            "defaultTransition": "",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "r24_dispatch",
+                    "macro": "",
+                    "selected": "1) Response24"
+                },
+                {
+                    "conditionalTransition": "manual_sub_selection",
+                    "macro": "",
+                    "selected": "2) Manual Dispatch"
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "r24_feedback",
+            "label": "Is State \"Completed\"?",
+            "elements": [
+                "Yes",
+                "No"
+            ],
+            "defaultTransition": "",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "sub_selection",
+                    "macro": "",
+                    "selected": "1) Yes"
+                },
+                {
+                    "conditionalTransition": "r24_update",
+                    "macro": "",
+                    "selected": "2) No"
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "report_verification",
+            "label": "Is the CiiMS Report Correct? ",
+            "elements": [
+                "Yes",
+                "No"
+            ],
+            "defaultTransition": "",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "finalize",
+                    "macro": "",
+                    "selected": "1) Yes"
+                },
+                {
+                    "conditionalTransition": "report_comment",
+                    "macro": "",
+                    "selected": "2) No"
+                }
+            ],
+            "finish": false
+        }
+    ],
+    "buttons": [
+        {
+            "startingElement": true,
+            "multiTasking": false,
+            "elementID": "1.start",
+            "label": "",
+            "buttonText": "Acknowledge",
+            "defaultTransition": "dispatch_choice",
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "finalize",
+            "label": "Event Finalization",
+            "buttonText": "Finalize Event",
+            "defaultTransition": "finalize_total",
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "finalize_no_dispatch",
+            "label": "Finalization (Move to Parked if Valid iCrypto Ref): ",
+            "buttonText": "Finalize Event",
+            "defaultTransition": "move_to_parked",
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "finalize_total",
+            "label": "Closing the event",
+            "buttonText": "Close",
+            "defaultTransition": "",
+            "finish": true
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "r24_dispatch",
+            "label": "Dispatch Via R24: ",
+            "buttonText": "Dispatch",
+            "defaultTransition": "r24_feedback",
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "r24_update",
+            "label": "Request Feedback: ",
+            "buttonText": "Request Feedback",
+            "defaultTransition": "",
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "report_review",
+            "label": "Review CiiMS Report: ",
+            "buttonText": "Review",
+            "defaultTransition": "report_verification",
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "final_report_review",
+            "label": "Review CiiMS Report: ",
+            "buttonText": "Review",
+            "defaultTransition": "finalize",
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "move_to_parked",
+            "label": "Move to Parked Stack",
+            "buttonText": "Move to Parked",
+            "defaultTransition": "",
+            "finish": true
+        }
+    ],
+    "comboBox": [
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "finalize7",
+            "label": "Category",
+            "elements": [
+                "ABANDONED COPPER CABLE FOUND \nACCIDENT (PRIVATE VEHICLE) \nARMED ROBBERY \nASSAULT COMMON \nASSAULT ON GUARD \nBREACH-CONTAINER \nBREACH-PERIMETER \nBTS GATE UNLOCKED \nBTS GATE/CONT OPEN (NO SUSPECTS) \nBTS LOCKED AND SECURED \nCONTRACTOR ON SITE (VENDOR) \nFAULTY HARDWARE \nFIRE INCIDENT \nGUARD ON SITE \nGUARD PLACEMENT (GENERATOR) \nGUARD PLACEMENT (VANDALISM) \nHIJACKING \nHOUSEBREAKING - BUSINESS \nINTIMIDATION \nMURDER \nNO ACCESS BUSINESS PARK \nNO ACCESS CIVIL UNREST \nNO ACCESS GATE LOCKED \nNO ACCESS GOVERNMENT/KPI SITE \nNO ACCESS LAND/PVT PROP \nNO ACCESS OTHER \nNO ACCESS ROAD CONDITION \nNO ACCESS ROOFTOP \nNO RESPONSE \nPATROL - SITE \nRECOVERY OF CLIENT PROPERTY \nRECOVERY OF FUEL \nRECOVERY OF GENERATOR \nRECOVERY OF NETWORK BATTERIES \nROBBERY \nSUSPICIOUS PERSON(S) \nSUSPICIOUS VEHICLE \nTECHNICIAN ON SITE \nTRESPASSING"
+            ],
+            "defaultTransition": "investigator_required",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "",
+                    "macro": "",
+                    "comboBox": [
+                        "",
+                        "",
+                        ""
+                    ]
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "manual_finalize7",
+            "label": "Category",
+            "elements": [
+                "ABANDONED COPPER CABLE FOUND \nACCIDENT (PRIVATE VEHICLE) \nARMED ROBBERY \nASSAULT COMMON \nASSAULT ON GUARD \nBREACH-CONTAINER \nBREACH-PERIMETER \nBTS GATE UNLOCKED \nBTS GATE/CONT OPEN (NO SUSPECTS) \nBTS LOCKED AND SECURED \nCONTRACTOR ON SITE (VENDOR) \nFAULTY HARDWARE \nFIRE INCIDENT \nGUARD ON SITE \nGUARD PLACEMENT (GENERATOR) \nGUARD PLACEMENT (VANDALISM) \nHIJACKING \nHOUSEBREAKING - BUSINESS \nINTIMIDATION \nMURDER \nNO ACCESS BUSINESS PARK \nNO ACCESS CIVIL UNREST \nNO ACCESS GATE LOCKED \nNO ACCESS GOVERNMENT/KPI SITE \nNO ACCESS LAND/PVT PROP \nNO ACCESS OTHER \nNO ACCESS ROAD CONDITION \nNO ACCESS ROOFTOP \nNO RESPONSE \nPATROL - SITE \nRECOVERY OF CLIENT PROPERTY \nRECOVERY OF FUEL \nRECOVERY OF GENERATOR \nRECOVERY OF NETWORK BATTERIES \nROBBERY \nSUSPICIOUS PERSON(S) \nSUSPICIOUS VEHICLE \nTECHNICIAN ON SITE \nTRESPASSING"
+            ],
+            "defaultTransition": "dispatch_outcome",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "",
+                    "macro": "",
+                    "comboBox": [
+                        "",
+                        "",
+                        ""
+                    ]
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "investigators",
+            "label": "Investigator:",
+            "elements": [
+                "\nBIDVEST PROTEA COIN \nCASWELL MATHE \nEDDIE STAFFORD \nGAUTENG INVESTIGATORS \nGUATENG INVESTIGATORS \nJAN BOTHA \nJOHN WRIGHT \nKAREL BUITENDAG \nMARIUS WINTER \nSAMUEL TSHABALALA \nTAMI BINDA \nWILLA VAN STADEN"
+            ],
+            "defaultTransition": "report_review",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "",
+                    "macro": "",
+                    "comboBox": [
+                        "",
+                        "",
+                        ""
+                    ]
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "sub_selection",
+            "label": "Subcontractor Company: ",
+            "elements": [
+                "\n373 ALARMS\n911 HIGH RISK\nABC SECURITY\nACSU SECURITY\nACTION FORCE\nAGRI FIRST SECURITY FRANKFORT\nALEXANDER BAY SAPS\nALL SOUND SECURITY\nALPHA ALARMS\nAMAJUBA SECURITY\nAPCAN SECURITY\nAR24\nART SECURITY\nBALLID SECURITY\nBEAUFORT ALARMS\nBERG PROTECTION SERVICES\nBEYERS SECURITY - WESTERN CAPE\nBIDVEST PROTEA COIN\nBIG SECURITY SERVICES (EASTERN CAPE)\nBLACK EXCELLENCE FORENSICS & SECURITY\nBLACK HAWK SECURITY\nBLUE INTERNATIONAL SECURITY\nBOZ ARMED RESPONSE & SECURITY\nBPC POTCHEFSTROOM\nB-SECURE\nBUFFALO SECURITY\nCAPITAL SECURITY\nCITI PROTECTION\nCMS-FARANI SECURITY\nCOMBAT FORCE\nCOMPUTER ALARMS\nCORCOMM SECURITY KROONSTAD\nCORTAC\nCRIME STOP\nDEEP BLUE SECURITY\nDELYN SECURITY\nERNATRAX SECURITY\nFIRST ARMED RESPONSE (FAR)\nFOX SECURITY\nFRASERBURG SAPS\nGALVEN SECURITY\nGEW SECURITY\nGLADIATOR JHB\nGLADIATOR KZN\nGORDON'S BAY SECURITY\nGRAAFF-REINET SECURITY\nHABPS ENTERPRISE\nHI TECH SECURITY\nHI ZONE\nICEBURG SECURITY\nINYALA SECURITY\nI-PROTECT .\nJ&M SECURITY\nJA ALARMS\nJNC SECURITY\nKASSELMAN SECURITY\nKUBOES SAPS\nLAD SECURITY\nLAINGSBURG SAPS\nLEEUGAMKA SAPS\nLESEDI SECURITY\nLOXTON SAPS\nLT SECURITY\nLTS SECURITY WC\nLURULI .SECURITY\nMAGMA HOLDINGS\nMARSHALL SECURITY\nMASER SECURITY\nMBA SECURITY\nMC4 SECURITY\nMONITORNET\nMONSTER SECURITY\nMOOIRVIER BESKERMING\nMOTHEO SECURITY SERVICES\nMPHEMBE SECURITY & PROJECTS\nMSEC SECURITY SYSTEMS\nMSS SECURITY\nMULTI SECURITY\nMZANZI WOLF\nNATIONAL FIRE & SECURITY\nNATPRO .\nNORTHERN CAPE SECURITY SOLUTIONS\nOMSIZI SECURITY\nORION RISK\nOVERBERG SECURITY\nPANGELA SOUTHERN CAPE\nPARYS SECURITY\nPHOTHOMA SECURITY\nPORT NOLLOTH SAPS\nPPTECH\nPRESTIGE SECURITY\nPRINCE ALBERT SAPS\nPSA SECURITY\nRED ALERT\nRED GUARD\nRHINO SECURITY KATHU\nRHINO SECURITY KURUMAN\nSAPS COLESBERG\nSAPS DE AAR\nSAPS GARIEP\nSAPS PHILLIPSTOWN\nSAPS VICTORIA WEST\nSAVAGE TACTICAL\nSCORPION RISK TSH\nSECURE ACCESS\nSECURICON .\nSECURITYMED24\nSENAKE SECURITY\nSENFORCE SECURITY\nSHIELD SECURITY\nSILENT SECURITY\nSMHART .\nSOS PROTEC SURE\nSOUTH AFRICAN POLICE SERVICE\nSPG SECURITY (HAWKS)\nSQ RISK MTHATHA\nSTEINHOF SAPS\nSUN SECURITY\nSUTHERLAND SAPS\nTD SECURITY\nTHEO UPINGTON\nTITANIUM SECURITAS\nTRINITY PROTECTION SERVICES\nURBAN COMUNICATION & SECURITY SOLUTIONS\nVIPER ASP PORT ELIZABETH\nVITAL SECURITY\nVOSSIES SECURITY\nWESTRANSVAAL SECURITY\nWIIPS SECURITY\nX-RAY SECURITY"
+            ],
+            "defaultTransition": "finalize3",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "",
+                    "macro": "",
+                    "comboBox": [
+                        "",
+                        "",
+                        ""
+                    ]
+                }
+            ],
+            "finish": false
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "manual_sub_selection",
+            "label": "Subcontractor Company: ",
+            "elements": [
+                "\n373 ALARMS\n911 HIGH RISK\nABC SECURITY\nACSU SECURITY\nACTION FORCE\nAGRI FIRST SECURITY FRANKFORT\nALEXANDER BAY SAPS\nALL SOUND SECURITY\nALPHA ALARMS\nAMAJUBA SECURITY\nAPCAN SECURITY\nAR24\nART SECURITY\nBALLID SECURITY\nBEAUFORT ALARMS\nBERG PROTECTION SERVICES\nBEYERS SECURITY - WESTERN CAPE\nBIDVEST PROTEA COIN\nBIG SECURITY SERVICES (EASTERN CAPE)\nBLACK EXCELLENCE FORENSICS & SECURITY\nBLACK HAWK SECURITY\nBLUE INTERNATIONAL SECURITY\nBOZ ARMED RESPONSE & SECURITY\nBPC POTCHEFSTROOM\nB-SECURE\nBUFFALO SECURITY\nCAPITAL SECURITY\nCITI PROTECTION\nCMS-FARANI SECURITY\nCOMBAT FORCE\nCOMPUTER ALARMS\nCORCOMM SECURITY KROONSTAD\nCORTAC\nCRIME STOP\nDEEP BLUE SECURITY\nDELYN SECURITY\nERNATRAX SECURITY\nFIRST ARMED RESPONSE (FAR)\nFOX SECURITY\nFRASERBURG SAPS\nGALVEN SECURITY\nGEW SECURITY\nGLADIATOR JHB\nGLADIATOR KZN\nGORDON'S BAY SECURITY\nGRAAFF-REINET SECURITY\nHABPS ENTERPRISE\nHI TECH SECURITY\nHI ZONE\nICEBURG SECURITY\nINYALA SECURITY\nI-PROTECT .\nJ&M SECURITY\nJA ALARMS\nJNC SECURITY\nKASSELMAN SECURITY\nKUBOES SAPS\nLAD SECURITY\nLAINGSBURG SAPS\nLEEUGAMKA SAPS\nLESEDI SECURITY\nLOXTON SAPS\nLT SECURITY\nLTS SECURITY WC\nLURULI .SECURITY\nMAGMA HOLDINGS\nMARSHALL SECURITY\nMASER SECURITY\nMBA SECURITY\nMC4 SECURITY\nMONITORNET\nMONSTER SECURITY\nMOOIRVIER BESKERMING\nMOTHEO SECURITY SERVICES\nMPHEMBE SECURITY & PROJECTS\nMSEC SECURITY SYSTEMS\nMSS SECURITY\nMULTI SECURITY\nMZANZI WOLF\nNATIONAL FIRE & SECURITY\nNATPRO .\nNORTHERN CAPE SECURITY SOLUTIONS\nOMSIZI SECURITY\nORION RISK\nOVERBERG SECURITY\nPANGELA SOUTHERN CAPE\nPARYS SECURITY\nPHOTHOMA SECURITY\nPORT NOLLOTH SAPS\nPPTECH\nPRESTIGE SECURITY\nPRINCE ALBERT SAPS\nPSA SECURITY\nRED ALERT\nRED GUARD\nRHINO SECURITY KATHU\nRHINO SECURITY KURUMAN\nSAPS COLESBERG\nSAPS DE AAR\nSAPS GARIEP\nSAPS PHILLIPSTOWN\nSAPS VICTORIA WEST\nSAVAGE TACTICAL\nSCORPION RISK TSH\nSECURE ACCESS\nSECURICON .\nSECURITYMED24\nSENAKE SECURITY\nSENFORCE SECURITY\nSHIELD SECURITY\nSILENT SECURITY\nSMHART .\nSOS PROTEC SURE\nSOUTH AFRICAN POLICE SERVICE\nSPG SECURITY (HAWKS)\nSQ RISK MTHATHA\nSTEINHOF SAPS\nSUN SECURITY\nSUTHERLAND SAPS\nTD SECURITY\nTHEO UPINGTON\nTITANIUM SECURITAS\nTRINITY PROTECTION SERVICES\nURBAN COMUNICATION & SECURITY SOLUTIONS\nVIPER ASP PORT ELIZABETH\nVITAL SECURITY\nVOSSIES SECURITY\nWESTRANSVAAL SECURITY\nWIIPS SECURITY\nX-RAY SECURITY"
+            ],
+            "defaultTransition": "manual_finalize3",
+            "conditionalLogic": [
+                {
+                    "conditionalTransition": "",
+                    "macro": "",
+                    "comboBox": [
+                        "",
+                        "",
+                        ""
+                    ]
+                }
+            ],
+            "finish": false
+        }
+    ],
+    "commentBox": [
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "manual_finalize4",
+            "label": "Response Reference Number: ",
+            "text": "",
+            "buttonText": "Submit",
+            "required": true,
+            "readOnly": false,
+            "minHeight": "0",
+            "maxHeight": "0",
+            "defaultTransition": "finalize5"
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "dispatch_outcome",
+            "label": "Dispatch Outcome: ",
+            "text": "",
+            "buttonText": "Submit",
+            "required": true,
+            "readOnly": false,
+            "minHeight": "0",
+            "maxHeight": "0",
+            "defaultTransition": "investigator_required"
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "finalize4",
+            "label": "Response Reference Number: ",
+            "text": "",
+            "buttonText": "Submit",
+            "required": true,
+            "readOnly": false,
+            "minHeight": "0",
+            "maxHeight": "0",
+            "defaultTransition": "finalize7"
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "finalize5",
+            "label": "Dispatch Date/Time: ",
+            "text": "",
+            "buttonText": "Submit",
+            "required": true,
+            "readOnly": false,
+            "minHeight": "0",
+            "maxHeight": "0",
+            "defaultTransition": "finalize6"
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "finalize6",
+            "label": "Arrival Date/Time: ",
+            "text": "",
+            "buttonText": "Submit",
+            "required": true,
+            "readOnly": false,
+            "minHeight": "0",
+            "maxHeight": "0",
+            "defaultTransition": "manual_finalize7"
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "no_dispatch_comment",
+            "label": "Why is response not required? ",
+            "text": "",
+            "buttonText": "Submit Comment",
+            "required": true,
+            "readOnly": false,
+            "minHeight": "0",
+            "maxHeight": "0",
+            "defaultTransition": "finalize_no_dispatch"
+        },
+        {
+            "startingElement": false,
+            "multiTasking": true,
+            "elementID": "report_comment",
+            "label": "What is incorrect on the report? ",
+            "text": "",
+            "buttonText": "Submit",
+            "required": true,
+            "readOnly": false,
+            "minHeight": "0",
+            "maxHeight": "0",
+            "defaultTransition": "final_report_review"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+[settings]
+title=
+details=
+page=0
+form=1
+numerate=1
+
+[title]
+
+-f 'code' -x0 -y8.8 -w,18 -h2 -t 'Cambria,20' -<
+-f ':SEARCH' -x0 -y11 -w,18 -h2 -t 'Cambria,22' -b -G '81,203,255' -< -E'"MACRO"|"1004"|"RUN"|monitor<"13">,slave_id<"BTS09">,number<code>.'
+-r -x0 -y0 -w,18 -h13.2 -C '234,234,234'
+-f ':Videowall' -x0 -y0 -w,18 -h2 -t 'Cambria,20' -b -G '128,128,255' -< -E'"MACRO"|"502"|"RUN"|slave_id<"BTS09">,number<code>.'
+-l -x0 -y8 -w18.2
+-s 'Site Search' -x0 -y7 -w,18 -h1.2 -t 'Cambria,20' -b -!
+-f ':Generate event' -x0 -y2 -w,18 -h2 -t 'Cambria,20' -b -G '53,255,255' -< -E'"MACRO"|"508"|"RUN"|slave_id<"BTS09">,number<code>.'
+
+[header]
+
+
+[details]
+
+
+[footer]
+
+
+[summary]
+
+
+[form]
+
+
+[form_sub]
+
+
+[form_sub1]
+
+
+[form_sub2]
+
+
+[form_sub3]
+
+

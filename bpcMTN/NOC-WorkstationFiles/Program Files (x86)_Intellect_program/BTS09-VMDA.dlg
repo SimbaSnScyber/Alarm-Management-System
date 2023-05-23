@@ -1,0 +1,46 @@
+[settings]
+title=SignalGrid
+details=
+page=0
+form=1
+numerate=1
+
+[title]
+
+-s 'VVS alarms 3h' -x0 -y0 -w,17 -h1.8 -t 'Cambria,24' -b -G '0,140,200' -<
+-f 'row1' -x0 -y2.2 -w,29.5 -h1.4 -t 'Cambria,16' -G '0,140,200' -< -F1
+-f 'row2' -x0 -y3.8 -w,29.5 -h1.4 -t 'Cambria,16' -G '0,140,200' -< -F1
+-f 'row3' -x0 -y5.4 -w,29.5 -h1.4 -t 'Cambria,16' -G '0,140,200' -< -F1
+-f 'row4' -x0 -y7 -w,29.5 -h1.4 -t 'Cambria,16' -G '0,140,200' -< -F1
+-f 'row5' -x0 -y8.4 -w,29.5 -h1.4 -t 'Cambria,16' -G '0,140,200' -< -F1
+-f 'row6' -x0 -y9.8 -w,29.5 -h1.4 -t 'Cambria,16' -G '0,140,200' -< -F1
+-f 'row7' -x0 -y11.8 -w,29.5 -h1.4 -t 'Cambria,16' -G '0,140,200' -< -F1
+-s 'Count' -x17 -y0 -w,12.5 -h1.8 -t 'Cambria,24' -b -G '0,140,200' -!
+
+[header]
+
+
+[details]
+
+
+[footer]
+
+
+[summary]
+
+
+[form]
+
+
+[form_sub]
+
+
+[form_sub1]
+
+
+[form_sub2]
+
+
+[form_sub3]
+
+

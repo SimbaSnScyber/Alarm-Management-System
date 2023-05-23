@@ -1,0 +1,4615 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<DataSetDDI>
+  <Objects>
+    <ObjectName>ACTIVEX</ObjectName>
+    <VisibleName>IIDK Interface</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>ARCH</ObjectName>
+    <VisibleName>Backup archive</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>START</ReactName>
+      <ReactDescription>Start archiving</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>STOP</ReactName>
+      <ReactDescription>Stop archiving</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>ACTIVE_PART</EventName>
+      <EventDescription>Partial work of backup archive</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ACTIVE</EventName>
+      <EventDescription>Backup archive on</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>INACTIVE</EventName>
+      <EventDescription>Backup archive off</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>ARCHPANEL</ObjectName>
+    <VisibleName>Backup archive panel</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>ATM</ObjectName>
+    <VisibleName>ATM</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>REC</ReactName>
+      <ReactDescription>Start recording</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>REC_STOP</ReactName>
+      <ReactDescription>Stop recording</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>INSERT_CARD</ReactName>
+      <ReactDescription>Card inserted</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>EJECT_CARD</ReactName>
+      <ReactDescription>Card ejected</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CAPTURE_CARD</ReactName>
+      <ReactDescription>Card captured</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>OPEN_DOOR</ReactName>
+      <ReactDescription>Door opened</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CLOSE_DOOR</ReactName>
+      <ReactDescription>Door closed</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CARD_RETAIN</ReactName>
+      <ReactDescription>Card ATM-withheld</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>BILL_TAKEN</ReactName>
+      <ReactDescription>Bill taken</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>STATE_SERVICE</ReactName>
+      <ReactDescription>SUPERVISOR Enter</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>STATE_OPEN</ReactName>
+      <ReactDescription>IN-SERVICE</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>STATE_CLOSE_CMD</ReactName>
+      <ReactDescription>OUT-OF-SERVICE</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>REC</EventName>
+      <EventDescription>Harddisk rec</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>INSERT_CARD</EventName>
+      <EventDescription>Card inserted</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>EJECT_CARD</EventName>
+      <EventDescription>Card ejected</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CAPTURE_CARD</EventName>
+      <EventDescription>Card captured</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>OPEN_DOOR</EventName>
+      <EventDescription>Safe door opened</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CLOSE_DOOR</EventName>
+      <EventDescription>Safe door closed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>TRACK2</EventName>
+      <EventDescription>TRACK2 No.=</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>BILL_TAKEN</EventName>
+      <EventDescription>Bill taken</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DUET_CLIENT</EventName>
+      <EventDescription>Duet Client Card</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DUET_CARD</EventName>
+      <EventDescription>Duet Card</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DUET_STORN</EventName>
+      <EventDescription>Duet Storn</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DUET_TRX_ERROR</EventName>
+      <EventDescription>Duet TRX error</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DUET_OPER</EventName>
+      <EventDescription>Duet operation</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DUET_OPER_END</EventName>
+      <EventDescription>Duet operation end</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CARD_TAKEN</EventName>
+      <EventDescription>Card Taken by Customer</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CARD_RETAIN</EventName>
+      <EventDescription>Card Retain</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>STATE_TRANSACT</EventName>
+      <EventDescription>Transaction (Customer service)</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>STATE_OPEN</EventName>
+      <EventDescription>ATM Online (IN-SERVICE)</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>STATE_CLOSE</EventName>
+      <EventDescription>ATM Offline (OFF-LINE)</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>STATE_CLOSE_CMD</EventName>
+      <EventDescription>ATM out of service (OUT-OF-SERVICE)</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>STATE_SERVICE</EventName>
+      <EventDescription>Supervisor Mode</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>STATE_INIT</EventName>
+      <EventDescription>Initialization</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>STATE_SW_UPDATE</EventName>
+      <EventDescription>Update SW</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>END_DISPENCE</EventName>
+      <EventDescription>ATM cash disbursement finished</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REC_STOP</EventName>
+      <EventDescription>Record on disk stopped</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>ATMX25_CLIENT</ObjectName>
+    <VisibleName>ATM Client</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>ATMX25_SERVER</ObjectName>
+    <VisibleName>ATM Server</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>ATM_ITV</ObjectName>
+    <VisibleName>ATM machine</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>CAM</ObjectName>
+    <VisibleName>Camera</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>REC</ReactName>
+      <ReactDescription>Start recording</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>REC_STOP</ReactName>
+      <ReactDescription>Stop recording</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>ARM</ReactName>
+      <ReactDescription>Arm</ReactDescription>
+      <IsReactArm>true</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DISARM</ReactName>
+      <ReactDescription>Disarm</ReactDescription>
+      <IsReactArm>true</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>MUX1</ReactName>
+      <ReactDescription>Video out</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>SIP_CONNECT</ReactName>
+      <ReactDescription>Sip connected</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>SIP_DISCONNECT</ReactName>
+      <ReactDescription>Sip disconnected</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>MD_START</EventName>
+      <EventDescription>Alarm</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>true</IsNetworkDisabled>
+      <IsProtocolDisabled>true</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>MD_STOP</EventName>
+      <EventDescription>Alarm end</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>true</IsNetworkDisabled>
+      <IsProtocolDisabled>true</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ATTACH</EventName>
+      <EventDescription>Connection</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DETACH</EventName>
+      <EventDescription>Connection lost</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ARM</EventName>
+      <EventDescription>Armed</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISARM</EventName>
+      <EventDescription>Disarmed</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REC</EventName>
+      <EventDescription>Harddisk rec</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>PRINT</EventName>
+      <EventDescription>Print frame</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>BLINDING</EventName>
+      <EventDescription>Blinding</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UNBLINDING</EventName>
+      <EventDescription>End of blinding</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REC_STOP</EventName>
+      <EventDescription>Record on disk stopped</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>RECORDER_ON</EventName>
+      <EventDescription>Record on</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>RECORDER_OFF</EventName>
+      <EventDescription>Record off</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISC_MOUNT</EventName>
+      <EventDescription>Disk mounted</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISC_UNMOUNT</EventName>
+      <EventDescription>Disk unmounted</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_RANGE_REMOVED</EventName>
+      <EventDescription>Range removed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_RANGE_ADDED</EventName>
+      <EventDescription>Range added</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_RANGE_STARTED</EventName>
+      <EventDescription>Synchronization started</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_RANGE_STOPPED</EventName>
+      <EventDescription>Synchronization stopped</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_ACTUALIZED</EventName>
+      <EventDescription>Synchronization updated</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ARCH_DELETE</EventName>
+      <EventDescription>File removal</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ARCH_PROTECTED</EventName>
+      <EventDescription>File protected from rewriting</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ARCH_UNPROTECTED</EventName>
+      <EventDescription>File rewriting protection removed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>FINISHED_AVI_EXPORT</EventName>
+      <EventDescription>Video export finished</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ARCH_BOOKMARK_RECORD</EventName>
+      <EventDescription>Tab added</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ARCH_UNBOOKMARK_RECORD</EventName>
+      <EventDescription>Tab deleted</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>TEMPERATURE_ALARM</EventName>
+      <EventDescription>Temperature threshold</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IGNORE_KEEP_NO_LESS</EventName>
+      <EventDescription>Ignoring "Store no less than"</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Icons>
+      <FileName>cam</FileName>
+      <IconName>Standard</IconName>
+    </Icons>
+    <Icons>
+      <FileName>camptz</FileName>
+      <IconName>PTZ</IconName>
+    </Icons>
+    <Icons>
+      <FileName>camfisheye</FileName>
+      <IconName>Fisheye</IconName>
+    </Icons>
+    <States>
+      <StateName>ALARMED</StateName>
+      <ImgName>alarm$255:0:0</ImgName>
+      <StateDescription>Alarmed</StateDescription>
+      <IsStateFlashing>true</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>DETACHED</StateName>
+      <ImgName>detach$127:255:0</ImgName>
+      <StateDescription>No signal</StateDescription>
+      <IsStateFlashing>true</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>ARMED</StateName>
+      <ImgName>arm$0:0:255</ImgName>
+      <StateDescription>Armed</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>DISARMED</StateName>
+      <ImgName>disarm$0:255:0</ImgName>
+      <StateDescription>Disarmed</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>RECORDING</StateName>
+      <ImgName>rec$255:0:255</ImgName>
+      <StateDescription>Record</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>CAM_FACECAPTURE</ObjectName>
+    <VisibleName>Face Detection</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>FACE_DETECTED</EventName>
+      <EventDescription>Face detected</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>CAM_IP_DETECTOR</ObjectName>
+    <VisibleName>Embedded detection</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>DETECTED</EventName>
+      <EventDescription>Event</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DETECTED_END</EventName>
+      <EventDescription>Event end</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>RECT_APPEARED</EventName>
+      <EventDescription>Object appeared</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>RECT_DISAPPEARED</EventName>
+      <EventDescription>Object disappeared</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DETECTED_BEGIN</EventName>
+      <EventDescription>Event start</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>CAM_TITLE</ObjectName>
+    <VisibleName>Captioner</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>REINDEX</ReactName>
+      <ReactDescription>Reindexing</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+  </Objects>
+  <Objects>
+    <ObjectName>CAM_ECHD</ObjectName>
+    <VisibleName>ECHD channel</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>CAM_VMDA</ObjectName>
+    <VisibleName>Tracker</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>ALARM_INACTIVE</EventName>
+      <EventDescription>Inactive</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>CAM_VMDA_DETECTOR</ObjectName>
+    <VisibleName>VMDA detection</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>ARM</ReactName>
+      <ReactDescription>Arm</ReactDescription>
+      <IsReactArm>true</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DISARM</ReactName>
+      <ReactDescription>Disarm</ReactDescription>
+      <IsReactArm>true</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>ALARM</EventName>
+      <EventDescription>Alarm</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ALARM_END</EventName>
+      <EventDescription>Alarm end</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>CAM_VMDA_DETECTOR2</ObjectName>
+    <VisibleName>NeuroTracker VMDA detection</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>ARM</ReactName>
+      <ReactDescription>Arm</ReactDescription>
+      <IsReactArm>true</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DISARM</ReactName>
+      <ReactDescription>Disarm</ReactDescription>
+      <IsReactArm>true</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>ALARM</EventName>
+      <EventDescription>Alarm</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ALARM_END</EventName>
+      <EventDescription>Alarm end</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>CAM_ZONE</ObjectName>
+    <VisibleName>Detection zone</VisibleName>
+    <GroupName>Detection zones</GroupName>
+    <Reacts>
+      <ReactName>ARM</ReactName>
+      <ReactDescription>Arm</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DISARM</ReactName>
+      <ReactDescription>Disarm</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>MD_START</EventName>
+      <EventDescription>Alarm in the zone</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>MD_STOP</EventName>
+      <EventDescription>End of alarm in the zone</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ARM</EventName>
+      <EventDescription>Zone armed</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISARM</EventName>
+      <EventDescription>Zone disarmed</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>MD_INFO</EventName>
+      <EventDescription>Information</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>true</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>CONFIG</ObjectName>
+    <VisibleName>Configuration</VisibleName>
+    <GroupName>Configurations</GroupName>
+    <Reacts>
+      <ReactName>ACTIVATE</ReactName>
+      <ReactDescription>Activate the configuration</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+  </Objects>
+  <Objects>
+    <ObjectName>DEPARTMENT</ObjectName>
+    <VisibleName>Department</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>DIALOG</ObjectName>
+    <VisibleName>Operator query panel</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>RUN</ReactName>
+      <ReactDescription>Show</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CLOSE</ReactName>
+      <ReactDescription>Close</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CLOSE_ALL</ReactName>
+      <ReactDescription>Close all</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+  </Objects>
+  <Objects>
+    <ObjectName>DISPLAY</ObjectName>
+    <VisibleName>Display</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>ACTIVATE</ReactName>
+      <ReactDescription>Show</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DEACTIVATE</ReactName>
+      <ReactDescription>Hide</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>ACTIVATED</EventName>
+      <EventDescription>Activated</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>DMD</ObjectName>
+    <VisibleName>Control of barriers</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>DRS</ObjectName>
+    <VisibleName>Data replication service</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>EVENT_COUNTER</ObjectName>
+    <VisibleName>Event counter</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>SIGNAL_POINT</EventName>
+      <EventDescription>Counters signal</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>COUNTERS_FLUSHED</EventName>
+      <EventDescription>Counters reset</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>EVENT_VIEWER</ObjectName>
+    <VisibleName>Event viewer</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>UPDATE_VIEW</ReactName>
+      <ReactDescription>Change parameters</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>bk_color</ParamName>
+        <ParamVisibleName>Background color</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>defclr</ParamName>
+        <ParamVisibleName>Font color</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Events>
+      <EventName>SHOW_ON_MAP</EventName>
+      <EventDescription>Display on the map</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SHOW_VIDEO</EventName>
+      <EventDescription>Display video</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SHOW_REPORT</EventName>
+      <EventDescription>Show report</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>GATE</ObjectName>
+    <VisibleName>Videogate</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>GATE_LOW_FPS</EventName>
+      <EventDescription>Critical fps on gate</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ACTIVE</EventName>
+      <EventDescription>Gate is active</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>INACTIVE</EventName>
+      <EventDescription>Gate is inactive</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ACTIVE_PART</EventName>
+      <EventDescription>Gate is partially active</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>GRABBER</ObjectName>
+    <VisibleName>Video capture device</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>MUX1_OFF</ReactName>
+      <ReactDescription>Disable video out 1</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>MUX2_OFF</ReactName>
+      <ReactDescription>Disable video out 2</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>MUX3_OFF</ReactName>
+      <ReactDescription>Disable video out 3</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>UPS_ONLINE</EventName>
+      <EventDescription>UPS - AC power supply restored</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UPS_ONBATT</EventName>
+      <EventDescription>UPS - Stitch on battery power</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UPS_LOWBATT</EventName>
+      <EventDescription>UPS - Low battery</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UPS_COMMLOST</EventName>
+      <EventDescription>UPS - Connection lost</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UPS_SHUTTING</EventName>
+      <EventDescription>UPS - Shutting down</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UPS_REPLACEBATT</EventName>
+      <EventDescription>UPS - Battery replacement required</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UPS_FATAL_ERROR</EventName>
+      <EventDescription>UPS - Connection error</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>VCORE</EventName>
+      <EventDescription>HUB - CPU core voltage</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CPU_FAN</EventName>
+      <EventDescription>HUB - FAN rpm</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CPU_TEMP</EventName>
+      <EventDescription>HUB - CPU temp</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYS_TEMP</EventName>
+      <EventDescription>HUB - Chipset temp</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>+5V</EventName>
+      <EventDescription>HUB - +5V Voltage error</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>+12V</EventName>
+      <EventDescription>HUB - +12V Voltage error</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>-5V</EventName>
+      <EventDescription>HUB - -5V Voltage error</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>-12V</EventName>
+      <EventDescription>HUB - -12V Voltage error</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>+3.3V</EventName>
+      <EventDescription>HUB - +3.3V Voltage error</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>AUDIO_SIG_LOST</EventName>
+      <EventDescription>No sound</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CONNECT_FAIL</EventName>
+      <EventDescription>Connection error</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>true</IsNetworkDisabled>
+      <IsProtocolDisabled>true</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CONNECT_OK</EventName>
+      <EventDescription>Connected</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>NETWORK_FAILURE</EventName>
+      <EventDescription>Connection lost</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>STATE_CONNECTED</EventName>
+      <EventDescription>Connection restored</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>GRAY</ObjectName>
+    <VisibleName>Sensor</VisibleName>
+    <GroupName>Sensors</GroupName>
+    <Reacts>
+      <ReactName>ARM</ReactName>
+      <ReactDescription>Arm</ReactDescription>
+      <IsReactArm>true</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DISARM</ReactName>
+      <ReactDescription>Disarm</ReactDescription>
+      <IsReactArm>true</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CONFIRM</ReactName>
+      <ReactDescription>Classify alarm</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>ON</EventName>
+      <EventDescription>Closed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>OFF</EventName>
+      <EventDescription>Open</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ALARM</EventName>
+      <EventDescription>Alarm</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CONFIRM</EventName>
+      <EventDescription>Alarm accepted</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ARM</EventName>
+      <EventDescription>Armed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISARM</EventName>
+      <EventDescription>Disarmed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>NOT_VALID_STATE</EventName>
+      <EventDescription>Zone not ready</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>true</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SIGNAL_LOST</EventName>
+      <EventDescription>Connection lost</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Icons>
+      <FileName>zone_fire</FileName>
+      <IconName>Fire</IconName>
+    </Icons>
+    <Icons>
+      <FileName>zone_smoke</FileName>
+      <IconName>Smoke</IconName>
+    </Icons>
+    <Icons>
+      <FileName>zone_ir</FileName>
+      <IconName>Infrared</IconName>
+    </Icons>
+    <Icons>
+      <FileName>zone_smk</FileName>
+      <IconName>Reed switch</IconName>
+    </Icons>
+    <Icons>
+      <FileName>zone_window</FileName>
+      <IconName>Window</IconName>
+    </Icons>
+    <Icons>
+      <FileName>zone_glass</FileName>
+      <IconName>Glass</IconName>
+    </Icons>
+    <Icons>
+      <FileName>zone_pir</FileName>
+      <IconName>PIR</IconName>
+    </Icons>
+    <States>
+      <StateName>ARMED</StateName>
+      <ImgName>arm</ImgName>
+      <StateDescription>Armed</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>DISARMED</StateName>
+      <ImgName>disarm</ImgName>
+      <StateDescription>Disarmed</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>ALARMED</StateName>
+      <ImgName>alarm</ImgName>
+      <StateDescription>Alarm</StateDescription>
+      <IsStateFlashing>true</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>CONFIRMED</StateName>
+      <ImgName>norm</ImgName>
+      <StateDescription>Alarm accepted</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>DETACHED_DISARM</StateName>
+      <ImgName>detach</ImgName>
+      <StateDescription>Connection lost</StateDescription>
+      <IsStateFlashing>true</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>OFF</StateName>
+      <ImgName>attention</ImgName>
+      <StateDescription>Normal(off)</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>ON</StateName>
+      <ImgName>norm</ImgName>
+      <StateDescription>Active(on)</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>GRELE</ObjectName>
+    <VisibleName>Relay</VisibleName>
+    <GroupName>Relays</GroupName>
+    <Reacts>
+      <ReactName>ON</ReactName>
+      <ReactDescription>Enable</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>OFF</ReactName>
+      <ReactDescription>Disable</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>ON</EventName>
+      <EventDescription>Relay On</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>OFF</EventName>
+      <EventDescription>Relay Off</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SIGNAL_LOST</EventName>
+      <EventDescription>Connection lost</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Icons>
+      <FileName>rele_light</FileName>
+      <IconName>Light</IconName>
+    </Icons>
+    <Icons>
+      <FileName>rele_lock</FileName>
+      <IconName>Lock</IconName>
+    </Icons>
+    <Icons>
+      <FileName>rele_woofer</FileName>
+      <IconName>Signal</IconName>
+    </Icons>
+    <States>
+      <StateName>ON</StateName>
+      <ImgName>on</ImgName>
+      <StateDescription>Relay On</StateDescription>
+      <IsStateFlashing>true</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>OFF</StateName>
+      <ImgName>off</ImgName>
+      <StateDescription>Relay Off</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>DETACHED_ON</StateName>
+      <ImgName>detach</ImgName>
+      <StateDescription>Connection lost</StateDescription>
+      <IsStateFlashing>true</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>DETACHED_OFF</StateName>
+      <ImgName>detach</ImgName>
+      <StateDescription>Connection lost</StateDescription>
+      <IsStateFlashing>true</IsStateFlashing>
+    </States>
+    <Rules>
+      <EventName>ON</EventName>
+      <FromStateName />
+      <ToStateName>ON</ToStateName>
+    </Rules>
+    <Rules>
+      <EventName>OFF</EventName>
+      <FromStateName />
+      <ToStateName>OFF</ToStateName>
+    </Rules>
+    <Rules>
+      <EventName>SIGNAL_LOST</EventName>
+      <FromStateName>ON</FromStateName>
+      <ToStateName>DETACHED_ON</ToStateName>
+    </Rules>
+    <Rules>
+      <EventName>SIGNAL_LOST</EventName>
+      <FromStateName>OFF</FromStateName>
+      <ToStateName>DETACHED_OFF</ToStateName>
+    </Rules>
+  </Objects>
+  <Objects>
+    <ObjectName>HTTP</ObjectName>
+    <VisibleName>Web-server</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>KEYB</ObjectName>
+    <VisibleName>Keyboard</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>LEVEL</ObjectName>
+    <VisibleName>Access Level</VisibleName>
+    <GroupName>Access Levels</GroupName>
+  </Objects>
+  <Objects>
+    <ObjectName>LMCFTP</ObjectName>
+    <VisibleName>LMCFTP</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>UPLOAD_OK</EventName>
+      <EventDescription>Fragment sent</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UPLOAD_FAIL</EventName>
+      <EventDescription>Fragment sending error</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>LMCGATE</ObjectName>
+    <VisibleName>LMCGATE</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>CL_CONNECT</EventName>
+      <EventDescription>Connect to client</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CL_DISCONNECT</EventName>
+      <EventDescription>Disconnect from client</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>TRANS_STAT</EventName>
+      <EventDescription>Transmission statistics</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CAM_NOT_FOUND</EventName>
+      <EventDescription>Camera not found</EventDescription>
+      <EventType>INFORMATION</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>MACRO</ObjectName>
+    <VisibleName>Macro</VisibleName>
+    <GroupName>Macros</GroupName>
+    <Reacts>
+      <ReactName>RUN</ReactName>
+      <ReactDescription>Execute action</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>RUN</EventName>
+      <EventDescription>Action executed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Icons>
+      <FileName>zone_ind</FileName>
+      <IconName>Macro 1</IconName>
+    </Icons>
+    <Icons>
+      <FileName>macros_2</FileName>
+      <IconName>Macro 2</IconName>
+    </Icons>
+    <Icons>
+      <FileName>macros_3</FileName>
+      <IconName>Macro 3</IconName>
+    </Icons>
+    <Icons>
+      <FileName>macros_4</FileName>
+      <IconName>Macro 4</IconName>
+    </Icons>
+    <Icons>
+      <FileName>macros_5</FileName>
+      <IconName>Macro 5</IconName>
+    </Icons>
+    <Icons>
+      <FileName>macros_6</FileName>
+      <IconName>Macro 6</IconName>
+    </Icons>
+    <Icons>
+      <FileName>macros_7</FileName>
+      <IconName>Macro 7</IconName>
+    </Icons>
+    <States>
+      <StateName>NORM</StateName>
+      <ImgName>arm</ImgName>
+      <StateDescription />
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>MAIL_MESSAGE</ObjectName>
+    <VisibleName>Mail message</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>SEND</ReactName>
+      <ReactDescription>Send message</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>SENT</EventName>
+      <EventDescription>Message sent</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SEND_ERROR</EventName>
+      <EventDescription>Message sending error</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>MAIN</ObjectName>
+    <VisibleName>Security zone</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>MAP</ObjectName>
+    <VisibleName>Map</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>SET_TOPMOST</ReactName>
+      <ReactDescription>Over all windows</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>SET_NOTOPMOST</ReactName>
+      <ReactDescription>Cancel Over all windows</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>INSCRIBE</ReactName>
+      <ReactDescription>Fit to window</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+  </Objects>
+  <Objects>
+    <ObjectName>MAPLAYER</ObjectName>
+    <VisibleName>Layer</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>MAPPLATFORM</ObjectName>
+    <VisibleName>Group of objects</VisibleName>
+    <GroupName>GIS platforms</GroupName>
+    <States>
+      <StateName>NORM</StateName>
+      <ImgName>demo_norm</ImgName>
+      <StateDescription />
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>MESSAGE</ObjectName>
+    <VisibleName>Alarm Message Window</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>DISABLE</ReactName>
+      <ReactDescription>Lock</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>ENABLE</ReactName>
+      <ReactDescription>Unlock</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+  </Objects>
+  <Objects>
+    <ObjectName>MMS</ObjectName>
+    <VisibleName>Mail Message Service</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>MONITOR</ObjectName>
+    <VisibleName>Monitor</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>ACTIVATE</ReactName>
+      <ReactDescription>Show image</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DEACTIVATE</ReactName>
+      <ReactDescription>Hide</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>REMOVE_ALL</ReactName>
+      <ReactDescription>Remove cameras</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>ADD_SHOW</ReactName>
+      <ReactDescription>Add camera</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>cam</ParamName>
+        <ParamVisibleName>Camera ID</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>control</ParamName>
+        <ParamVisibleName>Camera control</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Allowed</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Prohibited</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>name</ParamName>
+        <ParamVisibleName>Camera name</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>START_AVI_EXPORT</ReactName>
+      <ReactDescription>Start video export</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>avi_path</ParamName>
+        <ParamVisibleName>Path to created file</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>finish</ParamName>
+        <ParamVisibleName>Ending time</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>monitor</ParamName>
+        <ParamVisibleName>Monitor number</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>start</ParamName>
+        <ParamVisibleName>Time of beginning</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>cam</ParamName>
+        <ParamVisibleName>Camera ID</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>STOP_AVI_EXPORT</ReactName>
+      <ReactDescription>Stop video export</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>monitor</ParamName>
+        <ParamVisibleName>Monitor number</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>START_AVI_SCHEDULE</ReactName>
+      <ReactDescription>Start tabs export</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>STOP_AVI_SCHEDULE</ReactName>
+      <ReactDescription>Stop tabs export</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>KEY_PRESSED</ReactName>
+      <ReactDescription>Perform action on keypress</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>key</ParamName>
+        <ParamVisibleName>Key</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Open Create bookmark/Protect recordings window</ValueName>
+          <Value>PROTECT_DO</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Open View created bookmarks window</ValueName>
+          <Value>PROTECT_VIEW</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Open bookmark export window</ValueName>
+          <Value>EXPORT_DO</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Edit archive search date</ValueName>
+          <Value>ARCH_EDIT_DATE</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Edit archive search time</ValueName>
+          <Value>ARCH_EDIT_TIME</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Enter changes of values in archive</ValueName>
+          <Value>ARCH_EDIT_ENTER</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Cancel archive editing</ValueName>
+          <Value>ARCH_EDIT_ESCAPE</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Back</ValueName>
+          <Value>ARCH_EDIT_BACK</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Zoom in video surveillance window</ValueName>
+          <Value>WINDOW_ZOOM_IN</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Zoom out video surveillance window</ValueName>
+          <Value>WINDOW_ZOOM_OUT</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Zoom in</ValueName>
+          <Value>ZOOM_IN</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Zoom out</ValueName>
+          <Value>ZOOM_OUT</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Slideshow rewind</ValueName>
+          <Value>CYCLE_REW</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Slideshow fast-forward</ValueName>
+          <Value>CYCLE_FF</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Shift frame left in Zoom mode</ValueName>
+          <Value>LEFT</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Shift frame right in Zoom mode</ValueName>
+          <Value>RIGHT</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Shift frame up in Zoom mode</ValueName>
+          <Value>UP</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Shift frame down in Zoom mode</ValueName>
+          <Value>DOWN</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Video surveillance mode</ValueName>
+          <Value>MODE_VIDEO</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Playback mode of archive video recordings</ValueName>
+          <Value>MODE_ARCH</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Playback mode of archive video recordings 2</ValueName>
+          <Value>MODE_ARCH2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Show mask</ValueName>
+          <Value>MASK_SHOW</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Hide mask</ValueName>
+          <Value>MASK_HIDE</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Arm camera</ValueName>
+          <Value>ARM</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Disarm camera</ValueName>
+          <Value>DISARM</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Rewind</ValueName>
+          <Value>REW</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Playback</ValueName>
+          <Value>PLAY</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Play non-stop</ValueName>
+          <Value>PLAY_NONSTOP</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Play fast</ValueName>
+          <Value>PLAY_FAST</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Fast-forward</ValueName>
+          <Value>FF</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Record</ValueName>
+          <Value>RECORD</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Recording from mic</ValueName>
+          <Value>RECORD_MIC</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Stop</ValueName>
+          <Value>STOP</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Stop recording</ValueName>
+          <Value>REC_STOP</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Pause</ValueName>
+          <Value>PAUSE</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Mic on</ValueName>
+          <Value>MIC_ON</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Mic off</ValueName>
+          <Value>MIC_OFF</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Print frame</ValueName>
+          <Value>PRINT</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Manage layout</ValueName>
+          <Value>SELECT_LAYOUT</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Automatic slideshow fast-forwarding</ValueName>
+          <Value>START_CYCLE_FF</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Stop automatic slideshow</ValueName>
+          <Value>STOP_CYCLE</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Select layout. 1 camera</ValueName>
+          <Value>SCREEN.1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Select layout. 4 cameras</ValueName>
+          <Value>SCREEN.4</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Select layout. 6 cameras</ValueName>
+          <Value>SCREEN.6</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Select layout. 9 cameras</ValueName>
+          <Value>SCREEN.9</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Select layout. 16 cameras</ValueName>
+          <Value>SCREEN.16</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Select layout. 32 cameras</ValueName>
+          <Value>SCREEN.32</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>ENABLE_TELEMETRY</ReactName>
+      <ReactDescription>Enable PTZ</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DISABLE_TELEMETRY</ReactName>
+      <ReactDescription>Disable PTZ</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>FINISHED_AVI_EXPORT</EventName>
+      <EventDescription>Video export finished</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>INTERFACE_MANIPULATION</EventName>
+      <EventDescription>Visualization change</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>LAYOUT_DEL</EventName>
+      <EventDescription>Deleting layout</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>LAYOUT_ADD</EventName>
+      <EventDescription>Adding layout</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>LAYOUT_ACTIVATE</EventName>
+      <EventDescription>Changing active layout</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REPLACE_CAM</EventName>
+      <EventDescription>Changing the camera position</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>PERSON</ObjectName>
+    <VisibleName>User</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>REGISTERED</EventName>
+      <EventDescription>User registration</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UNREGISTERED</EventName>
+      <EventDescription>Shutdown</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ACTIVATE_T_LEV</EventName>
+      <EventDescription>Time access level beginning</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DEACTIVATE_T_LEV</EventName>
+      <EventDescription>Time access level end</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CHANGE_AREA</EventName>
+      <EventDescription>Region changed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REACT_NO_RIGHTS</EventName>
+      <EventDescription>No rights to reaction</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>PROGRAM</ObjectName>
+    <VisibleName>Program</VisibleName>
+    <GroupName>Programs</GroupName>
+  </Objects>
+  <Objects>
+    <ObjectName>REGION</ObjectName>
+    <VisibleName>Region</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>CONTROL_OBJECT</ReactName>
+      <ReactDescription>Control objects</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>obj_type</ParamName>
+        <ParamVisibleName>object type</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>react_name</ParamName>
+        <ParamVisibleName>reaction type</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>ARM</ReactName>
+      <ReactDescription>Arm</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DISARM</ReactName>
+      <ReactDescription>Disarm</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CONFIRM</ReactName>
+      <ReactDescription>Classify alarm</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>ARM</EventName>
+      <EventDescription>Armed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISARM</EventName>
+      <EventDescription>Disarmed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ALARM</EventName>
+      <EventDescription>Alarm in region</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ALARM_END</EventName>
+      <EventDescription>Alarm end</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CONFIRMED</EventName>
+      <EventDescription>Alarm accepted</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DETACH</EventName>
+      <EventDescription>Disconnecting</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ATTACH</EventName>
+      <EventDescription>Connecting</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Icons>
+      <FileName>zone_ind</FileName>
+      <IconName>ZoneInd</IconName>
+    </Icons>
+    <Icons>
+      <FileName>zone_btn</FileName>
+      <IconName>ZoneBtn</IconName>
+    </Icons>
+    <States>
+      <StateName>ARMED</StateName>
+      <ImgName>arm</ImgName>
+      <StateDescription>Armed</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>DISARMED</StateName>
+      <ImgName>disarm</ImgName>
+      <StateDescription>Disarmed</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>ALARMED</StateName>
+      <ImgName>alarm</ImgName>
+      <StateDescription>Alarm</StateDescription>
+      <IsStateFlashing>true</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>DETACHED</StateName>
+      <ImgName>detach</ImgName>
+      <StateDescription>Disconnected</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>NOTREADY</StateName>
+      <ImgName>disarm_alarm</ImgName>
+      <StateDescription>Not ready</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>REGIONRULE</ObjectName>
+    <VisibleName>Rule of states transition</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>RIGHTS</ObjectName>
+    <VisibleName>User permissions</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>SCENE</ObjectName>
+    <VisibleName>Scene</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>ACTIVATE</ReactName>
+      <ReactDescription>Show image</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DEACTIVATE</ReactName>
+      <ReactDescription>Hide</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>REMOVE_ALL</ReactName>
+      <ReactDescription>Remove cameras</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>ADD_SHOW</ReactName>
+      <ReactDescription>Add camera</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>cam</ParamName>
+        <ParamVisibleName>Camera ID</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>control</ParamName>
+        <ParamVisibleName>Camera control</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Allowed</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Prohibited</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>name</ParamName>
+        <ParamVisibleName>Camera name</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+  </Objects>
+  <Objects>
+    <ObjectName>SCRIPT</ObjectName>
+    <VisibleName>Script</VisibleName>
+    <GroupName>Scripts</GroupName>
+  </Objects>
+  <Objects>
+    <ObjectName>SENTRI</ObjectName>
+    <VisibleName>Shot Recognition</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>CONFIRM</ReactName>
+      <ReactDescription>Classify alarm</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>ALARM</EventName>
+      <EventDescription>Alarm</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CONFIRM</EventName>
+      <EventDescription>Alarm classification</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Icons>
+      <FileName>sentri</FileName>
+      <IconName>Sentri</IconName>
+    </Icons>
+    <States>
+      <StateName>ALARMED</StateName>
+      <ImgName>alarm</ImgName>
+      <StateDescription>Alarm</StateDescription>
+      <IsStateFlashing>true</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>NORMAL</StateName>
+      <ImgName>norm</ImgName>
+      <StateDescription>Normal</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <Rules>
+      <EventName>ALARM</EventName>
+      <FromStateName />
+      <ToStateName>ALARMED</ToStateName>
+    </Rules>
+    <Rules>
+      <EventName>CONFIRM</EventName>
+      <FromStateName />
+      <ToStateName>NORMAL</ToStateName>
+    </Rules>
+  </Objects>
+  <Objects>
+    <ObjectName>SHORT_MESSAGE</ObjectName>
+    <VisibleName>Short Message</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>SEND</ReactName>
+      <ReactDescription>Send message</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>SENT</EventName>
+      <EventDescription>Message sent</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SEND_ERROR</EventName>
+      <EventDescription>Message sending error</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>SLAVE</ObjectName>
+    <VisibleName>Computer</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>CONNECT_OTHER</ReactName>
+      <ReactDescription>Connect to cores</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>SYNC_PROTOCOL</ReactName>
+      <ReactDescription>Receive protocols</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>SYNC_TIME</ReactName>
+      <ReactDescription>Synchronize time</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>BACKUP</ReactName>
+      <ReactDescription>Backup DB</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CREATE_PROCESS</ReactName>
+      <ReactDescription>Start process</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>command_line</ParamName>
+        <ParamVisibleName>Command line</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>SEND_MY_CONFIG</ReactName>
+      <ReactDescription>Distribute configuration</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>MOVE_CONFIG</ReactName>
+      <ReactDescription>Move configuration</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>from</ParamName>
+        <ParamVisibleName>sender</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>to</ParamName>
+        <ParamVisibleName>receiver</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>SPREAD_CONFIG</ReactName>
+      <ReactDescription>Distribute configuration</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>GET_DEPTH</ReactName>
+      <ReactDescription>Get archive depth</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>cam</ParamName>
+        <ParamVisibleName>Camera</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>drive</ParamName>
+        <ParamVisibleName>Disk</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>RESTART_ALL</ReactName>
+      <ReactDescription>Restart modules</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>ACTIVATE_DISPLAY</ReactName>
+      <ReactDescription>Change screen</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>display_id</ParamName>
+        <ParamVisibleName>Display ID</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>EXECUTE</ReactName>
+      <ReactDescription>Add process</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>command</ParamName>
+        <ParamVisibleName>command</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>path_absolute</ParamName>
+        <ParamVisibleName>path_absolute</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>0</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>1</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>restart</ParamName>
+        <ParamVisibleName>restart</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>0</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>1</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>AD_SYNC</ReactName>
+      <ReactDescription>Synchronize AD</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>CONNECTED</EventName>
+      <EventDescription>Connection</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISCONNECTED</EventName>
+      <EventDescription>Disconnection</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>PROTOCOL_RCVD</EventName>
+      <EventDescription>Protocol received</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REGISTER_ERROR</EventName>
+      <EventDescription>Attempts to access exceeded</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REGISTER_USER</EventName>
+      <EventDescription>User registration</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REGISTER_ATTEMPT</EventName>
+      <EventDescription>Unauthorized access attempted</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>KEY_UPDATED</EventName>
+      <EventDescription>Key updated</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>KEY_IGNORED_SW</EventName>
+      <EventDescription>Key rejected (limit exceeded)</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>KEY_IGNORED_HW</EventName>
+      <EventDescription>Key rejected (incorrect codes)</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REBUILD_IN_START</EventName>
+      <EventDescription>Archive rebuilding started</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>REBUILD_IN_STOP</EventName>
+      <EventDescription>Archive rebuilding finished</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISC_EXIST</EventName>
+      <EventDescription>Disk for archive storage found</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>NO_DISC</EventName>
+      <EventDescription>No disk for archive storage</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>KEY_IGNORED_FR</EventName>
+      <EventDescription>Key rejected (HID incompliance)</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SHUTDOWN</EventName>
+      <EventDescription>Shutdown</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISC_MOUNT</EventName>
+      <EventDescription>Disk mounted</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DISC_UNMOUNT</EventName>
+      <EventDescription>Disk unmounted</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>ARCHIVE_DEPTH</EventName>
+      <EventDescription>Archive depth</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>FORCED_OFF</EventName>
+      <EventDescription>Forced shutdown</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CHANGE_DRIVE_RECORD</EventName>
+      <EventDescription>Record to disc transfer</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>INTEGRITY_FAIL</EventName>
+      <EventDescription>Distribution kit integrity damaged</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DATABASE_ERROR</EventName>
+      <EventDescription>Database error</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Icons>
+      <FileName>bolid</FileName>
+      <IconName>?</IconName>
+    </Icons>
+    <States>
+      <StateName>CONNECTED</StateName>
+      <ImgName>ON</ImgName>
+      <StateDescription>Connected</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>DISCONNECTED</StateName>
+      <ImgName>OFF</ImgName>
+      <StateDescription>Disconnected</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>SMS</ObjectName>
+    <VisibleName>Short Message Service</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>REINIT</ReactName>
+      <ReactDescription>Reopen device</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+  </Objects>
+  <Objects>
+    <ObjectName>SSS_SNMP</ObjectName>
+    <VisibleName>SNMP service</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>SSS_SNMP_TRAP</ObjectName>
+    <VisibleName>SNMP trap</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>SSS_WATCHDOG</ObjectName>
+    <VisibleName>System restart service</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>RESTART_PROCESS</EventName>
+      <EventDescription>Module restart</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>RESTART_EXCEEDED</EventName>
+      <EventDescription>Attempts to restart module exceeded</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>STREAMING_SERVER</ObjectName>
+    <VisibleName>RTSP Server</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>ONVIF_SERVER</ObjectName>
+    <VisibleName>ONVIF-Server</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>FIXML_SERVER</ObjectName>
+    <VisibleName>ISD integration server</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>ONVIF_PROFILE</ObjectName>
+    <VisibleName>ONVIF-Server Profile</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>PROGRAM_STREAMING_SERVER</ObjectName>
+    <VisibleName>PS-RTP Server</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>TELEMETRY</ObjectName>
+    <VisibleName>PTZ device</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>SET_PRESET</ReactName>
+      <ReactDescription>Set preset</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>preset</ParamName>
+        <ParamVisibleName>Preset</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>CLEAR_PRESET</ReactName>
+      <ReactDescription>Clear preset</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>preset</ParamName>
+        <ParamVisibleName>Preset</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>GO_PRESET</ReactName>
+      <ReactDescription>Go to preset</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>preset</ParamName>
+        <ParamVisibleName>Preset</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOFOCUS_ON</ReactName>
+      <ReactDescription>Enable autofocus</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>UP</ReactName>
+      <ReactDescription>Up</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>speed</ParamName>
+        <ParamVisibleName>Speed</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>5</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>10</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>DOWN</ReactName>
+      <ReactDescription>Down</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>speed</ParamName>
+        <ParamVisibleName>Speed</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>5</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>10</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>LEFT</ReactName>
+      <ReactDescription>Left</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>speed</ParamName>
+        <ParamVisibleName>Speed</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>5</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>10</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>RIGHT</ReactName>
+      <ReactDescription>Right</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>speed</ParamName>
+        <ParamVisibleName>Speed</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>5</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>10</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>HOME</ReactName>
+      <ReactDescription>Home</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>STOP</ReactName>
+      <ReactDescription>Stop</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>FOCUS_IN</ReactName>
+      <ReactDescription>Focus +</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>FOCUS_OUT</ReactName>
+      <ReactDescription>Focus -</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>FOCUS_STOP</ReactName>
+      <ReactDescription>Stop focus</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>RIGHT_DOWN</ReactName>
+      <ReactDescription>Down right</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>speed</ParamName>
+        <ParamVisibleName>Speed</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>5</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>10</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>RIGHT_UP</ReactName>
+      <ReactDescription>Up right</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>speed</ParamName>
+        <ParamVisibleName>Speed</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>5</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>10</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>LEFT_DOWN</ReactName>
+      <ReactDescription>Down left</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>speed</ParamName>
+        <ParamVisibleName>Speed</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>5</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>10</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>LEFT_UP</ReactName>
+      <ReactDescription>Up left</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>speed</ParamName>
+        <ParamVisibleName>Speed</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>5</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>10</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>IRIS_OPEN</ReactName>
+      <ReactDescription>Open iris</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>IRIS_CLOSE</ReactName>
+      <ReactDescription>Close iris</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>IRIS_STOP</ReactName>
+      <ReactDescription>Stop iris</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>PATROL_LEARN</ReactName>
+      <ReactDescription>Patrol study</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>patrol_id</ParamName>
+        <ParamVisibleName>Route</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>point</ParamName>
+        <ParamVisibleName>Point</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>preset</ParamName>
+        <ParamVisibleName>Preset</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>dwell</ParamName>
+        <ParamVisibleName>Delay</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>flush_tour</ParamName>
+        <ParamVisibleName>Record route</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>speed</ParamName>
+        <ParamVisibleName>Speed</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>PATROL_STOP</ReactName>
+      <ReactDescription>Patrol stop</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>patrol_id</ParamName>
+        <ParamVisibleName>Route</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>PATROL_PLAY</ReactName>
+      <ReactDescription>Patrol</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>patrol_id</ParamName>
+        <ParamVisibleName>Route</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>D2ON</ReactName>
+      <ReactDescription>Super Dynamic on</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>D2OFF</ReactName>
+      <ReactDescription>Super Dynamic off</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOPAN_START_P</ReactName>
+      <ReactDescription>Set autopan start point</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOPAN_END_P</ReactName>
+      <ReactDescription>Set autopan end point</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOPAN_START</ReactName>
+      <ReactDescription>Start autopan</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOPAN_STOP</ReactName>
+      <ReactDescription>Stop autopan</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>LOCK</ReactName>
+      <ReactDescription>Lock</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>UNLOCK</ReactName>
+      <ReactDescription>Unlock</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>LOCKED</EventName>
+      <EventDescription>Locked</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UNLOCKED</EventName>
+      <EventDescription>Unlocked</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>AUTOFOCUS_ON</EventName>
+      <EventDescription>Enable autofocus</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>AUTOPAN_END_P</EventName>
+      <EventDescription>Set autopan end point</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>AUTOPAN_START</EventName>
+      <EventDescription>Start autopan</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>AUTOPAN_START_P</EventName>
+      <EventDescription>Set autopan start point</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>AUTOPAN_STOP</EventName>
+      <EventDescription>Stop autopan</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>CLEAR_PRESET</EventName>
+      <EventDescription>Clear preset</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>D2OFF</EventName>
+      <EventDescription>Super Dynamic off</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>D2ON</EventName>
+      <EventDescription>Super Dynamic on</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DOWN</EventName>
+      <EventDescription>Down</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>FOCUS_IN</EventName>
+      <EventDescription>Focus +</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>FOCUS_OUT</EventName>
+      <EventDescription>Focus -</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>GO_PRESET</EventName>
+      <EventDescription>Go to preset</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>HOME</EventName>
+      <EventDescription>Home</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IRIS_CLOSE</EventName>
+      <EventDescription>Close iris</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IRIS_OPEN</EventName>
+      <EventDescription>Open iris</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>IRIS_STOP</EventName>
+      <EventDescription>Stop iris</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>LEFT</EventName>
+      <EventDescription>Left</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>LEFT_DOWN</EventName>
+      <EventDescription>Down left</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>LEFT_UP</EventName>
+      <EventDescription>Up left</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>LOCK</EventName>
+      <EventDescription>Lock</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>PATROL_LEARN</EventName>
+      <EventDescription>Patrol study</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>PATROL_PLAY</EventName>
+      <EventDescription>Patrol</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>PATROL_STOP</EventName>
+      <EventDescription>Patrol stop</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>RIGHT</EventName>
+      <EventDescription>Right</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>RIGHT_DOWN</EventName>
+      <EventDescription>Down right</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>RIGHT_UP</EventName>
+      <EventDescription>Up right</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SET_PRESET</EventName>
+      <EventDescription>Set preset</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>STOP</EventName>
+      <EventDescription>Stop</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UNLOCK</EventName>
+      <EventDescription>Unlock</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>UP</EventName>
+      <EventDescription>Up</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <States>
+      <StateName>LOCKED</StateName>
+      <ImgName>?</ImgName>
+      <StateDescription>?</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>UNLOCKED</StateName>
+      <ImgName>?</ImgName>
+      <StateDescription>?</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>TELEMETRY_CARD</ObjectName>
+    <VisibleName>Telemetry Controller</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>TELEMETRY_EXT</ObjectName>
+    <VisibleName>Control panel</VisibleName>
+    <GroupName />
+    <Reacts>
+      <ReactName>SET_PRESET</ReactName>
+      <ReactDescription>Set preset</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CLEAR_PRESET</ReactName>
+      <ReactDescription>Clear preset</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>GO_PRESET</ReactName>
+      <ReactDescription>Go to preset</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>preset</ParamName>
+        <ParamVisibleName>Preset</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>tel_prior</ParamName>
+        <ParamVisibleName>Priority</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Low</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Medium</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>High</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOFOCUS_ON</ReactName>
+      <ReactDescription>Autofocus on</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>UP</ReactName>
+      <ReactDescription>Up</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>DOWN</ReactName>
+      <ReactDescription>Down</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>LEFT</ReactName>
+      <ReactDescription>Left</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>RIGHT</ReactName>
+      <ReactDescription>Right</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>HOME</ReactName>
+      <ReactDescription>Home</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>STOP</ReactName>
+      <ReactDescription>Stop</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>FOCUS_IN</ReactName>
+      <ReactDescription>Focus +</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>FOCUS_OUT</ReactName>
+      <ReactDescription>Focus -</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>FOCUS_STOP</ReactName>
+      <ReactDescription>Stop focus</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>RIGHT_DOWN</ReactName>
+      <ReactDescription>Down right</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>RIGHT_UP</ReactName>
+      <ReactDescription>Up right</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>LEFT_DOWN</ReactName>
+      <ReactDescription>Down left</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>LEFT_UP</ReactName>
+      <ReactDescription>Up left</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>IRIS_OPEN</ReactName>
+      <ReactDescription>Open iris</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>IRIS_CLOSE</ReactName>
+      <ReactDescription>Close iris</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>IRIS_STOP</ReactName>
+      <ReactDescription>Stop iris</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>PATROL_LEARN</ReactName>
+      <ReactDescription>Patrol study</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>PATROL_STOP</ReactName>
+      <ReactDescription>Patrol stop</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>PATROL_PLAY</ReactName>
+      <ReactDescription>Patrol</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>D2ON</ReactName>
+      <ReactDescription>Super Dynamic on</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>D2OFF</ReactName>
+      <ReactDescription>Super Dynamic off</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOPAN_START_P</ReactName>
+      <ReactDescription>Set autopan start point</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOPAN_END_P</ReactName>
+      <ReactDescription>Set autopan end point</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOPAN_START</ReactName>
+      <ReactDescription>Start autopan</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>AUTOPAN_STOP</ReactName>
+      <ReactDescription>Stop autopan</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>CLEAR_DISPLAY</ReactName>
+      <ReactDescription>Clear screen</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>display</ParamName>
+        <ParamVisibleName>Display</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Basic</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Status</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>PRINT_TEXT</ReactName>
+      <ReactDescription>Print text</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>display</ParamName>
+        <ParamVisibleName>Display</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Basic</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Status</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>x</ParamName>
+        <ParamVisibleName>Coordinate X</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>y</ParamName>
+        <ParamVisibleName>Coordinate Y</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>text</ParamName>
+        <ParamVisibleName>Text</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>charset</ParamName>
+        <ParamVisibleName>Encoding</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Latin</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Cyrillic</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Central European</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>style</ParamName>
+        <ParamVisibleName>Style</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Normal</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Bold</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>DRAW_FIGURE</ReactName>
+      <ReactDescription>Draw figure</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>display</ParamName>
+        <ParamVisibleName>Display</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Basic</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Status</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>x1</ParamName>
+        <ParamVisibleName>Coordinate X initial</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>y1</ParamName>
+        <ParamVisibleName>Coordinate Y initial</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>x2</ParamName>
+        <ParamVisibleName>Coordinate X final</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>y2</ParamName>
+        <ParamVisibleName>Coordinate Y final</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>is_fill</ParamName>
+        <ParamVisibleName>Fill figure</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Yes</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>No</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>is_set_pixels</ParamName>
+        <ParamVisibleName>Drawing type</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Draw</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Clear</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>figure</ParamName>
+        <ParamVisibleName>Figure</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Line</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Rectangle</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>SET_ALARM</ReactName>
+      <ReactDescription>Set alarm</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>audio_alarm</ParamName>
+        <ParamVisibleName>Audio alarm</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Disabled</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Type 1</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Type 2</ValueName>
+          <Value>3</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Type 2 once</ValueName>
+          <Value>4</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Type 3</ValueName>
+          <Value>5</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Type 3 once</ValueName>
+          <Value>6</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Error signal once</ValueName>
+          <Value>8</Value>
+        </ReactParamValues>
+      </ReactParams>
+      <ReactParams>
+        <ParamName>visual_alarm</ParamName>
+        <ParamVisibleName>Visual alarm</ParamVisibleName>
+        <ParamType>COMBOBOX</ParamType>
+        <ReactParamValues>
+          <ValueName>Disabled</ValueName>
+          <Value>0</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Enabled</ValueName>
+          <Value>1</Value>
+        </ReactParamValues>
+        <ReactParamValues>
+          <ValueName>Blinking</ValueName>
+          <Value>2</Value>
+        </ReactParamValues>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>RELE_ON</ReactName>
+      <ReactDescription>Enable relay</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>rele</ParamName>
+        <ParamVisibleName>Relay ID</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Reacts>
+      <ReactName>RELE_OFF</ReactName>
+      <ReactDescription>Disable relay</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>rele</ParamName>
+        <ParamVisibleName>Relay ID</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Events>
+      <EventName>KEY_PRESSED</EventName>
+      <EventDescription>Key pressed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>KEY_RELEASED</EventName>
+      <EventDescription>Key released</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>MOVED</EventName>
+      <EventDescription>Position changed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>TELEMETRY_PANEL</ObjectName>
+    <VisibleName>Telemetry control panel</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>TIMER</ObjectName>
+    <VisibleName>Timer</VisibleName>
+    <GroupName>Timers</GroupName>
+    <Reacts>
+      <ReactName>START</ReactName>
+      <ReactDescription>Start counter</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+      <ReactParams>
+        <ParamName>bound</ParamName>
+        <ParamVisibleName>trigger value</ParamVisibleName>
+        <ParamType>EDIT</ParamType>
+      </ReactParams>
+    </Reacts>
+    <Events>
+      <EventName>TRIGGER</EventName>
+      <EventDescription>Timer triggered</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>TIME_ZONE</ObjectName>
+    <VisibleName>Time schedule</VisibleName>
+    <GroupName>Time schedules</GroupName>
+    <Events>
+      <EventName>ACTIVATE</EventName>
+      <EventDescription>Beginning</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>DEACTIVATE</EventName>
+      <EventDescription>Ending</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <States>
+      <StateName>ACTIVE</StateName>
+      <ImgName />
+      <StateDescription>Active</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+    <States>
+      <StateName>INACTIVE</StateName>
+      <ImgName />
+      <StateDescription>Inactive</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>TITLEVIEWER</ObjectName>
+    <VisibleName>Captions search</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>VMDA</ObjectName>
+    <VisibleName>VMDA metadata storage</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>QUEUE_OVERFLOW</EventName>
+      <EventDescription>Queue full</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>VMS</ObjectName>
+    <VisibleName>Voice Message Service</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>WINDOW</ObjectName>
+    <VisibleName>External window</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>ZONE</ObjectName>
+    <VisibleName>Area</VisibleName>
+    <GroupName>Areas</GroupName>
+  </Objects>
+  <Objects>
+    <ObjectName>IPSTORAGE</ObjectName>
+    <VisibleName>Edge storage</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>SYNC_RANGE_REMOVED</EventName>
+      <EventDescription>Range removed</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_RANGE_ADDED</EventName>
+      <EventDescription>Range added</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_RANGE_STARTED</EventName>
+      <EventDescription>Synchronization started</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_RANGE_STOPPED</EventName>
+      <EventDescription>Synchronization stopped</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_ACTUALIZED</EventName>
+      <EventDescription>Synchronization updated</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SYNC_FINISHED</EventName>
+      <EventDescription>Synchronization finished</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>IPJOYSTICK</ObjectName>
+    <VisibleName>Control device</VisibleName>
+    <GroupName />
+  </Objects>
+  <Objects>
+    <ObjectName>FAILOVER</ObjectName>
+    <VisibleName>Failover service</VisibleName>
+    <Reacts>
+      <ReactName>FORCED_START</ReactName>
+      <ReactDescription>Move to failover server</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Reacts>
+      <ReactName>FORCED_STOP</ReactName>
+      <ReactDescription>Move to permanent location</ReactDescription>
+      <IsReactArm>false</IsReactArm>
+    </Reacts>
+    <Events>
+      <EventName>PING_FAILED</EventName>
+      <EventDescription>ping failed</EventDescription>
+      <EventType>ALARM</EventType>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <States>
+      <StateName>ACTIVE</StateName>
+      <ImgName>arm</ImgName>
+      <StateDescription>Active</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>VIDEOSTREAM</ObjectName>
+    <VisibleName>Video stream</VisibleName>
+  </Objects>
+  <Objects>
+    <ObjectName>MACROEVENT</ObjectName>
+    <VisibleName>Macro event</VisibleName>
+    <GroupName>Macro events</GroupName>
+    <Events>
+      <EventName>RUN</EventName>
+      <EventDescription>Macro event occurred</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>LINK</ObjectName>
+    <VisibleName>Objects link</VisibleName>
+    <GroupName>Objects links</GroupName>
+  </Objects>
+  <Objects>
+    <ObjectName>FAILOVER_MANAGER</ObjectName>
+    <VisibleName>Manager of failover services</VisibleName>
+  </Objects>
+  <Objects>
+    <ObjectName>DISPLAY_MANAGER</ObjectName>
+    <VisibleName>Display manager</VisibleName>
+  </Objects>
+  <Objects>
+    <ObjectName>NEXT_GATE</ObjectName>
+    <VisibleName>NGP manager</VisibleName>
+  </Objects>
+  <Objects>
+    <ObjectName>ANALOG_SENSOR</ObjectName>
+    <VisibleName>Analog sensor</VisibleName>
+    <States>
+      <StateName>NORM</StateName>
+      <ImgName>inp_norm</ImgName>
+      <StateDescription>Normal</StateDescription>
+      <IsStateFlashing>false</IsStateFlashing>
+    </States>
+  </Objects>
+  <Objects>
+    <ObjectName>SIP_OPERATOR</ObjectName>
+    <VisibleName>SIP-operator</VisibleName>
+    <Icons>
+      <FileName>SIP_Operator</FileName>
+      <IconName />
+    </Icons>
+  </Objects>
+  <Objects>
+    <ObjectName>TNT</ObjectName>
+    <VisibleName>Tag&amp;Track</VisibleName>
+  </Objects>
+  <Objects>
+    <ObjectName>NEUROFILTER</ObjectName>
+    <VisibleName>Neurofilter</VisibleName>
+  </Objects>
+  <Objects>
+    <ObjectName>MPEG4_ENCODER</ObjectName>
+    <VisibleName>MPEG4 encoder</VisibleName>
+  </Objects>
+  <Objects>
+    <ObjectName>YITU_CLIENT</ObjectName>
+    <VisibleName>YITU integration client</VisibleName>
+    <GroupName />
+    <Events>
+      <EventName>DETECTED</EventName>
+      <EventDescription>Face detected</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>INTEGRATION_HTTP_CLIENT</ObjectName>
+    <VisibleName />
+    <Events>
+      <EventName>SERVER_CONNECTED</EventName>
+      <EventDescription>Video module started</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+    <Events>
+      <EventName>SERVER_DISCONNECTED</EventName>
+      <EventDescription>Video module unloaded</EventDescription>
+      <IsSoundEnabled>false</IsSoundEnabled>
+      <IsNetworkDisabled>false</IsNetworkDisabled>
+      <IsProtocolDisabled>false</IsProtocolDisabled>
+      <IsWindowsLogEnabled>false</IsWindowsLogEnabled>
+    </Events>
+  </Objects>
+  <Objects>
+    <ObjectName>VMDA_SEARCH_CHANNEL</ObjectName>
+    <VisibleName>Search channel</VisibleName>
+  </Objects>
+</DataSetDDI>

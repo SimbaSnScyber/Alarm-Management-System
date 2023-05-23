@@ -1,0 +1,676 @@
+swagger: '2.0'
+info:
+  description: REST API's for PSIM 
+  version: 1.3.0
+  title: PSIM REST API
+  termsOfService: 'http://swagger.io/terms/'
+  license:
+    name: MIT
+    url: 'http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT'
+host: 'host:7004'
+basePath: /event-management/v1
+tags:
+  - name: Event Management
+    description: ''
+security:
+- basicAuth: []    
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+  
+
+paths:
+
+  /v1/event:
+    post:
+      tags:
+        - Event Management
+      summary: >-
+        Enables for the PSIM to initiate a dispatch armed response. 
+      description: >-
+        Enables for the PSIM to initiate a dispatch armed response. [PSIM-Response24]
+      operationId: dispatchEvent
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/dispatchEventRequest'
+      responses:
+        '200':
+          description: Dispatch Event Response
+          schema:
+            $ref: '#/definitions/dispatchEventResponse'
+        '400':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              type: string 
+
+    get:
+      tags:
+        - Event Management
+      summary: >-
+        Enables for the PSIM to get the updates of the previous armed response using provided unique key.
+      description: >-
+        Enables for the PSIM to get the updates of the previous armed response using provided unique key. [PSIM-Response24]
+      operationId: getEventUpdates
+      parameters:
+        - name: sourceIdentifier
+          in: query
+          description: Identifies the source system which integrates with SOA.
+          type: string
+          required: true
+          maxLength: 50
+        - name: transactionId
+          in: query
+          description: >-
+            Unique identifier for every request to SOA.
+          type: string
+          required: true
+          maxLength: 50
+        - name: referenceId
+          in: query
+          description:  unique id which is generated for each event.
+          type: string
+          required: true
+          maxLength: 100
+      responses:
+        '200':
+          description: get Dispatch updates (“polling”)
+          schema:
+            $ref: '#/definitions/getDispatchEventResponse'
+        '400':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              type: string
+    delete:
+      tags:
+      - Event Management
+      summary: Enables for the PSIM to close the armed response dispatch event (move it  to history) 
+      description: Enables for the PSIM to close the armed response dispatch event (move it  to history) 
+      operationId: closeEvent
+      produces:
+      - application/json
+      parameters:
+        - name: sourceIdentifier
+          in: query
+          description: Identifies the source system which integrates with SOA.
+          type: string
+          required: true
+          maxLength: 50
+        - name: transactionId
+          in: query
+          description: >-
+            Unique identifier for every request to SOA.
+          type: string
+          required: true
+          maxLength: 50
+        - name: referenceId
+          in: query
+          description:  unique id which is generated for each event.
+          type: string
+          required: true
+          maxLength: 100
+      responses:
+        '200':
+          description: close Event Response
+          schema:
+            $ref: '#/definitions/closeEventResponse'
+        '400':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              type: string        
+  /v1/processed-event:
+    post:
+      tags:
+        - Event Management
+      summary: >-
+        Provides information to Signal Tower about processed event in PSIM.
+      description: >-
+        Provides information to Signal Tower about processed event in PSIM.[PSIM-SignalTower]
+      operationId: updateProcessedEvent
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/updateProcessedEventRequest'
+      responses:
+        '200':
+          description: processed event response
+          schema:
+            $ref: '#/definitions/updateProcessedEventResponse'
+        '400':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              type: string 
+         
+definitions:
+  dispatchEventRequest:
+      allOf:
+        - required:
+            - transactionId
+            - sourceIdentifier
+            - siteId
+          properties:
+            transactionId:
+              type: string
+              description: Unique value for every request to SOA. This value will be generated by the source channels that are consuming the SOA service.
+              maxLength: 50
+              x-example : SOA_123345 , 86329856
+            sourceIdentifier:
+              type: string
+              description: Identifies the source system which integrates with SOA. 
+              maxLength: 50
+              x-example : MTN App, Portal, Online Store
+            siteId:
+              type: string
+              description: Tower siteId
+              maxLength: 50
+              x-example : 123456
+  
+  dispatchEventResponse:
+    allOf:
+    - required:
+      - statusCode
+      - statusMessage
+      - supportMessage
+      - transactionId
+      - referenceId
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          description: Status code of the transaction, O indicates Success.
+        statusMessage:
+          type: string
+          description: Status message of the transaction
+        supportMessage: 
+          type: string
+          description: Detailed support message for the transaction.
+        transactionId: 
+          type: string
+          description: Unique identifier for every request to SOA. Mapped from input request.
+        referenceId: 
+          type: string
+          description: unique id which is generated for each event.
+
+
+  getDispatchEventResponse :
+    allOf:
+    - required:
+      - statusCode
+      - statusMessage
+      - supportMessage
+      - transactionId
+      - data
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          description: Status code of the transaction, O indicates Success.
+        statusMessage:
+          type: string
+          description: Status message of the transaction
+        supportMessage: 
+          type: string
+          description: Detailed support message for the transaction.
+        transactionId: 
+          type: string
+          description: Unique identifier for every request to SOA. Mapped from input request. 
+        data:
+          type: array
+          items:
+            type: object
+            required:
+              - initiatorKey
+              - dateInitiated
+              - responseServiceCategory
+              - responseServiceClientName
+              - categoryDetails
+              - originalResponseServiceKey
+              - stateHistory
+              - clientKey
+              - key
+              - state
+              - responseServiceClientKey
+              - movementHistory
+              - responseServiceName
+              - comment
+              - clientName
+              - originalResponseServiceName
+              - images
+              - responseServiceKey
+            properties:
+              initiatorKey:
+                type: string
+                description: NA
+              dateInitiated :
+                type: object
+                required:
+                  - seconds
+                  - nanoseconds
+                description : Date initialized
+                properties:
+                  seconds :
+                    type: number
+                    x-example : 1613142033
+                  nanoseconds :
+                    type: number
+                    x-example : 545000000
+              responseServiceCategory :
+                type: string
+              responseServiceClientName :
+                type: string
+              categoryDetails:
+                type: object
+                required:
+                  - clientName
+                  - clientKey
+                  - initiatorDisplayName
+                  - initiatorDetail
+                  - initiatorType
+                  - initiatorKey
+                properties:
+                  clientName:
+                      type: string
+                      description : NA
+                  clientKey:
+                      type: string
+                      description : Client (Alert owner) name
+                  initiatorDisplayName :
+                    type: string
+                    description : Tower Name
+                  initiatorDetail:
+                      type: object
+                      description : Details of initiator
+                      required:
+                        - siteName
+                        - siteIdSearch
+                        - locality
+                        - providerKey
+                        - networkRegion
+                        - networkArea
+                        - key
+                        - providerLinkedResponseServiceKey
+                        - clientKey
+                        - clientName
+                        - subRegion
+                        - serviceProviderName
+                        - serviceProviderKey
+                        - longitude
+                        - latitude
+                        - providerLinkedResponseServiceName
+                        - siteId
+                        - providerName
+                      properties:
+                        siteName :
+                          type: string
+                          description : Tower siteName
+                        siteIdSearch :
+                          type: array
+                          description : Tower search string
+                          items :
+                            type: string
+                        locality :
+                          type: string
+                          description : Tower locality    
+                        providerKey:
+                          type: string
+                          description : Tower linked providerKey    
+                        networkRegion:
+                          type: string
+                          description : Tower networkRegion
+                        networkArea:
+                          type: string
+                          description : Tower networkArea
+                        key :
+                          type: string
+                          description : Tower unique key
+                        providerLinkedResponseServiceKey :
+                          type: string
+                          description : Tower linked providerLinkedResponseServiceKey
+                        clientKey:
+                          type: string
+                          description : Tower linked clientKey
+                        clientName :
+                          type: string
+                          description : Tower linked clientName
+                        subRegion:
+                          type: string
+                          description : Tower   subRegion
+                        serviceProviderName :
+                          type: string
+                          description : Tower linked serviceProviderName
+                        serviceProviderKey:
+                          type: string
+                          description : Tower  
+                        longitude:
+                          type: string
+                          description : Tower longitude 
+                        latitude:
+                          type: string
+                          description : Tower latitude
+                        providerLinkedResponseServiceName :
+                          type: string
+                          description : Tower
+                        siteId:
+                          type: string
+                          description : Tower siteId
+                        providerName :
+                          type: string
+                          description : Alert Provider Name
+                  initiatorType :
+                    type: string
+                    description : Will always be “Tower”
+                  initiatorKey :
+                    type: string
+              originalResponseServiceKey :
+                type: string    
+              stateHistory :
+                type: array
+                items:
+                  type: object
+                  required:
+                    - changeOwnerDisplayName
+                    - changeOwnerKey
+                    - dateUpdated
+                    - changeOwnerClientName
+                    - changeOwnerClientKey
+                    - state
+                    - message
+                  properties:
+                    changeOwnerDisplayName :
+                      type: string
+                      description : Name of Change Owner
+                    changeOwnerKey:
+                      type : string
+                      description : Key of change owner
+                    dateUpdated :
+                      type: object
+                      required:
+                        - seconds
+                        - nanoseconds
+                      properties:
+                        seconds :
+                          type: number
+                          x-example : 1613142033
+                        nanoseconds :
+                          type: number
+                          x-example : 545000000
+                    changeOwnerClientName:
+                      type : string
+                      description: Name of change owner client
+                    changeOwnerClientKey:
+                      type : string
+                      description : Key of change owner client
+                    state:
+                      type : string
+                      description : NA
+                      x-example : open, pickedUp, awaitResponderPickup, completed, terminated , stale, awaitNOCCompletionConfirmation, phoned, responding, completedByHandler , transferred
+                    message:
+                      type : string
+                      description: Reason for State Change
+              clientKey:
+                  type: string
+                  description: NA
+              key :
+                  type: string
+              state :
+                type: string
+                x-example : open, pickedUp, awaitResponderPickup, completed, terminated , stale, awaitNOCCompletionConfirmation, phoned, responding, completedByHandler , transferred
+              responseServiceClientKey :
+                type: string
+              movementHistory:
+                type: array
+                description: NA
+                items:
+                  type: object
+                  required:
+                    - dateUpdated
+                    - lat
+                    - long
+                  properties:
+                    dateUpdated:
+                      type: object
+                      description : Date Updated
+                      required:
+                        - seconds
+                        - nanoseconds
+                      properties :
+                        seconds :
+                          type: number
+                          x-example : 1613142033
+                        nanoseconds :
+                          type: number
+                          x-example : 545000000
+                    lat:
+                      type: string
+                      description: Tower latitude
+                      x-example: -33.8125
+                    long:
+                      type: string
+                      description: Tower longitude
+                      x-example: 18.50639
+              responseServiceName :
+                type: string
+                description : Name of Response service linked to tower
+              comment :
+                type: string
+              clientName:
+                  type: string
+                  description: Client (tower owner) name
+              originalResponseServiceName :
+                type: string
+              images:
+                type: array
+                items: 
+                  type: string
+              responseServiceKey :
+                type: string
+                description : Tower Alert identification key
+                
+  
+  updateProcessedEventRequest:
+      allOf:
+        - required:
+            - transactionId
+            - sourceIdentifier
+            - eventDetails
+          properties:
+            transactionId:
+              type: string
+              description: Unique value for every request to SOA. This value will be generated by the source channels that are consuming the SOA service.
+              maxLength: 50
+              x-example : SOA_123345 , 86329856
+            sourceIdentifier:
+              type: string
+              description: Identifies the source system which integrates with SOA. 
+              maxLength: 50
+              x-example : MTN App, Portal, Online Store
+            eventDetails:
+              type: object
+              required:
+                - uuid
+                - eventFullTimestamp
+                - siteId
+                - zoneId
+                - eventType
+                - transmitterId
+                - acknowledgeDateTime
+                - responseDispatched
+                - subcontractorDispatched
+                - responseReferenceNumberReceived
+                - responseReferenceNumber
+                - dispatchDateTime
+                - arrivalDateTime
+                - category
+                - discoveryMethod
+                - reportedBy
+                - rootCause
+                - investigatorRequired
+                - investigator
+                - reactions
+              properties:
+                uuid:
+                  type: string
+                  description : Unique identifier of the event 
+                eventFullTimestamp:
+                  type: string
+                  description : timestamp of the event 
+                siteId:
+                  type: string
+                  description : ID of the site where this event produced 
+                zoneId:
+                  type: string
+                  description : ID of the zone from this site which triggered 
+                eventType:
+                  type: string
+                  description : type of the event (type of sensor, VMDA alarm, etc)
+                transmitterId:
+                  type: string
+                  description : ID of the transmitter received from Signal Tower 
+                acknowledgeDateTime:
+                  type: string
+                  description : Date/Time event was acknowledged  
+                responseDispatched:
+                  type: string
+                  description : Has a Responder been dispatched
+                subcontractorDispatched:
+                  type: string
+                  description : Identify the Responder which was Dispatch
+                responseReferenceNumberReceived:
+                  type: string
+                  description : Has a Reference number been received from Responder
+                responseReferenceNumber:
+                  type: string
+                  description : Reference number from Responder
+                dispatchDateTime:
+                  type: string
+                  description : Time when Dispatch took place
+                arrivalDateTime : 
+                  type : string
+                  description : Time when Responder arrives on Site
+                category : 
+                  type : string
+                  description : The Reporting Category for CiiMS Incident Report
+                discoveryMethod : 
+                  type : string
+                  description : The Discovery Method for CiiMS Incident Report
+                reportedBy : 
+                  type : string
+                  description : The Reported By for CiiMS Incident Report
+                rootCause : 
+                  type : string
+                  description : The Root Cause for CiiMS Incident Report
+                investigatorRequired :
+                  type : string
+                  description : Does the Incident require an Investigator for CiiMS Incident Report
+                investigator : 
+                  type : string
+                  description :  Dedicated investigator required for site
+                reactions:
+                  type: string
+                  description : reactions from NOC to the event
+                response24:
+                  type: string
+                  description : reactions from NOC to the event
+  
+  updateProcessedEventResponse:
+     allOf:
+      - required:
+          - statusCode
+          - statusMessage
+          - supportMessage
+          - transactionId
+        properties:
+          statusCode:
+            type: integer
+            description: Status code of the transaction, O indicates Success.
+          statusMessage:
+            type: string
+            description: Status message of the transaction
+          supportMessage: 
+            type: string
+            description: Detailed support message for the transaction.
+          transactionId: 
+            type: string
+            description: Unique identifier for every request to SOA. Mapped from input request.
+          rawDataId :
+            type: string
+            description : Id for the rawData created
+        
+  closeEventResponse:
+     allOf:
+      - required:
+          - statusCode
+          - statusMessage
+          - supportMessage
+          - transactionId
+        properties:
+          statusCode:
+            type: integer
+            description: Status code of the transaction, O indicates Success.
+          statusMessage:
+            type: string
+            description: Status message of the transaction
+          supportMessage: 
+            type: string
+            description: Detailed support message for the transaction.
+          transactionId: 
+            type: string
+            description: Unique identifier for every request to SOA. Mapped from input request.
+          
+  
+  Error:
+    allOf:
+      - required:
+          - statusCode
+          - statusMessage
+          - supportMessage
+          - transactionId
+        properties:
+          transactionId:
+            type: string
+          statusCode:
+            type: integer
+            format: string
+          statusMessage:
+            type: string
+          supportMessage:
+            type: string
+            description: Support error message.
+      - {}
+securityDefinitions:
+  basicAuth:
+    type: basic
+    
+responses:
+  UnauthorizedError:
+    description: Authentication information is missing or invalid
+    headers:
+      WWW_Authenticate:
+        type: string

@@ -1,0 +1,801 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PSIM HTML</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <style>
+        * {
+            font-size: 14px;
+        }
+
+        .hstack {
+            align-items: normal;
+        }
+
+        body {
+            margin-top: 15px;
+            margin-left: 15px;
+        }
+
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .form-control {
+            padding: 2px 6px;
+        }
+
+        .col-form-label,
+        .col-form-button {
+            width: 100%;
+            max-width: 20%;
+            margin-right: 15px;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        .btn {
+            padding: 2px 6px;
+        }
+
+        .text-field {
+            padding: 0;
+            width: 75%;
+        }
+
+        .small-text {
+            max-width: 24%;
+        }
+
+        form {
+            width: 450px;
+            height: 150px;
+            overflow-y: scroll;
+        }
+
+        .modal-body form {
+            height: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        .response24 .col-form-label,
+        .response24 .col-form-button {
+            width: 100%;
+            max-width: 37%;
+            margin-right: 12px;
+            padding: 0;
+        }
+
+        .response24 .text-field {
+            width: 60%;
+        }
+
+        #header {
+            width: fit-content;
+            margin-right: 40px;
+            display: inline-block;
+        }
+
+        /* When the screen is minimized. 501px to check styling on normal browser outside of Intellect */
+        @media (max-width: 501px) {}
+    </style>
+</head>
+
+
+
+<body>
+    <div class="top hstack">
+        <form>
+            <div class="mb-1">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#siteModal">
+                    Popout
+                </button>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">Site ID:</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control data" placeholder="Site ID" id="site-id">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">Site Name:</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control data" placeholder="Site Name" id="site-name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">Region</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control data" placeholder="Region" id="region">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">Cluster</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control data" placeholder="Cluster" id="cluster">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">Priority</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control data" placeholder="Priority" id="priority">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">VVS</label>
+                <div class="col-sm-3 text-field small-text">
+                    <input disabled type="text" class="form-control data" placeholder="VVS" id="vvs">
+                </div>
+                <label class="col-form-label ms-2">Intrusion</label>
+                <div class="col-sm-3 text-field small-text">
+                    <input disabled type="text" class="form-control data" placeholder="Intrusion" id="intrusion">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-form-button">
+                    <button type="button" class="btn btn-primary" onclick="showCoordinates()">Open Map</button>
+                </div>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control data" placeholder="Coordinates" id="coordinates">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-form-button">
+                    <button type="button" class="btn btn-primary">Access Ref</button>
+                </div>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control data" placeholder="Access Ref" id="access-ref">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">Contractor</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control data" placeholder="Contractor" id="contractor">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">Site Type</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control data" placeholder="Site Type" id="site-type">
+                </div>
+            </div>
+        </form>
+        <div class="vr"></div>
+        <form class="response24 ms-2 me-2">
+            <div class="mb-1">
+                <button type="button" class="btn btn-primary">
+                    Send Second Responder
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#R24Modal">
+                    Popout
+                </button>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">Tower:</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control r24" placeholder="Tower Name" id="tower">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">Time to arrive (POP):</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control r24" placeholder="Time to arrive" id="popTime">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">State:</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control r24" placeholder="State" id="state">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">R24 dispatched at:</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control r24" placeholder="Dispatch Time" id="dispatchTime">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">R24 expected arrival:</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control r24" placeholder="Expected arrival" id="expectedTime">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">KPI Timer:</label>
+                <div class="text-field">
+                    <input disabled type="text" class="form-control r24" placeholder="KPI Timer" id="countdown">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label">R24 dispatch messages:</label>
+                <textarea class="form-control r24" placeholder="Site Name" id="message"></textarea>
+            </div>
+        </form>
+        <div class="vr"></div>
+        <div class="ms-2">
+            <div class="mb-1">
+                <h5 id="header">Tower: </h5>
+                <button type="button" class="btn btn-primary">
+                    Update Grid
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gridModal">
+                    Popout
+                </button>
+            </div>
+            <table id="grid-table" class="table table-sm table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Date/Time</th>
+                        <th>Last Event Description</th>
+                        <th>Zone/User</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="hstack">
+        <label>Site ID Search
+
+            <select class="js-example-basic-single" name="state" id="site-select" style="width: 100px">
+            </select>
+        </label>
+        <div class="hstack ms-2">
+            <button type="button" class="btn btn-primary me-2" onclick="searchSite()">
+                Search Site
+            </button>
+            <button type="button" class="btn btn-primary me-2" onclick="showSiteInfo()">
+                Site Status
+            </button>
+            <button type="button" class="btn btn-primary me-2" onclick="showVideowall()">
+                Video Wall
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL START -->
+
+    <!-- R24 -->
+    <div class="modal fade" id="R24Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="response24 ms-2 me-2">
+                        <div class="mb-1">
+                            <button type="button" class="btn btn-primary">
+                                Send Second Responder
+                            </button>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">Tower:</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control grid" placeholder="Site Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">Time to arrive (POP):</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control grid" placeholder="Site Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">State:</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control grid" placeholder="Region">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">R24 dispatched at:</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control grid" placeholder="Cluster">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">R24 expected arrival:</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control grid" placeholder="Priority">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">KPI Timer:</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control grid" placeholder="Site Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">R24 dispatch messages:</label>
+                            <textarea class="form-control grid" placeholder="Site Name"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signal Grid -->
+    <div class="modal fade" id="gridModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-1">
+                        <button type="button" class="btn btn-primary">
+                            Update Grid
+                        </button>
+                    </div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date/Time</th>
+                                <th scope="col">Last Event Description</th>
+                                <th scope="col">Zone/User</th>
+                                <th scope="col">Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">2022-06-09 13:36:42</th>
+                                <td>CB001</td>
+                                <td>Unauthorized Vibration Sensor 3 Tamper</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2022-06-09 12:55:41</th>
+                                <td>CB005</td>
+                                <td>Unauthorized Vibration Sensor 2 Tamper</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <th>2022-06-09 07:10:25</th>
+                                <td>User 5</td>
+                                <td>Panel Access?</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site Info -->
+    <div class="modal fade" id="siteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label class="col-form-label">Site ID:</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control" placeholder="Site ID">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">Site Name:</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control" placeholder="Site Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">Region</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control" placeholder="Region">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">Cluster</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control" placeholder="Cluster">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">Priority</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control" placeholder="Priority">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">VVS</label>
+                            <div class="col-sm-3 text-field small-text">
+                                <input disabled type="text" class="form-control" placeholder="VVS">
+                            </div>
+                            <label class="col-form-label ms-2">Intrusion</label>
+                            <div class="col-sm-3 text-field small-text">
+                                <input disabled type="text" class="form-control" placeholder="Intrusion">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-form-button">
+                                <button type="button" class="btn btn-primary">Open Map</button>
+                            </div>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control" placeholder="Coordinates">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-form-button">
+                                <button type="button" class="btn btn-primary">Access Ref</button>
+                            </div>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control" placeholder="Access Ref">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">Contractor</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control" placeholder="Contractor">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label">Site Type</label>
+                            <div class="text-field">
+                                <input disabled type="text" class="form-control" placeholder="Site Type">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL END -->
+
+
+    <div id="key"></div>
+    <!-- Use the elements below to log within the HTML -->
+    <div id="log"></div>
+    <div id="key-log"></div>
+    <div id="update-log"></div>
+    <div id="log-count"></div>
+
+    <script>
+        $(document).ready(function () {
+            test();
+            $('.js-example-basic-single').select2({
+                minimumInputLength: 1
+            });
+        });
+        var autoUpdateInitialized = false;
+        var autoUpdateCheck = false;
+        var x = null;
+
+        /*// Function can be used to test certain functionality. Most recently used to test info received from R24*/
+        function test() {
+            let str = "D017|D020|D0200|D023|D034|D038|D049|D079|D1004|D102|D105|D250|D306|D5032|D5664|D734|D959|D972|MHEL|MHEM|MHER|MHKL|MHKM|MHLS|MHNS|MHQU|MHWO|MTNWM|New MTN site|T1|T10|T100|T100009|T100010|T100011|T100012|T100013|T100014|T100015|T100016|T100017|T100019|T10002|T100027|T100046|T10005|T100050|T100056|T10007|T100072|T100073|T100076|T10008|T100081|T10009|T100095|T1001|T1001009|T100101|T10011|T100114|T100116|T100117|T100118|T100119|T10012|T100120|T100121|T100122|T100123|T100124|T100125|T100128|T10013|T10014|T100152|T100156|T10016|T10017|T100178|T10018|T100183|T100185|T1002|T100209|T10024|T100245|T100246|T100249|T100252|T100257|T10026|T100298|T1003|T100307|T100312|T10032|T10033|T100339|T10034|T10035|T10036|T10037|T10038|T1004|T10043|T10044|T1005|T10058|T10059|T100594|T1006|T10060|T100606|T10061|T10062|T10063|T10064|T10065|T10066|T10068|T1007|T10071|T10072|T10077|T10078|T10079|T1008|T10084|T10085|T10088|T1009|T10090|T100900|T10092|T100921|T100924|T100926|T100935|T100936|T100938|T100939|T10094|T10095|T100956|T100957|T100959|T10096|T100960|T100962|T100969|T100975|T10098|T101|T10100|T101003|T101006|T101007|T101008|T101010|T101011|T10102|T10104|T10107|T10108|T1011|T10110|T10113|T10115|T10116|T10117|T10119|T1012|T10124|T10125|T10128|T1013|T10130|T10133|T10135|T10136|T1014|T10150|T10154|T10159|T1016|T10166|T10167|T10168|T10169|T1017|T10170|T10171|T10172|T10173|T10174|T10177|T1018|T10180|T10182|T10184|T10187|T1019|T10192|T10193|T10199|T1020|T1021|T1022|T1023|T10234|T10235|T10236|T10237|T10238|T1024|T10240|T10243|T1025|T10250|T10251|T10254|T10257|T1026|T10260|T10262|T10265|T10266|T10268|T10269|T1027|T10272|T10277|T10278|T1028|T10281|T10282|T10284|T102853|T10288|T1029|T10290|T10291|T10292|T10294|T10296|T10297|T10298|T1030|T10302|T10305|T1031|T10311|T10312|T10313|T10317|T1032|T10324|T10325|T10328|T1033|T1034|T10342|T10347|T1035|T10351|T10352|T10354|T10355|T10356|T10361|T1037|T10370|T10371|T10373|T10377|T10378|T1038|T10388|T10389|T1039|T10399|T104|T1040|T10401|T10402|T10403|T10404|T10408|T1041|T10410|T10411|T10413|T10414|T10415|T10416|T10419|T1042|T10420|T10422|T10426|T10427|T10428|T10429|T1043|T10430|T10432|T10433|T10436|T10438|T10439|T1044|T10440|T10446|T10447|T10449|T10450|T10451|T10453|T10454|T104544|T104555|T10456|T10457|T10459|T10463|T10467|T10469|T10474|T10476|T10477|T10479|T1048|T10480|T10481|T10484|T10486|T10487|T10488|T10489|T10490|T10491|T10492|T10497|T10498|T10499|T105|T10500|T10501|T10502|T10503|T10504|T10505|T10506|T1051|T10510|T10511|T10512|T10513|T10517|T10523|T10526|T10527|T1053|T10530|T10534|T10537|T1054|T10540|T10541|T10542|T10544|T10546|T10547|T10548|T10549|T1055|T10552|T10553|T10554|T10555|T10556|T10557|T1056|T10560|T10564|T10568|T10569|T1057|T10572|T10573|T10574|T10575|T1058|T10581|T10582|T10584|T10585|T10586|T10587|T10588|T10589|T1059|T10590|T10592|T10596|T10598|T10599|T106|T1060|T10600|T10601|T10603|T10604|T1061|T10611|T10613|T10617|T10618|T10619|T1062|T10621|T10622|T10623|T10624|T10627|T1063|T10630|T10631|T10632|T10633|T10639|T1064|T10645|T1065|T10654|T10656|T10657|T10659|T1066|T10663|T10664|T10666|T10667|T10668|T10669|T1067|T10670|T10671|T10678|T1068|T10680|T10685|T10687|T1069|T10692|T10693|T10695|T10697|T107|T1070|T10701|T10706|T10707|T10709|T1071|T10716|T1072|T10723|T10727|T10728|T10729|T1073|T1074|T10740|T10741|T10743|T10745|T10746|T10747|T10749|T1075|T10750|T10752|T10755|T1076|T10760|T10762|T10763|T10764|T10766|T10767|T1077|T10770|T10771|T10772|T10774|T10775|T10776|T1078|T10781|T10782|T10783|T10785|T10787|T10788|T10789|T1079|T10791|T10792|T10795|T10799|T108|T1080|T10802|T10803|T10807|T10808|T10809|T1081|T10810|T10811|T10812|T10813|T10814|T10815|T10816|T10817|T1082|T10820|T10825|T1083|T10834|T10835|T10836|T10837|T10838|T1084|T10840|T10841|T10842|T10843|T10844|T10845|T10846|T10847|T10848|T1085|T10850|T1086|T1087|T1088|T1089|T10897|T10899|T109|T1090|T10900|T10901|T10902|T10903|T10907|T10909|T1091|T10911|T10913|T10915|T10916|T10917|T1092|T10922|T10923|T10926|T10927|T10928|T1093|T10932|T1094|T10941|T10945|T10946|T10947|T10949|T1095|T10950|T10952|T10953|T10954|T10956|T10957|T10958|T10959|T1096|T10961|T10962|T10963|T10964|T10965|T10966|T10967|T10968|T10969|T1097|T10970|T10971|T10972|T10973|T10974|T10975|T10976|T10977|T10978|T1098|T10981|T10985|T1099|T10993|T109983|T109984|T109985|T109986|T109992|T109993|T109996|T109998|T11|T110|T1100|T11008|T1101|T11011|T11013|T11015|T11017|T11018|T11019|T11020|T11021|T11022|T11024|T11027|T11028|T1103|T11030|T11033|T11036|T11037|T11038|T1104|T11043|T11047|T11053|T11054|T11058|T11060|T11063|T11065|T11067|T11068|T11069|T11071|T11072|T11075|T11076|T11080|T11082|T11084|T11086|T11091|T11092|T11093|T11094|T11097|T11098|T111|T11100|T11102|T11104|T11109|T1111|T11110|T11111|T11113|T11114|T11115|T11117|T11118|T11119|T1112|T11121|T11122|T11123|T11124|T11125|T1113|T11131|T11134|T11137|T11140|T11147|T1115|T1116|T11163|T11164|T11166|T1117|T11170|T11172|T11176|T11177|T1118|T11183|T11184|T11186|T11187|T11189|T1119|T11190|T11191|T11192|T11194|T11195|T11196|T11197|T112|T1120|T11200|T11201|T11202|T11206|T11209|T1121|T11213|T11217|T11219|T1122|T11221|T11223|T11224|T11225|T11227|T11231|T11233|T11234|T11235|T1124|T11240|T11241|T11242|T11243|T11244|T11245|T11248|T11249|T1125|T11251|T11255|T11257|T1126|T11261|T11268|T11269|T1127|T11270|T11272|T11273|T11274|T11276|T11277|T11278|T11279|T1128|T11280|T11281|T11282|T11283|T11285|T11286|T11287|T11288|T11289|T113|T1130|T11305|T11308|T1131|T11312|T11314|T11316|T1132|T11323|T11326|T11327|T11328|T1133|T11332|T11334|T11335|T11337|T11339|T1134|T11344|T11345|T1135|T11356|T11357|T11358|T1136|T11360|T11361|T11363|T11366|T11367|T11368|T11369|T1137|T11371|T11372|T11373|T11374|T11377|T11378|T11379|T1138|T11389|T1139|T11391|T11394|T11396|T11397|T11398|T11399|T114|T1140|T11401|T11405|T11407|T1141|T11411|T11416|T11417|T11418|T11419|T1142|T11423|T11424|T11429|T1143|T11430|T11431|T11433|T11436|T1144|T11441|T11448|T11449|T1145|T11450|T11452|T11453|T11454|T11455|T11456|T11457|T11459|T1146|T11463|T11464|T11465|T11467|T11468|T1147|T11471|T11472|T11477|T1148|T11484|T11485|T11488|T11489|T1149|T11490|T11491|T11493|T11499|T115|T1150|T11507|T11508|T11509|T1151|T11510|T11512|T1152|T11520|T11522|T11523|T11525|T1153|T11532|T11534|T11536|T11538|T11539|T1154|T11546|T11548|T11549|T1155|T11550|T11551|T11552|T11554|T11556|T11557|T1156|T11564|T1157|T11574|T1158|T11589|T1159|T11590|T11592|T116|T1160|T11605|T11607|T11608|T11609|T1161|T11613|T11617|T11618|T11619|T1162|T11620|T11621|T11622|T11623|T11624|T11625|T1163|T11632|T11637|T1164|T11641|T11643|T11644|T11645|T1165|T1166|T11660|T11661|T11663|T11664|T11666|T11667|T11668|T1167|T11670|T11671|T11672|T11674|T11677|T11678|T1168|T11681|T11682|T11684|T11688|T11689|T1169|T11692|T11694|T11695|T11696|T11699|T117|T1170|T11704|T11705|T11706|T11708|T1171|T11710|T11711|T11713|T11714|T11715|T11717|T1172|T1173|T11732|T11733|T11744|T11747|T1175|T11752|T11762|T11763|T11766|T11767|T11768|T11769|T1177|T11770|T11771|T11772|T11774|T11775|T11778|T1178|T11780|T11785|T11786|T11788|T11789|T1179|T11791|T11793|T11798|T118|T1180|T11800|T11802|T11805|T11806|T11807|T11808|T11811|T11812|T11813|T11814|T11815|T11816|T11817|T11818|T11819|T1182|T11821|T11822|T11824|T11827|T11829|T1183|T11831|T11833|T11834|T11835|T11838|T11839|T11840|T11843|T11844|T11846|T11847|T1185|T11850|T11851|T11853|T11855|T11859|T1186|T11860|T11862|T11863|T11865|T11866|T11867|T11868|T11869|T1187|T11874|T11875|T1188|T11880|T11882|T11884|T11885|T11886|T11887|T11889|T1189|T11895|T11896|T119|T1190|T1191|T11910|T11915|T11916|T11917|T11918|T1192|T11928|T11929|T1193|T11930|T11933|T11934|T11939|T1194|T11943|T11945|T11946|T11947|T11948|T11949|T1195|T11950|T11951|T11952|T11954|T11956|T11957|T1196|T11962|T11967|T1197|T11970|T11971|T11973|T11975|T11976|T11977|T11979|T1198|T11980|T11981|T11984|T1199|T11994|T12|T120|T1200|T12003|T1201|T12012|T12013|T12014|T12015|T12017|T1202|T12020|T12021|T12022|T12024|T12027|T12028|T1203|T12035|T12036|T12038|T1204|T12040|T12042|T12043|T12046|T12047|T12048|T1205|T12050|T12051|T12052|T12053|T1206|T12063|T12067|T12069|T1207|T12070|T12071|T12072|T12073|T12077|T1208|T12082|T12083|T12085|T12086|T12088|T1209|T12098|T121|T12100|T12107|T1211|T12111|T12114|T12118|T1212|T12120|T12121|T12124|T12125|T12126|T12129|T1213|T12133|T12134|T12138|T1214|T12141|T12142|T12144|T12146|T12148|T1215|T12150|T12151|T12153|T12154|T12159|T1216|T12160|T12161|T12162|T1217|T12171|T12176|T12177|T1218|T12183|T12185|T12186|T12187|T1219|T12195|T12196|T122|T1220|T12200|T12201|T12202|T12203|T12204|T12209|T1221|T12211|T12214|T12215|T12216|T12217|T12218|T12219|T1222|T12221|T12222|T12227|T12228|T1223|T12230|T12231|T12235|T1224|T12242|T12248|T12249|T1225|T12251|T12252|T12254|T12255|T12256|T1226|T12261|T12263|T12265|T12266|T12267|T12269|T1227|T12270|T12272|T12274|T12276|T12277|T12278|T12279|T1228|T12280|T12283|T12285|T12286|T12287|T12288|T1229|T12290|T12291|T12295|T12296|T12297|T12298|T123|T1230|T12300|T12301|T12302|T12304|T12307|T12308|T1231|T12310|T12317|T1232|T1233|T12335|T12338|T1234|T12341|T12346|T1235|T1236|T12363|T12366|T1237|T12375|T12376|T1238|T1239|T12392|T12397|T124|T1240|T1241|T1242|T12420|T12421|T12422|T12424|T12428|T1243|T12434|T12439|T1244|T12445|T12447|T1245|T12450|T12451|T12452|T1246|T12460|T12468|T12469|T1247|T12470|T12474|T12476|T12478|T12479|T1248|T12484|T1249|T12490|T12491|T12492|T12493|T12494|T12496|T125|T1250|T12503|T12506|T12508|T1251|T12510|T12511|T12513|T12514|T12517|T1252|T12521|T12522|T12526|T12534|T12535|T12539|T1254|T12548|T1255|T12552|T12558|T12559|T1256|T12560|T12561|T12562|T12563|T12564|T12566|T1257|T12570|T12572|T12577|T12579|T1258|T12580|T12584|T12587|T12588|T1259|T12591|T12592|T12593|T12594|T12595|T126|T1260|T12601|T12608|T1261|T12614|T12615|T12616|T12617|T1262|T12625|T12628|T1263|T12633|T12634|T12636|T1264|T12640|T12643|T12644|T12645|T1265|T12655|T1266|T12660|T12661|T12663|T12666|T12667|T12668|T1267|T12672|T12673|T12674|T12675|T12676|T12677|T12679|T1268|T12681|T12682|T12683|T12684|T12685|T12686|" +
+                "T12687|T12688|T12689|T1269|T12690|T12692|T12699|T1270|T12702|T12703|T12704|T12706|T12707|T12708|T1271|T12714|T1272|T12721|T12722|T12723|T12726|T12727|T12728|T12729|T1273|T12735|T1274|T12740|T12741|T12742|T12744|T12745|T12746|T12748|T12749|T1275|T12752|T12753|T12754|T12755|T12756|T12757|T12758|T12759|T1276|T1277|T12788|T12789|T1279|T12790|T12791|T12792|T12793|T128|T1280|T1281|T12810|T12813|T1282|T12821|T1283|T12832|T12834|T12836|T1284|T12841|T12842|T12843|T12844|T1285|T12852|T12853|T12854|T12857|T12859|T1286|T12861|T12866|T12867|T12868|T1287|T12873|T12877|T12880|T12881|T12883|T12884|T12888|T12889|T1289|T12890|T12891|T12894|T12898|T12899|T129|T1290|T12900|T12901|T12904|T12908|T1291|T12911|T12915|T12917|T12919|T1292|T12927|T1293|T12931|T12932|T12933|T12935|T1294|T1295|T12959|T1296|T1297|T12970|T12972|T12978|T12982|T12985|T1299|T13|T130|T1300|T13006|T13007|T13009|T1301|T13010|T13012|T13013|T13014|T13015|T1302|T13020|T13021|T13022|T13026|T13027|T13028|T1303|T13030|T13035|T13036|T13037|T13038|T1304|T13040|T13041|T13045|T13046|T13047|T13048|T1305|T13050|T13051|T13059|T1306|T13062|T13064|T13068|T13069|T1307|T13071|T13072|T13078|T13079|T1308|T13082|T13086|T1309|T13090|T13091|T13092|T13093|T13094|T13095|T13096|T13098|T131|T1310|T13100|T13102|T13104|T1311|T13113|T13115|T13116|T1312|T1313|T13130|T13131|T13133|T13137|T1314|T13142|T13148|T13149|T1315|T13151|T13153|T13158|T1316|T13162|T13163|T13165|T13167|T1317|T1318|T13184|T1319|T132|T1320|T13205|T13206|T1321|T13210|T13211|T13212|T13213|T1322|T13229|T1323|T13230|T13231|T13232|T1324|T13247|T13248|T13249|T1325|T13250|T13252|T13255|T13257|T13258|T13259|T1326|T13267|T13268|T1327|T13275|T13276|T13278|T1328|T13281|T13284|T13286|T13288|T13289|T13292|T1330|T13300|T13303|T13304|T1331|T1332|T13327|T13328|T1333|T13330|T13333|T13335|T13336|T13338|T1334|T13341|T13342|T13345|T13347|T13352|T13354|T13355|T13356|T13358|T13359|T13361|T13362|T13363|T13364|T13365|T13366|T1337|T13375|T13378|T13379|T1338|T13382|T13383|T13384|T13385|T13386|T13387|T13388|T1339|T13391|T13393|T13394|T13395|T13396|T13398|T134|T1340|T13400|T13401|T13402|T13403|T13404|T13405|T13408|T13409|T1341|T13410|T13411|T13412|T13413|T13414|T13418|T13419|T1342|T13420|T13422|T13423|T13425|T13427|T13428|T13429|T1343|T13430|T13431|T13432|T13433|T13436|T13438|T1344|T13440|T13443|T13445|T1345|T13450|T1346|T1347|T1348|T13486|T13488|T1349|T13492|T135|T1350|T13504|T13506|T1351|T13515|T1352|T13520|T1353|T13530|T13531|T13533|T13534|T13535|T13537|T1354|T13545|T13546|T13548|T1355|T13551|T13554|T13558|T1356|T13561|T13563|T13566|T13568|T13569|T1357|T13573|T13574|T13576|T1358|T1359|T13590|T136|T1360|T1361|T13615|T13617|T13618|T1362|T13623|T1363|T13634|T13635|T1364|T13644|T13646|T1365|T13651|T13653|T13657|T13658|T1366|T13662|T13664|T13668|T13669|T1367|T13678|T1368|T13683|T13686|T13688|T13689|T1369|T137|T1370|T13701|T1371|T13710|T13712|T13714|T13715|T1372|T1373|T13734|T13739|T1374|T13740|T13741|T13748|T1375|T1376|T13760|T13766|T1377|T1378|T13788|T1379|T138|T1380|T13800|T13801|T13805|T13808|T13809|T13812|T13813|T13814|T13815|T13817|T13818|T13819|T1382|T13820|T13821|T13822|T13828|T1383|T13832|T13834|T13836|T13837|T13838|T13839|T1384|T1385|T13856|T13857|T1387|T13877|T1388|T13882|T13883|T13884|T13885|T13886|T13887|T13888|T1389|T13892|T13898|T139|T1390|T13900|T13901|T13903|T13904|T13906|T13907|T13908|T13914|T13918|T1392|T13920|T13921|T13922|T13927|T13928|T1393|T13931|T13932|T1394|T13944|T13945|T1395|T13951|T13953|T13955|T13957|T13958|T13959|T1396|T13964|T1397|T13976|T1398|T13981|T13982|T1399|T13993|T13998|T140|T1400|T14000|T14002|T1401|T14012|T14013|T14015|T14017|T14019|T1402|T14020|T14022|T14023|T14025|T14026|T14027|T14028|T1403|T14030|T14034|T14038|T14039|T1404|T14040|T14041|T14042|T14044|T14046|T14048|T1405|T14051|T14053|T14055|T14059|T1406|T14061|T1407|T1408|T14091|T14095|T14097|T141|T1410|T1411|T14110|T14115|T1412|T14125|T14127|T14128|T1413|T14135|T14137|T14139|T1414|T14144|T14146|T14149|T1415|T14152|T14157|T14158|T1416|T14167|T1417|T1418|T14183|T1419|T14191|T142|T1420|T14204|T14206|T14207|T1421|T14212|T14216|T14224|T14229|T1423|T14238|T1424|T14242|T14245|T14247|T1425|T14250|T14251|T14256|T14257|T1426|T14263|T14268|T1427|T14271|T14277|T1429|T14294|T14298|T14299|T143|T1430|T14301|T14306|T1431|T14314|T14317|T14319|T1432|T14324|T14326|T14327|T14328|T14329|T1433|T14331|T14332|T14333|T14336|T14338|T1434|T14340|T14341|T14342|T14344|T14347|T14348|T14349|T1435|T14350|T14352|T14355|T14357|T14358|T14359|T1436|T14360|T14363|T14364|T14365|T14366|T14367|T14368|T1437|T14371|T14372|T14375|T14376|T14377|T14378|T14379|T1438|T14386|T14388|T14389|T1439|T14390|T14392|T14394|T14396|T14398|T144|T1440|T14401|T14402|T14407|T14408|T14409|T1441|T14410|T14412|T14413|T14414|T14415|T14416|T14417|T1442|T14425|T14426|T14427|T14428|T1443|T14430|T14432|T14434|T14435|T14437|T14438|T1444|T14441|T14442|T14443|T14444|T14445|T14446|T14447|T14448|T14449|T1445|T14450|T14451|T14452|T14453|T14454|T14455|T14456|T14458|T14459|T1446|T14460|T14461|T14462|T14465|T14467|T14468|T14469|T1447|T14470|T14471|T14472|T14474|T14475|T14476|T14477|T14479|T1448|T14480|T14481|T14482|T14484|T14485|T14487|T14488|T14489|T1449|T14490|T14491|T14492|T14493|T14496|T14497|T14499|T145|T1450|T14500|T14502|T14503|T14504|T14505|T14506|T14509|T1451|T14510|T14511|T14512|T14513|T14514|T14516|T14517|T14518|T14519|T1452|T14521|T14522|T14523|T14525|T1453|T14530|T14531|T14532|T14534|T14535|T14537|T14538|T14539|T1454|T14540|T14541|T14542|T14543|T14544|T14545|T14546|T1455|T14550|T14551|T14552|T14554|T14555|T14556|T14558|T14559|T1456|T14560|T14561|T14563|T14564|T14565|T14566|T14567|T14568|T1457|T14570|T14571|T14572|T14573|T14574|T14575|T14576|T1458|T14580|T14581|T14582|T14583|T14584|T14585|T14588|T14589|T1459|T14591|T14593|T14594|T14597|T146|T1460|T14600|T14602|T14604|T14605|T14606|T14607|T14609|T1461|T14611|T14613|T14614|T14616|T14618|T14619|T1462|T14622|T14623|T14624|T14626|T1463|T14631|T14633|T14634|T14635|T14636|T14637|T14638|T14639|T1464|T14642|T14644|T14645|T14646|T14648|T14649|T1465|T14650|T14651|T14653|T14654|T14655|T14656|T14658|T14659|T1466|T14661|T14662|T14663|T14667|T14668|T14669|T1467|T14674|T14675|T14676|T14677|T14678|T14679|T1468|T14680|T14682|T14684|T14688|T1469|T14690|T14693|T14694|T14695|T14697|T14698|T14699|T14701|T14702|T14703|T14704|T14705|T14706|T14708|T14709|T1471|T14711|T14712|T14715|T14717|T14718|T1472|T14720|T14721|T14722|T14725|T14727|T1473|T14731|T14732|T14739|T1474|T14740|T14743|T14744|T1475|T1476|T1477|T14770|T1478|T14784|T1479|T14793|T14794|T14795|T14796|T148|T1480|T14806|T1481|T1482|T14820|T14823|T14824|T14826|T14828|T1483|T14831|T14832|T14833|T14835|T14836|T14837|T14838|T1484|T14840|T14842|T14843|T14844|T14846|T14847|T1485|T14851|T14852|T14855|T14858|T1486|T14860|T14861|T14862|T14863|T14867|T14868|T1487|T14870|T14871|T14873|T14875|T14877|T1488|T14880|T14887|T1489|T14890|T14891|T14893|T14898|T14899|T149|T1490|T14900|T14906|T14908|T14909|T1491|T14910|T14912|T14913|T14914|T14916|T14917|T14918|T14919|T1492|T14922|T14923|T14924|T14926|T14927|T14928|T1493|T14931|T14932|T14934|T14935|T14936|T14937|T1494|T14940|T14944|T14945|T1495|T14951|T14952|T14954|T14956|T14957|T1496|T14962|T14963|T14965|T14967|T14968|T1497|T14970|T14971|T14975|T14976|T14977|T14978|T14979|T1498|T14980|T14981|T14984|T14985|T14986|T14987|T14988|T1499|T14990|T14992|T14993|T14994|T14996|T14998|T150|T1500|T15000|T15001|T15007|T15009|T1501|T15012|T15013|T15015|T15017|T1502|T15020|T15021|T15027|T1503|T15030|T15032|T15035|T15036|T15039|T1504|T15040|T15043|T15046|T1505|T15050|T15051|T15052|T15053|T15054|T15056|T15058|T15059|T1506|T15060|T15061|T15062|T15065|T15068|T15069|T1507|T15071|T15072|T15074|T15075|T15077|T1508|T1509|T15098|T15099|T151|T1510|T15100|T15101|T15102|T15104|T15105|T15106|T15108|T15109|T1511|T15110|T15113|T15115|T1512|T15120|T15125|T15126|T15128|T1513|T15133|T15134|T15135|T15136|T1514|T15140|T15141|T15142|T15144|T15146|T15147|T15149|T1515|T15150|T15152|T15154|T15155|T15156|T15159|T1516|T15160|T15161|T15162|T15164|T15168|T15169|T1517|T15170|T15172|T15173|T15174|T15176|T15177|T15178|T1518|T15180|T15181|T15182|T15186|T15187|T15189|T1519|T15190|T15191|T15193|T15194|T15195|T15199|T152|T1520|T15200|T15201|T15202|T15203|T15205|T15206|T15207|T15208|T1521|T15210|T15211|T15212|T15213|T15216|T15219|T1522|T15224|T1523|T15230|T1524|T15240|T15243|T1525|T15252|T15255|T15259|T1526|T1527|T15271|T15275|T1528|T15284|T1529|T153|T1530|T15307|T1531|T15317|T1532|T15323|T15325|T15338|T1534|T15347|T15348|T1535|T15357|T15359|T1536|T15362|T1537|T15370|T1538|T15384|T1539|T154|T1540|T15408|T15409|T1541|T15417|T15419|T1542|T15420|T15421|T15427|T15428|T1543|T15431|T15432|T15436|T1544|T15440|T15444|T15446|T1545|T15459|T1546|T15465|T15468|T15469|T1547|T15471|T15472|T15474|T15475|T15478|T15479|T1548|T15481|T15482|T15483|T15486|T15488|T15489|T1549|T15490|T15492|T15493|T15494|T15495|T15498|T155|T15508|T15509|T1551|T15513|T15514|T15517|T1552|T15521|T15523|T15525|T1553|T15530|T15531|T15532|T15534|T15536|T15538|T1554|T15540|T15543|T15544|T1555|T1556|T1557|T15578|T1558|T15585|T15586|T1559|T15594|T15597|T15599|T156|T1560|T15600|T15601|T15602|T15603|T15604|T15610|T15613|T15616|T15618|T1562|T15620|T15621|T15622|T15624|T15627|T15628|T15629|T15630|T15632|T15638|T15639|T1564|T15640|T15641|T15644|T15646|T15649|T15650|T15653|T15654|T15656|T15657|T15659|T1566|T15661|T15663|T15665|T15666|T15667|T15668|T15669|T1567|T15670|T15678|T1568|T15681|T15683|T15684|T15685|T15686|T15687|T1569|T15694|T15695|T15696|T15698|T15699|T157|T1570|T15700|T15701|T15704|T15705|T15706|T15708|T15709|T1571|T15711|T15712|T15715|T15719|T1572|T15720|T15721|T15722|T1573|T15734|T15737|T1574|T15744|T15746|T15748|T15749|T1575|T15751|T1576|T15761|T15762|T15764|T15765|T15766|T15767|T15768|T15769|T1577|T15770|T1578|T15781|T15784|T15785|T15786|T15787|T15788|T15789|T1579|T15790|T15792|T15793|T15794|T15795|T15796|T15797|T158|T1580|T15806|T1581|T15811|T1582|T1583|T1584|T15840|T15843|T15844|T15845|T15846|T15848|T15849|T1585|T15850|" +
+                "T15851|T1586|T15860|T15861|T15862|T15863|T15865|T15866|T15868|T1587|T15870|T15871|T15872|T15875|T15876|T15877|T1588|T15881|T15882|T15883|T15884|T15885|T15888|T1589|T15890|T15891|T15892|T15893|T15894|T15897|T15899|T159|T1590|T15900|T15907|T15908|T1591|T15911|T15912|T15913|T15914|T15915|T15916|T15917|T15918|T1592|T15923|T1593|T15936|T1594|T15945|T15946|T15947|T15948|T1595|T15953|T15954|T15955|T15956|T15959|T1596|T15960|T15966|T15967|T15969|T1597|T15971|T15972|T15975|T15977|T1598|T15984|T15988|T1599|T15993|T15994|T16|T160|T1600|T16001|T16003|T16005|T16007|T16008|T1601|T16012|T16015|T16018|T16019|T16020|T16026|T16027|T1603|T16031|T16035|T16036|T16037|T16038|T1604|T16040|T16041|T16043|T16045|T16049|T16050|T16053|T16056|T16058|T16059|T1606|T16063|T16064|T1607|T16070|T16076|T16078|T1608|T16083|T16085|T16087|T16088|T16089|T1609|T16093|T16095|T161|T1610|T1612|T1613|T1614|T1615|T1616|T1617|T1618|T1619|T1620|T1621|T1623|T1624|T1625|T1626|T1627|T1628|T1629|T163|T1630|T1632|T16346|T16347|T16348|T16349|T1635|T16350|T16351|T16353|T16354|T16355|T16356|T16357|T16358|T16359|T1636|T16360|T16363|T16364|T16365|T16366|T16367|T16368|T16369|T1637|T16375|T16376|T16377|T16379|T1638|T16381|T16382|T16383|T16384|T16385|T16386|T16387|T16388|T16389|T1639|T16390|T16391|T16392|T16394|T16396|T164|T1640|T16400|T16401|T16403|T16404|T16408|T16409|T1641|T16414|T16415|T1642|T16420|T16425|T16427|T16428|T16429|T1643|T16430|T16432|T16434|T16435|T16439|T1644|T16442|T16443|T16444|T16446|T16448|T1645|T16451|T16453|T16455|T16456|T16458|T16459|T1646|T16460|T16461|T16462|T16463|T16464|T16465|T16466|T16467|T1647|T16470|T16472|T16473|T16474|T16475|T16476|T16477|T16478|T16479|T1648|T16480|T16481|T16482|T16483|T1649|T16491|T16492|T16493|T16494|T16495|T16496|T165|T16500|T16501|T16502|T16503|T16504|T16506|T16507|T16508|T16509|T1651|T16510|T16511|T16513|T16518|T1652|T16520|T16522|T16526|T16527|T16528|T16529|T1653|T16530|T16531|T16532|T16533|T16534|T16535|T16538|T16539|T1654|T16540|T16541|T16542|T16543|T16545|T16546|T16549|T1655|T16550|T16551|T16554|T16555|T16557|T16558|T16559|T1656|T16560|T16562|T16563|T16565|T16566|T16567|T16568|T1657|T16570|T16572|T16573|T16574|T16577|T16578|T16579|T1658|T16580|T16581|T16582|T16583|T16584|T16585|T16589|T1659|T16591|T16592|T16593|T16594|T16595|T166|T1660|T16606|T1661|T1662|T1663|T1664|T1665|T1666|T1667|T1668|T1669|T167|T1671|T1672|T1673|T1674|T1675|T1676|T1677|T1678|T1679|T16792|T16794|T16795|T168|T1680|T16802|T16808|T1681|T16816|T16817|T16819|T1682|T16823|T16825|T1683|T16832|T16836|T1684|T1685|T16856|T1686|T16861|T16862|T1687|T16875|T1688|T16880|T16883|T16888|T1689|T169|T1690|T16907|T1691|T16914|T16915|T16916|T16917|T16918|T16919|T1692|T16920|T16921|T16922|T16924|T1693|T1694|T1695|T1696|T1697|T1698|T1699|T16996|T16997|T17|T170|T1700|T17003|T17004|T17005|T17008|T1701|T17013|T17016|T1702|T17021|T17027|T17029|T1703|T17036|T17037|T17039|T1704|T17040|T17041|T17045|T17046|T17047|T1705|T17051|T17052|T17054|T17055|T1706|T17064|T17066|T17068|T1707|T17070|T17072|T17078|T17079|T1708|T17082|T17084|T17085|T17086|T17087|T17088|T17089|T1709|T17091|T17093|T17094|T17095|T17096|T17097|T17099|T171|T1710|T17100|T17101|T17103|T17104|T1711|T17111|T17115|T1712|T17120|T17121|T17122|T17123|T17124|T17128|T1713|T17131|T17132|T17134|T17135|T17136|T17137|T1714|T17140|T17141|T17142|T17147|T17148|T1715|T17150|T17151|T17152|T17153|T17155|T17156|T17157|T17159|T1716|T17160|T17161|T17162|T17164|T17165|T17167|T1717|T17179|T1718|T17184|T17187|T17188|T1719|T17190|T17192|T17194|T17195|T17196|T17198|T172|T1720|T1721|T17214|T17216|T17217|T1722|T17227|T1723|T17234|T17237|T17238|T1724|T17240|T17241|T17242|T17245|T17247|T17248|T17249|T1725|T17250|T17252|T17253|T17254|T17255|T17257|T17259|T1726|T17260|T1727|T17278|T1728|T17280|T1729|T17295|T17298|T173|T1730|T17301|T17302|T17303|T17304|T1731|T17310|T17317|T1732|T1733|T17333|T17334|T17337|T17338|T1734|T1735|T1736|T1737|T1738|T17384|T17385|T17388|T1739|T17390|T17391|T17392|T17395|T17396|T17397|T17398|T17399|T174|T1740|T17400|T17401|T17402|T17403|T17404|T17405|T17406|T17407|T17408|T17409|T1741|T17410|T17411|T17414|T17417|T17418|T17419|T1742|T17422|T17424|T17425|T17427|T1743|T17432|T17433|T17434|T17435|T17438|T1744|T17440|T17445|T17446|T17449|T1745|T17450|T17451|T17452|T17453|T17454|T17456|T17457|T17458|T17459|T1746|T17460|T17461|T17462|T17466|T17467|T1747|T17472|T17473|T17474|T17476|T1748|T17480|T17481|T17482|T17483|T17484|T17485|T17486|T17487|T1749|T17496|T17497|T17499|T175|T17501|T17505|T17506|T17508|T17509|T1751|T17510|T17515|T17517|T17518|T1752|T17520|T17521|T17522|T17523|T17524|T17526|T17527|T17529|T1753|T17539|T1754|T17540|T17541|T17542|T17543|T17544|T17546|T17547|T1755|T17550|T17554|T17555|T1756|T17562|T17565|T17566|T17567|T17568|T17569|T1757|T17571|T17572|T17573|T17574|T17575|T17576|T17578|T17579|T1758|T17581|T17582|T17586|T17588|T17589|T1759|T17590|T17591|T17592|T17599|T176|T1760|T17600|T17601|T17602|T17603|T17604|T17605|T17606|T1761|T17611|T17612|T17613|T17616|T1762|T17627|T1763|T17630|T17638|T1764|T17648|T17649|T1765|T17650|T1766|T17665|T1767|T17674|T1768|T17682|T17688|T17689|T1769|T177|T1770|T1771|T17719|T1772|T17721|T1773|T1774|T17742|T1775|T1776|T1777|T1778|T1779|T178|T1780|T1781|T17813|T1782|T17822|T1783|T17833|T17834|T1784|T17844|T17847|T17848|T1785|T17851|T17852|T17853|T17857|T17859|T1786|T17861|T17862|T17863|T17869|T17872|T17873|T17874|T17875|T17876|T1788|T17883|T17885|T1789|T17890|T17895|T17899|T179|T1790|T17900|T17904|T17909|T1791|T17910|T17913|T17914|T17917|T17918|T1792|T17921|T17922|T17923|T17924|T17925|T17926|T1793|T1794|T17947|T1795|T17959|T1796|T1797|T17975|T17976|T1798|T17984|T17988|T17989|T1799|T17994|T17997|T17998|T17999|T18|T180|T1800|T18000|T18002|T18003|T18018|T18020|T18026|T18028|T18039|T1804|T18041|T18043|T18051|T18062|T18063|T18069|T1807|T18070|T18077|T1808|T18084|T18088|T1809|T18090|T18096|T18097|T18099|T181|T1810|T1811|T18119|T1812|T18120|T18124|T18125|T18128|T1813|T18133|T18139|T1814|T18140|T18147|T18149|T1815|T18151|T18152|T18153|T18154|T1816|T18171|T18174|T18176|T18178|T1818|T18186|T18189|T1819|T18190|T18193|T18194|T18195|T182|T1820|T18200|T18204|T1821|T18210|T1822|T18226|T18229|T1823|T18235|T18237|T1824|T18243|T18246|T18247|T18248|T18249|T18255|T18256|T18257|T1826|T18260|T18263|T18265|T18266|T18267|T18268|T1827|T18271|T18273|T18274|T18275|T18276|T18278|T18279|T1828|T18281|T18282|T18284|T18285|T18286|T18288|T1829|T18290|T18292|T18293|T18294|T183|T1830|T18302|T18303|T1831|T18310|T18311|T18314|T18316|T18317|T1832|T18324|T18326|T18327|T18328|T18329|T1833|T18330|T18331|T18333|T18334|T18335|T18336|T18337|T18338|T18339|T1834|T18341|T18342|T18343|T18349|T1835|T18350|T18351|T18353|T1836|T18364|T18365|T18366|T18368|T1837|T18370|T18371|T1838|T18387|T18388|T18389|T1839|T18393|T184|T1840|T18400|T18401|T18402|T1841|T18412|T18413|T18415|T18416|T18419|T1842|T18421|T18422|T18423|T18424|T18425|T18427|T1843|T18430|T18431|T1844|T18440|T18444|T18446|T18447|T18448|T18449|T1845|T18453|T18454|T18455|T18456|T18457|T18458|T18459|T1846|T18460|T18461|T18462|T18464|T18466|T18467|T18468|T18469|T1847|T18470|T18471|T18472|T18477|T18479|T1848|T18480|T18482|T18485|T18488|T18489|T1849|T18490|T18491|T18493|T18494|T18495|T18496|T18497|T18498|T18499|T185|T1850|T1851|T18514|T18515|T1852|T18522|T18523|T18524|T1853|T18531|T18532|T18538|T1854|T18540|T18543|T18548|T18549|T1855|T18553|T18557|T18558|T18559|T1856|T18560|T18561|T1857|T18573|T18575|T18576|T18578|T18579|T1858|T18581|T18582|T18583|T18584|T18588|T1859|T18590|T18592|T18593|T18594|T18595|T18596|T18599|T186|T1860|T18601|T18602|T18603|T18606|T1861|T18610|T18612|T18616|T18617|T18618|T1862|T18620|T18622|T18625|T18626|T18628|T18630|T18632|T18633|T18634|T1864|T18642|T18647|T18648|T1865|T18650|T18654|T18657|T18658|T1866|T18660|T18667|T1867|T18677|T1868|T18682|T18686|T18687|T18688|T1869|T18690|T18692|T18693|T18694|T18695|T18699|T187|T1870|T18702|T18705|T18706|T18713|T18714|T18719|T1872|T18721|T18723|T18726|T1873|T18730|T18735|T1874|T18740|T18748|T1875|T18753|T18756|T18759|T1876|T18763|T18766|T18767|T18768|T18769|T1877|T18770|T18771|T18773|T18774|T1878|T18782|T18783|T1879|T18793|T188|T1880|T18800|T18807|T18808|T18809|T1881|T18810|T18811|T18812|T18813|T1882|T18821|T18822|T18823|T18824|T18825|T18828|T18829|T1883|T18830|T18832|T18836|T1884|T18846|T1885|T18850|T18851|T18852|T18853|T18854|T18855|T1886|T18860|T18861|T18862|T18863|T18864|T18865|T18866|T18867|T18868|T18869|T1887|T18870|T18871|T18872|T18873|T18874|T18879|T1888|T18882|T18883|T18886|T18888|T1889|T189|T1890|T1891|T18913|T18914|T18916|T1892|T18924|T18931|T1894|T18944|T18947|T18948|T18959|T1896|T18966|T18967|T18968|T18969|T1897|T18971|T18972|T18973|T18974|T18975|T18976|T18978|T1898|T1899|T18993|T18999|T19|T190|T1900|T19000|T19001|T19003|T19004|T19005|T19006|T19007|T19008|T19009|T1901|T19010|T19013|T19015|T19018|T19019|T1902|T19020|T19021|T19023|T19024|T19025|T19027|T19029|T1903|T19030|T19031|T19032|T19033|T19035|T1904|T19042|T19043|T19047|T19048|T1905|T19055|T19057|T1906|T19063|T19066|T19068|T19069|T1907|T1908|T19089|T1909|T19092|T19096|T19099|T191|T1910|T19103|T19104|T19109|T1911|T19110|T19111|T19113|T19118|T19119|T1912|T19120|T19121|T19123|T19126|T19129|T1913|T19130|T19132|T19134|T19135|T19136|T19137|T19139|T19140|T19141|T19142|T19144|T19145|T19147|T19148|T1915|T1916|T19165|T19166|T1917|T19173|T1918|T19183|T1919|T19194|T1920|T19200|T19201|T19202|T19205|T19206|T1921|T19212|T19218|T19219|T1922|T19221|T19222|T19223|T19224|T19225|T1923|T19232|T19233|T19234|T19236|T19237|T19238|T19239|T19240|T19241|T19242|T19243|T19248|T1925|T19252|T19255|T19257|T19258|T1926|T19262|T19265|T1927|T19272|T19273|T19278|T1928|T19282|T19283|T19284|T19285|T19286|T19289|T1929|T19295|T19296|T19298|T19299|T1930|T19301|T19305|T19309|T1931|T19310|T19311|T19312|T19313|T19318|T19319|T1932|T19320|T19322|T19324|T19325|T19326|T19328|T19329|T1933|T19333|T19339|T1934|T19340|T19343|T19345|T19348|T1935|T19350|T19357|T1936|T19362|T19363|T19368|T19369|T1937|T1938|T19388|T19389|T1939|T19391|" +
+                "T19392|T19395|T19397|T19399|T194|T1940|T19401|T19402|T19404|T19405|T19407|T19408|T19409|T1941|T19410|T19411|T19412|T19415|T19416|T19417|T19421|T19424|T19425|T19427|T19429|T1943|T19431|T19432|T19433|T19434|T19437|T19438|T19439|T1944|T19440|T19441|T1945|T19459|T1946|T19460|T19463|T19464|T19465|T19466|T19469|T1947|T19470|T19476|T19478|T1948|T19480|T19481|T19484|T19485|T1949|T19493|T19494|T19499|T195|T1950|T19500|T19501|T19502|T1951|T19515|T19516|T1953|T19532|T19538|T1954|T19547|T19548|T1955|T19553|T19557|T19558|T19559|T1956|T19561|T19562|T19563|T19564|T19566|T19567|T19568|T19569|T1957|T19570|T19571|T19573|T19576|T19577|T19578|T19579|T1958|T19580|T19581|T19582|T19584|T19585|T19586|T19587|T19588|T19589|T1959|T19590|T19592|T19596|T19597|T19599|T196|T1960|T19600|T19601|T19602|T19603|T19604|T19605|T19607|T19608|T1961|T19610|T19612|T19614|T19615|T19616|T19617|T19619|T1962|T19620|T19623|T19624|T19627|T19628|T1963|T19630|T19633|T19637|T19638|T19639|T1964|T19640|T19645|T19646|T19647|T1965|T19652|T19655|T19656|T19659|T1966|T19661|T19663|T19664|T19665|T1967|T19670|T19671|T19673|T19675|T19677|T19679|T1968|T19680|T19681|T19684|T19685|T19687|T19688|T19689|T1969|T19690|T19692|T19693|T19694|T19695|T19696|T19697|T19699|T197|T1970|T19700|T19701|T19703|T19704|T19705|T19708|T19709|T1971|T19710|T19711|T19712|T19715|T19717|T1972|T19721|T19724|T19727|T1973|T19731|T19732|T19734|T19735|T19736|T19737|T19738|T19739|T1974|T19740|T19741|T19742|T19747|T19748|T19749|T1975|T19750|T19751|T19752|T19756|T19759|T1976|T19760|T19762|T19764|T19765|T19766|T19767|T1977|T1978|T19782|T19783|T19785|T19787|T19789|T1979|T19792|T19796|T19797|T198|T1980|T19807|T19809|T1981|T19810|T19811|T19812|T19814|T19817|T1982|T19820|T19823|T19824|T1983|T19830|T19832|T19833|T19837|T19838|T1984|T19841|T19842|T19844|T19846|T19849|T19851|T19857|T19860|T19866|T19868|T19870|T19876|T1988|T19881|T19882|T19883|T19884|T19886|T1989|T19890|T19892|T19896|T19899|T1990|T19903|T19904|T19906|T19908|T19909|T19912|T19917|T19918|T19919|T1992|T19920|T19921|T19923|T19924|T19925|T19926|T19927|T19928|T19929|T1993|T19930|T19932|T19934|T19935|T19936|T19937|T19938|T19939|T1994|T19940|T19941|T19942|T19943|T19944|T19945|T19946|T19947|T19948|T19949|T1995|T19950|T19951|T19952|T19953|T19954|T19955|T19956|T19957|T19958|T19959|T1996|T19960|T19961|T19962|T19963|T19964|T19965|T19966|T19967|T19968|T19969|T1997|T19970|T19971|T19972|T19973|T19974|T19975|T19976|T19977|T19979|T1998|T19980|T19981|T19982|T19983|T19984|T19985|T19986|T19987|T19988|T19990|T19993|T2|T20|T200|T2000|T20002|T20007|T20009|T2001|T20010|T20012|T20016|T20019|T2002|T20023|T20024|T20025|T20026|T20027|T20028|T2003|T20032|T20033|T20034|T20037|T20038|T20039|T2004|T20040|T20041|T20043|T20044|T20045|T20046|T20047|T20048|T20049|T2005|T20055|T20058|T20059|T2006|T20060|T20062|T20063|T20065|T20068|T2007|T20070|T20072|T20073|T20074|T20076|T20079|T2008|T20080|T20086|T20088|T20089|T2009|T20090|T20091|T20093|T20095|T20096|T20099|T201|T20101|T20102|T20103|T20104|T20105|T20106|T20107|T20109|T2011|T20111|T20115|T20118|T2012|T20122|T20128|T20129|T2013|T20130|T20131|T20132|T20133|T20134|T20136|T20138|T20139|T2014|T20140|T20141|T20142|T20143|T20144|T20147|T20148|T20149|T2015|T20150|T20152|T20153|T20155|T20156|T20157|T2016|T2017|T20178|T2018|T20180|T20183|T20184|T20186|T2019|T20190|T20191|T20192|T20193|T20196|T20199|T202|T2020|T20201|T20207|T20208|T2021|T20213|T20216|T20217|T20219|T2022|T20220|T20225|T20226|T20227|T20229|T2023|T20230|T20231|T20232|T20239|T2024|T2025|T2026|T2027|T20274|T2028|T2029|T20293|T20297|T203|T2030|T2031|T20323|T2033|T20339|T20341|T20342|T2035|T20350|T20351|T20352|T20353|T20354|T20355|T20356|T20358|T20359|T2036|T20360|T20361|T20362|T20366|T20367|T20368|T2037|T20370|T20372|T2038|T20383|T2039|T20399|T204|T2040|T20401|T2041|T2042|T20421|T20422|T20424|T20426|T2043|T20431|T20432|T20433|T20435|T20436|T20437|T20438|T2044|T20440|T20441|T20442|T20443|T20444|T20445|T20447|T20448|T20449|T2045|T20450|T20452|T20453|T20454|T20456|T2046|T20460|T20461|T20462|T20463|T20464|T20468|T2047|T20470|T20471|T20472|T20473|T20476|T20477|T20479|T2048|T20480|T20481|T20483|T20484|T20485|T20486|T20488|T2049|T20495|T20496|T20497|T20499|T205|T2050|T20500|T20503|T20504|T20505|T20507|T20508|T20509|T2051|T20512|T20513|T20514|T20515|T20516|T20518|T2052|T20520|T20523|T20524|T20526|T20527|T20528|T2053|T20531|T20532|T20533|T20534|T20536|T20537|T20538|T2054|T20540|T20543|T20544|T20545|T20546|T20547|T20548|T20549|T2055|T20550|T20551|T20552|T20556|T20557|T20558|T20559|T2056|T20560|T20561|T20564|T20565|T2057|T20570|T20572|T20573|T20578|T2058|T20580|T20581|T20582|T20583|T20585|T2059|T20590|T20592|T20594|T20595|T20596|T20597|T20598|T20599|T206|T2060|T20600|T20607|T20608|T2062|T20621|T20627|T2063|T2064|T20641|T20642|T20643|T20644|T2065|T2066|T20660|T20661|T20669|T2067|T20671|T20673|T20674|T20679|T2068|T20680|T20681|T20682|T20683|T20685|T20686|T2069|T20690|T20691|T20693|T20694|T207|T2070|T20700|T20708|T2071|T20714|T20716|T20718|T20719|T2072|T20723|T20725|T20726|T2073|T20733|T20734|T20736|T20737|T20738|T2074|T20742|T2075|T20758|T20759|T2076|T20762|T20764|T20766|T20767|T2077|T20771|T20772|T20774|T20775|T20778|T2078|T20780|T20781|T20782|T20783|T20784|T20786|T2079|T20795|T208|T2080|T20803|T20805|T20806|T20807|T20808|T20809|T2081|T20810|T20812|T20814|T20815|T20817|T20820|T20822|T20827|T2083|T20833|T20834|T20836|T20838|T20839|T2084|T20840|T20841|T20842|T20843|T20844|T20847|T20849|T2085|T20856|T2086|T20863|T20864|T20865|T20866|T20867|T2087|T20872|T20873|T20876|T20878|T20879|T2088|T20885|T20887|T2089|T209|T2090|T20909|T2091|T20912|T20915|T20916|T2092|T20921|T2093|T20932|T20934|T20936|T2094|T2095|T20955|T20956|T20959|T2096|T20968|T20969|T20970|T20971|T2098|T2099|T20992|T20994|T20995|T20996|T20997|T20998|T20999|T21|T2100|T21000|T21001|T21002|T21004|T21005|T21006|T21007|T21008|T21009|T2101|T21010|T21011|T21012|T21013|T21014|T21019|T2102|T21022|T21025|T21027|T21028|T2103|T21032|T21033|T21034|T21035|T21036|T21037|T2104|T21040|T21042|T21043|T21044|T21045|T21046|T21047|T21048|T2105|T21050|T21054|T2106|T21065|T21068|T2107|T21071|T21072|T21074|T21077|T21078|T2108|T21081|T21083|T21084|T21085|T21086|T21087|T21088|T21089|T2109|T21090|T21093|T211|T2110|T21105|T2111|T2112|T21124|T21129|T2113|T2114|T21142|T21145|T21148|T21149|T2115|T21150|T21151|T21152|T21154|T21156|T21158|T2116|T21161|T21163|T21166|T21167|T21168|T21169|T2117|T21170|T21171|T21172|T21173|T21174|T21175|T21176|T21177|T2118|T21182|T21184|T21185|T21186|T21188|T21189|T2119|T21190|T21191|T21194|T21196|T212|T2120|T21207|T21209|T2121|T21210|T21211|T21215|T21217|T21218|T21223|T21225|T21227|T2123|T21231|T21238|T21239|T2124|T21241|T21248|T2125|T21250|T21254|T21255|T21256|T21257|T2126|T21262|T21263|T21265|T21266|T21269|T2127|T21271|T21272|T21273|T21275|T21276|T21277|T21279|T2128|T21281|T21284|T21286|T21287|T21288|T2129|T21290|T21292|T21293|T21295|T21296|T213|T2130|T21300|T21301|T21302|T21303|T21304|T21305|T21308|T21309|T21310|T21311|T21312|T21313|T21314|T21315|T21317|T21318|T21319|T2132|T21320|T21322|T21323|T21325|T21326|T21329|T21330|T21333|T21335|T21336|T2134|T21340|T21341|T21344|T21345|T21347|T21348|T21349|T2135|T21350|T21351|T21357|T21358|T21359|T2136|T21360|T21361|T21362|T21363|T21366|T2137|T21372|T21373|T21375|T21376|T21377|T21378|T2138|T21383|T21386|T21388|T2139|T21390|T21392|T21393|T21397|T21398|T21399|T214|T2140|T21402|T21403|T21404|T21406|T21409|T2141|T21414|T21415|T21416|T2142|T21420|T21424|T21425|T21426|T21427|T21428|T21432|T21435|T21436|T21438|T21439|T2144|T21440|T21441|T21442|T21443|T2145|T21450|T21452|T21453|T21454|T21455|T21457|T21459|T21461|T21462|T21463|T21464|T21468|T21469|T2147|T21472|T21474|T21475|T21476|T21477|T21478|T2148|T21480|T21481|T21483|T21485|T21488|T21489|T21490|T21493|T21494|T21495|T215|T2150|T21506|T21509|T2151|T21512|T21513|T21514|T21515|T21517|T21518|T2152|T21521|T21524|T21525|T21526|T21529|T2153|T21530|T21532|T21535|T21536|T2154|T21544|T21545|T21546|T2155|T21550|T21551|T21553|T21554|T21555|T2156|T21560|T21561|T21562|T21568|T21569|T2157|T21571|T21573|T21578|T21579|T2158|T21580|T21583|T2159|T21591|T21592|T21595|T21596|T21599|T216|T2160|T21602|T2161|T21611|T2162|T2163|T2165|T2166|T21665|T21666|T21667|T21669|T2167|T21670|T21671|T21672|T21673|T21674|T21675|T21676|T21677|T21678|T2168|T21687|T21689|T2169|T21691|T21695|T21697|T21698|T217|T2170|T21701|T21702|T21707|T2171|T21710|T21711|T21714|T21715|T21716|T21717|T21718|T21719|T2172|T21721|T21722|T21723|T21724|T2173|T2174|T21740|T21742|T21743|T21746|T2175|T21750|T21755|T21758|T21759|T2176|T21762|T2177|T21773|T21777|T21778|T2178|T21789|T2179|T21791|T21792|T21795|T21797|T21798|T218|T2180|T21800|T2181|T2182|T21820|T21821|T21824|T21826|T2183|T21832|T2184|T2185|T21854|T2186|T21863|T21866|T2187|T2188|T21883|T21885|T21898|T2190|T2191|T21914|T2192|T2193|T2194|T2195|T21951|T2196|T21964|T2197|T2198|T2199|T22|T220|T2200|T2201|T2202|T2203|T2204|T2205|T2206|T2207|T2208|T2209|T22096|T221|T22108|T2211|T2212|T2213|T2214|T2215|T2216|T2217|T2218|T2219|T222|T2220|T2221|T22216|T2222|T2223|T22237|T2224|T22241|T2225|T22252|T22253|T2226|T2227|T2228|T2229|T223|T2230|T2231|T2232|T2233|T2234|T22342|T22348|T2235|T2236|T22364|T2238|T22380|T22389|T2239|T22393|T224|T2240|T2241|T2242|T2244|T2245|T2246|T2247|T22472|T22474|T22476|T22479|T2248|T22483|T22484|T22486|T22488|T22489|T2249|T22494|T22495|T225|T2250|T22500|T22501|T22503|T22507|T2251|T22526|T2253|T22538|T2254|T22544|T22546|T2255|T2256|T22565|T2257|T22570|T2258|T22589|T2259|T22591|T22597|T22598|T22599|T226|T2260|T2261|T22610|T22613|T22616|T22617|T2262|T2263|T22633|T22635|T22638|T2264|T2265|T2266|T22666|T2267|T22672|T22673|T22676|T22677|T2268|T22684|T22687|T2269|T22699|T227|T2270|T22702|T22713|T22715|T2272|T22723|T22725|T22726|T2273|T2274|T22747|T22749|T2275|T2276|T22762|T22764|T22765|T22767|T2277|T22778|T2278|T2279|T2280|T22806|T2281|T22813|T22814|T22815|T22816|T22819|T2282|T22820|T22821|T22822|T22823|T22827|T2283|T2284|T22847|T22848|T2285|T2286|T22861|T22863|T22865|T22869|T2287|" +
+                "T22870|T22872|T22873|T22874|T22875|T22877|T2288|T2289|T229|T2290|T2291|T2292|T2293|T22933|T2294|T22945|T2295|T2296|T2297|T2298|T2299|T23|T230|T2300|T2301|T2302|T2303|T2304|T2305|T2306|T2307|T2308|T2309|T231|T2310|T23109|T2311|T23113|T23115|T2312|T2313|T2314|T23144|T2315|T23150|T23153|T23155|T23156|T23157|T23158|T23159|T23161|T23162|T23163|T23164|T23165|T23168|T2317|T23171|T2318|T2319|T23190|T23196|T23198|T232|T2320|T23205|T2321|T2322|T23223|T23227|T23228|T23229|T2323|T23233|T23234|T23235|T23236|T23237|T23245|T23247|T2325|T2326|T23264|T23266|T23268|T23269|T2327|T23270|T23271|T23272|T23274|T23275|T23278|T2328|T2329|T23291|T23296|T23297|T23298|T233|T23300|T23301|T23302|T23304|T23305|T2331|T23310|T23311|T23313|T23314|T23315|T23316|T23318|T23319|T2332|T23320|T23321|T23322|T2333|T23331|T23334|T23336|T23338|T2334|T23344|T2335|T23351|T23352|T23353|T23354|T23355|T2336|T23364|T23365|T23366|T23367|T23368|T23369|T2337|T23374|T23379|T2338|T23380|T23382|T23385|T2339|T234|T2340|T2341|T2342|T2343|T2344|T2345|T2347|T2348|T2349|T235|T2350|T2351|T23511|T2352|T2353|T23530|T23536|T2354|T2355|T2356|T23563|T23565|T2357|T2358|T2359|T23595|T236|T2360|T2361|T2362|T2363|T2364|T2366|T2367|T2368|T2369|T23690|T23698|T237|T2370|T23706|T2371|T23710|T23713|T2373|T2374|T2375|T2376|T23760|T23763|T23765|T23766|T23769|T23775|T23776|T2378|T23781|T23788|T2379|T23791|T23794|T23796|T238|T2380|T2381|T2383|T2384|T2385|T2386|T2387|T23874|T23875|T2388|T2389|T23891|T23894|T239|T2390|T23908|T23911|T23913|T23915|T2392|T2393|T2394|T23940|T23941|T23943|T2395|T2396|T2397|T2398|T2399|T23998|T23999|T24|T240|T2400|T24002|T24003|T2401|T2402|T2403|T2404|T2405|T2406|T2407|T2408|T2409|T241|T2410|T2411|T2412|T2413|T2414|T2415|T2416|T2417|T2418|T2419|T242|T2420|T2421|T2423|T2424|T2425|T2426|T2427|T2428|T243|T2431|T2432|T2433|T2436|T2437|T2438|T244|T2440|T2441|T2442|T2443|T2444|T2445|T2446|T2447|T2448|T2449|T245|T2450|T2451|T2452|T2454|T2455|T2456|T2458|T246|T2460|T2461|T2463|T2466|T2467|T2468|T2469|T247|T2471|T2474|T2475|T2476|T2477|T2478|T2479|T248|T2480|T2481|T2482|T2483|T2484|T2485|T2486|T2487|T2488|T2489|T249|T2490|T2491|T2492|T2493|T2494|T2495|T2496|T2497|T2498|T2499|T25|T250|T2501|T2502|T2503|T2504|T2505|T2507|T2508|T2509|T251|T2514|T2515|T2516|T2517|T2518|T252|T2520|T2521|T2522|T2523|T2524|T2525|T2526|T2527|T2528|T2529|T253|T2530|T2531|T2532|T2533|T2534|T2537|T2538|T2539|T254|T2540|T2541|T2542|T2544|T2545|T2546|T2548|T2549|T255|T2550|T2551|T2552|T2553|T2554|T2555|T2556|T2557|T2558|T2559|T256|T2560|T2561|T2562|T2563|T2564|T2565|T2566|T2567|T2568|T2569|T2571|T2573|T2574|T2575|T2576|T2577|T2578|T2579|T258|T2580|T2581|T2582|T2583|T2584|T2585|T2589|T259|T2590|T2591|T2592|T2593|T2594|T2595|T2597|T2599|T26|T260|T2600|T2601|T2602|T2604|T2605|T2606|T2607|T2609|T261|T2610|T2611|T2612|T2613|T2614|T2615|T2616|T2617|T2618|T2619|T262|T2620|T2621|T2622|T2623|T2624|T2625|T2626|T2627|T2628|T2629|T263|T2630|T2631|T2632|T2633|T2634|T2635|T2636|T2637|T2638|T2639|T2640|T2641|T2642|T2643|T2644|T2645|T2646|T2647|T2648|T2649|T265|T2651|T2652|T2653|T2654|T2655|T2656|T2657|T2658|T2659|T266|T2660|T2661|T2662|T2664|T2665|T2666|T2667|T2668|T2669|T267|T2670|T2673|T2674|T2675|T2676|T2677|T2678|T2679|T268|T2681|T2682|T2685|T2686|T2687|T2688|T269|T2691|T2692|T2693|T2694|T2696|T2698|T2699|T27|T270|T2701|T2702|T2703|T2704|T2705|T2706|T2707|T2708|T2709|T271|T2710|T2711|T2712|T2713|T2714|T2715|T2716|T2717|T2718|T2719|T272|T2720|T2721|T2722|T2723|T2725|T2726|T2727|T2728|T2729|T273|T2730|T2731|T2732|T2733|T2734|T2735|T2736|T2737|T2738|T2739|T274|T2740|T2741|T2742|T2743|T2744|T2746|T2747|T2748|T2749|T275|T2750|T2751|T2752|T2753|T2754|T2755|T2756|T2757|T2758|T2759|T276|T2760|T2761|T2762|T2763|T2764|T2765|T2766|T2767|T2768|T2769|T277|T2770|T2771|T2772|T2774|T2775|T2776|T2777|T2778|T2779|T278|T2780|T2781|T2782|T2783|T2784|T2785|T2786|T2787|T2788|T2789|T279|T2790|T2791|T2792|T2793|T2794|T2795|T2796|T2797|T2798|T2799|T28|T2800|T2801|T2802|T2803|T2804|T2805|T2806|T2807|T2808|T2809|T281|T2810|T2811|T2812|T2813|T2814|T2815|T2816|T2817|T2818|T2819|T282|T2820|T2822|T2823|T2824|T2825|T2826|T2827|T2828|T2829|T283|T2830|T2831|T2832|T2833|T2834|T2835|T2836|T2837|T2838|T2839|T284|T2840|T2841|T2842|T2843|T2845|T2846|T2847|T2848|T2849|T285|T2850|T2851|T2852|T2853|T2855|T2856|T2857|T2858|T2859|T286|T2860|T2861|T2862|T2863|T2864|T2865|T2866|T2867|T2868|T2869|T287|T2870|T2871|T2872|T2873|T2877|T288|T2880|T2881|T2882|T2883|T2884|T2885|T2886|T2887|T2888|T2889|T289|T2891|T2892|T2893|T2894|T2895|T2896|T2897|T2898|T2899|T29|T290|T2900|T2901|T2902|T2903|T2904|T2905|T2906|T2907|T2908|T2909|T291|T2910|T2911|T2912|T2913|T2914|T2915|T2916|T2917|T292|T2920|T2921|T2922|T2923|T2924|T2926|T2928|T2929|T293|T2930|T2931|T2932|T2933|T2934|T2935|T2936|T2937|T2938|T2939|T294|T2940|T2941|T2942|T2943|T2944|T2945|T2946|T2947|T2948|T2949|T295|T2950|T2951|T2952|T2953|T2954|T2955|T2956|T2957|T2958|T2959|T296|T2960|T2961|T2962|T2963|T2964|T2965|T2966|T2967|T2968|T2969|T297|T2970|T2971|T2972|T2975|T2976|T2977|T2978|T2979|T298|T2980|T2981|T2982|T2983|T2984|T2985|T2986|T2987|T2988|T2989|T299|T2990|T2991|T2992|T2993|T2994|T2995|T2996|T2997|T2998|T2999|T3|T30|T300|T3000|T3001|T3002|T3004|T3005|T3006|T3007|T3008|T3009|T301|T3010|T3011|T3012|T3013|T3014|T3015|T3016|T3017|T3019|T302|T3021|T3022|T3023|T3024|T3025|T3026|T3027|T3028|T3029|T303|T3030|T3031|T3034|T3035|T3036|T3037|T3039|T304|T3040|T3041|T3042|T3044|T3045|T3046|T3047|T3048|T3049|T305|T3052|T3053|T3055|T3057|T3058|T3059|T306|T3060|T3061|T3062|T3063|T3064|T3065|T3066|T3067|T3068|T3069|T307|T3070|T3071|T3073|T3075|T3076|T3077|T3079|T308|T3080|T3081|T3082|T3083|T3085|T3086|T3087|T3088|T3089|T309|T3093|T3094|T3097|T31|T310|T3100|T3102|T3103|T3104|T3105|T3106|T3109|T311|T3113|T3117|T3118|T312|T3123|T3126|T3127|T3129|T313|T3131|T3132|T3135|T3138|T3139|T3142|T3144|T3146|T315|T3152|T3156|T316|T3162|T3163|T3165|T3166|T3167|T3169|T317|T3170|T3172|T3174|T3175|T3177|T3179|T318|T3180|T3181|T3182|T3183|T3184|T3185|T3186|T3187|T3188|T3189|T319|T3190|T3191|T3192|T3193|T3194|T3195|T3196|T3197|T3198|T3199|T32|T320|T3200|T3201|T3202|T3203|T3204|T3205|T3206|T3207|T3208|T3209|T321|T3210|T3211|T3212|T3213|T3214|T3215|T3216|T3217|T3218|T3219|T322|T3220|T3221|T3222|T3223|T3224|T3225|T3226|T3227|T3228|T3229|T323|T3230|T3232|T3233|T3234|T3235|T3236|T3237|T3238|T3239|T324|T3240|T3241|T3242|T3243|T3244|T3245|T3246|T3247|T3248|T3249|T325|T3250|T3251|T3252|T3253|T3254|T3255|T3256|T3257|T3258|T3259|T326|T3260|T3261|T3262|T3263|T3264|T3265|T3266|T3267|T3269|T3270|T3271|T3272|T3273|T3274|T3275|T3276|T3277|T3278|T3279|T328|T3280|T3281|T3285|T3286|T3287|T3288|T3289|T3290|T3291|T3292|T3293|T3294|T3295|T3296|T3297|T3298|T3299|T33|T330|T3300|T3301|T3308|T3309|T331|T3316|T332|T3321|T3322|T3323|T3326|T333|T3331|T3332|T3335|T3336|T3338|T3339|T334|T3341|T3346|T3348|T3349|T335|T3350|T3351|T3352|T3356|T3357|T336|T3360|T3364|T3365|T3367|T3368|T3369|T337|T3370|T3371|T3372|T3373|T3376|T3377|T3378|T3379|T338|T3380|T3381|T3382|T3384|T3386|T3387|T3388|T339|T3390|T3391|T3392|T3393|T3394|T3395|T3396|T3397|T3398|T3399|T34|T340|T3400|T3401|T3402|T3403|T3404|T3406|T3407|T3409|T341|T3410|T3411|T3412|T3413|T3414|T3415|T3416|T3417|T3418|T3419|T342|T3420|T3421|T3422|T3423|T3424|T3425|T3426|T3427|T3428|T3429|T343|T3430|T3431|T3432|T3433|T3434|T3436|T3437|T3438|T3439|T344|T3441|T3442|T3443|T3444|T3445|T3446|T3447|T3448|T3449|T345|T3451|T3452|T3453|T3454|T3455|T3456|T3457|T3458|T3459|T3460|T3461|T3462|T3463|T3464|T3465|T3467|T3468|T3469|T347|T3470|T3471|T3472|T3473|T3474|T3475|T3476|T3477|T3478|T3479|T348|T3480|T3482|T3483|T3484|T3485|T3487|T3488|T3489|T349|T3490|T3491|T3492|T3493|T3494|T3495|T3496|T3497|T3498|T3499|T35|T350|T3501|T3502|T3503|T3504|T3505|T3506|T3507|T3508|T3509|T351|T3510|T3511|T3512|T3513|T3514|T3515|T3516|T3517|T3518|T3519|T352|T3520|T3521|T3523|T3524|T3525|T3526|T3527|T3528|T3529|T353|T3530|T3531|T3532|T3533|T3534|T3535|T3536|T3538|T3539|T354|T3540|T3541|T3542|T3545|T3546|T3547|T3548|T3549|T355|T3550|T3551|T3552|T3553|T3554|T3555|T3556|T3557|T3559|T356|T3560|T3561|T3562|T3563|T3564|T3565|T3566|T3567|T3568|T357|T3570|T3571|T3572|T3573|T3574|T3575|T3576|T3577|T3578|T3579|T358|T3580|T3581|T3583|T3584|T3586|T3587|T3588|T3589|T359|T3590|T3591|T3592|T3594|T3595|T3597|T3598|T3599|T36|T360|T3600|T3601|T3602|T3603|T3604|T3605|T3606|T3607|T3608|T3609|T361|T3610|T3611|T3612|T3613|T3614|T3615|T3616|T3617|T3618|T3619|T362|T3620|T3621|T3622|T3623|T3625|T3626|T3627|T3628|T3629|T363|T3630|T3631|T3632|T3633|T3634|T3635|T3636|T3637|T3639|T364|T3640|T3641|T3642|T3643|T3644|T3645|T3646|T3647|T3648|T3649|T365|T3650|T3651|T3653|T3654|T3655|T3656|T3657|T3658|T3659|T366|T3660|T3661|T3662|T3664|T3666|T3667|T3668|T3669|T367|T3670|T3671|T3672|T3673|T3674|T3676|T3677|T3678|T3679|T368|T3680|T3681|T3682|T3684|T3685|T3686|T3687|T3689|T369|T3690|T3691|T3693|T3694|T3695|T3696|T3697|T3698|T3699|T37|T370|T3700|T3702|T3703|T3704|T3705|T3706|T3708|T3709|T371|T3710|T3711|T3712|T3713|T3714|T3716|T3717|T3718|T372|T3720|T3722|T3723|T3724|T3725|T3726|T3727|T3728|T3729|T373|T3730|T3731|T3732|T3733|T3734|T3736|T3737|T3738|T374|T3740|T3741|T3742|T3743|T3744|T3747|T3748|T3749|T375|T3750|T3751|T3752|T3753|T3754|T3755|T3756|T3757|T3758|T3759|T376|T3761|T3763|T3764|T3765|T3767|T3768|T3769|T377|T3770|T3772|T3773|T3774|T3775|T3776|T3777|T3778|T3779|T378|T3781|T3783|T3784|T3785|T3789|T379|T3790|T3791|T3793|T3794|T3795|T3796|T3797|T3798|T3799|T38|T380|T3800|T3801|T3802|T3803|T3804|T3805|T3806|T3807|T3808|T3809|T381|T3810|T3811|T3813|T3814|T3815|T3816|T3817|T3818|T3819|T382|T3820|T3822|T3823|T3824|T383|T3830|T384|T3840|T3843|T3847|T3848|T385|T3850|T386|T3861|T3865|T3867|T3869|T387|T3870|T3872|T3873|T3877|T3878|T3879|T388|T3880|T3882|T3883|T3885|T3886|T3887|T3889|T389|T3891|T3897|T3899|T39|T3900|T3901|T3902|T3903|T3904|T3905|T3907|T3908|T3909|T391|T3910|T3911|T3912|T3914|T3915|T3916|T3917|T3918|T392|T3920|T3922|T3923|T3924|T3925|T3926|T3927|T3928|T393|T3931|T3933|T3935|T3938|T3939|T3940|T3941|T3945|T3947|T395|T3957|" +
+                "T3959|T396|T3961|T3962|T3963|T3964|T3965|T3966|T3967|T3968|T3969|T397|T3970|T3971|T3972|T3975|T3978|T3979|T398|T3980|T3981|T3983|T3984|T3985|T3986|T3989|T399|T3990|T3993|T3994|T3995|T3996|T3997|T3999|T40|T400|T4003|T4004|T4005|T4006|T4007|T4008|T4009|T401|T4010|T4011|T4012|T4013|T4014|T4015|T4016|T4017|T4018|T4019|T402|T4020|T4021|T4022|T4023|T4024|T4025|T4026|T4027|T4028|T4029|T403|T4030|T4031|T4032|T4034|T4035|T4036|T4037|T4040|T4041|T4042|T4045|T4046|T4047|T4048|T4049|T405|T4050|T4056|T4059|T406|T4060|T4063|T4065|T4067|T4069|T407|T4070|T4075|T4076|T4077|T4080|T4081|T4082|T4083|T4084|T4088|T409|T4092|T4093|T4096|T4097|T41|T4102|T4103|T4105|T4106|T4108|T4109|T411|T4110|T4117|T4118|T412|T4121|T4128|T4129|T413|T4130|T4131|T4134|T4135|T4136|T414|T4140|T4142|T4143|T4144|T4145|T4149|T415|T4153|T4155|T4159|T4161|T4162|T4167|T417|T4171|T4172|T4174|T4175|T418|T4180|T4183|T4184|T4189|T419|T4190|T4191|T4195|T4197|T42|T420|T4201|T4203|T4204|T4208|T4209|T421|T4211|T4217|T4218|T4219|T422|T4221|T4222|T4226|T423|T4230|T4232|T4238|T424|T4247|T4248|T425|T4251|T4252|T4253|T4254|T4256|T426|T4261|T4262|T4263|T4264|T4265|T427|T4271|T4276|T4277|T4279|T428|T4281|T4284|T4288|T429|T4290|T4291|T4292|T4297|T4299|T43|T430|T4303|T4305|T4309|T431|T4311|T4313|T4314|T4315|T4316|T4317|T4318|T432|T4320|T4321|T4322|T4323|T4324|T4325|T4326|T4327|T4328|T4329|T433|T4330|T4331|T4332|T4334|T4336|T4337|T4338|T4339|T434|T4340|T4341|T4344|T4345|T4346|T4347|T4348|T4349|T435|T4350|T4351|T4352|T4353|T4354|T4355|T4357|T4358|T4359|T4360|T4361|T4362|T4363|T4364|T4365|T4367|T4368|T4369|T437|T4370|T4372|T4373|T4374|T4375|T4376|T4377|T4378|T4379|T438|T4380|T4381|T4382|T4383|T4384|T4385|T4386|T4387|T4388|T4389|T439|T4390|T4391|T4392|T4393|T4394|T4395|T4396|T4397|T4398|T4399|T44|T440|T4400|T4401|T4402|T4403|T4404|T4406|T4408|T4409|T441|T4410|T4411|T4413|T4414|T4415|T4416|T4417|T4418|T4419|T442|T4420|T4421|T4422|T4423|T4424|T4425|T4426|T4427|T4428|T4429|T443|T4430|T4431|T4432|T4433|T4434|T4435|T4436|T4437|T4438|T4439|T444|T4440|T4441|T4442|T4443|T4444|T4445|T4447|T4448|T4449|T445|T4452|T4453|T4454|T4455|T4456|T4457|T4458|T446|T4461|T4462|T4465|T4467|T4468|T4469|T447|T4470|T4471|T4473|T4474|T4475|T4476|T4477|T4478|T4479|T448|T4480|T4481|T4482|T4483|T4484|T4485|T4486|T4487|T4488|T4489|T449|T4490|T4492|T4493|T4494|T4495|T4496|T4497|T4498|T4499|T45|T450|T4500|T4501|T4502|T4503|T4504|T4505|T4506|T4507|T4508|T4509|T451|T4510|T4511|T4512|T4513|T4514|T4515|T4516|T4517|T4518|T4519|T452|T4520|T4521|T4522|T4523|T4524|T4525|T4526|T4527|T4528|T4529|T453|T4530|T4531|T4532|T4533|T4534|T4535|T4536|T4537|T4538|T4539|T454|T4540|T4541|T4542|T4543|T4544|T4545|T4546|T4547|T4548|T4549|T455|T4550|T4552|T4553|T4554|T4555|T4556|T4557|T4558|T4559|T456|T4560|T4561|T4562|T4563|T4565|T4566|T4567|T4568|T4569|T457|T4570|T4571|T4572|T4573|T4574|T4575|T4576|T4577|T4578|T4579|T458|T4580|T4581|T4582|T4583|T4584|T4585|T4586|T4589|T459|T4590|T4591|T4593|T4594|T4595|T4596|T4597|T4598|T4599|T46|T460|T4600|T4601|T4602|T4603|T4604|T4605|T4606|T4607|T4608|T4609|T461|T4610|T4611|T4612|T4613|T4614|T4615|T4616|T4617|T4618|T4619|T462|T4620|T4621|T4622|T4623|T4624|T4625|T4626|T4627|T4628|T4629|T463|T4630|T4631|T4633|T4634|T4635|T4636|T4637|T4638|T4639|T464|T4640|T4641|T4642|T4643|T4644|T4645|T4646|T4647|T4648|T4649|T465|T4650|T4651|T4652|T4653|T4654|T4655|T4656|T4657|T4659|T466|T4660|T4661|T4662|T4663|T4665|T4668|T467|T4671|T4673|T4674|T4675|T4676|T4677|T4678|T4679|T468|T4680|T4681|T4682|T4683|T4684|T4685|T469|T4692|T4694|T4696|T4697|T4698|T4699|T47|T4700|T4702|T4703|T4705|T4707|T4709|T471|T4710|T4711|T4712|T4714|T4715|T4716|T4718|T4719|T472|T4720|T4721|T4723|T4725|T4726|T4727|T4728|T4729|T473|T4730|T4731|T4732|T4733|T4734|T4735|T4736|T4737|T4738|T4739|T474|T4740|T4741|T4742|T4743|T4744|T4745|T4746|T4747|T4748|T4749|T475|T4750|T4751|T4752|T4753|T4754|T4755|T4756|T4758|T4759|T476|T4760|T4761|T4762|T4763|T4764|T4765|T4766|T4767|T4768|T4769|T477|T4770|T4771|T4772|T4773|T4774|T4775|T4776|T4777|T4778|T4779|T478|T4780|T4781|T4782|T4783|T4784|T4785|T4787|T4788|T4789|T479|T4790|T4791|T4792|T4793|T4794|T4795|T4796|T4797|T4798|T4799|T48|T480|T4800|T4801|T4802|T4803|T4804|T4805|T4806|T4807|T4808|T4809|T481|T4810|T4811|T4812|T4813|T4814|T4815|T4816|T4817|T4818|T4819|T482|T4820|T4821|T4822|T4823|T4824|T4825|T4826|T4827|T4828|T4829|T483|T4830|T4831|T4832|T4833|T4834|T4835|T4836|T4837|T4838|T4839|T484|T4840|T4841|T4842|T4843|T4845|T4846|T4847|T4848|T4849|T4850|T4851|T4852|T4853|T4854|T4855|T4856|T4857|T4858|T4859|T486|T4860|T4861|T4862|T4863|T4864|T4865|T4866|T4867|T4868|T4869|T487|T4870|T4871|T4872|T4873|T4874|T4875|T4876|T4877|T4878|T4879|T488|T4880|T4881|T4882|T4883|T4884|T4885|T4886|T4887|T4888|T4889|T489|T4890|T4891|T4892|T4894|T4895|T4896|T4897|T4898|T4899|T49|T490|T4901|T4902|T4903|T4904|T4906|T4907|T4908|T4909|T491|T4910|T4913|T4914|T4916|T4917|T4918|T4919|T492|T4920|T4921|T4922|T4923|T4924|T4925|T4926|T4927|T4928|T4929|T493|T4930|T4931|T4932|T4934|T4935|T4936|T4937|T4938|T4939|T494|T4941|T4942|T4943|T4945|T4946|T4948|T4949|T495|T4951|T4952|T4953|T4954|T4955|T4956|T4957|T4958|T4959|T496|T4960|T4961|T4962|T4963|T4964|T4965|T4966|T4967|T4968|T4969|T497|T4970|T4971|T4972|T4973|T4974|T4975|T4976|T4977|T4978|T4979|T498|T4981|T4982|T4983|T4984|T4985|T4986|T4987|T4988|T4989|T499|T4990|T4991|T4995|T4996|T4997|T4998|T5|T50|T500|T5000|T5001|T5002|T5003|T5004|T5005|T5006|T5007|T5008|T5009|T501|T5010|T5011|T5012|T5013|T5014|T5015|T5016|T5017|T5019|T502|T5020|T5021|T5022|T5023|T5024|T5025|T5026|T5027|T5028|T5029|T503|T5030|T5031|T5033|T5034|T5035|T5036|T5039|T504|T5040|T5041|T5042|T5043|T5044|T5045|T5046|T5047|T5048|T5049|T505|T5050|T5051|T5052|T5053|T5054|T5055|T5056|T5057|T5058|T5059|T506|T5060|T5061|T5062|T5063|T5065|T5066|T5067|T5068|T5069|T507|T5070|T5071|T5072|T5073|T5074|T5075|T5076|T5077|T5078|T508|T5080|T5081|T5083|T5084|T5085|T5086|T5087|T5088|T5089|T509|T5090|T5091|T5092|T5093|T5094|T5095|T5096|T5097|T5098|T51|T510|T5101|T5102|T5103|T5104|T5105|T5106|T5107|T5108|T5109|T511|T5110|T5111|T5112|T5113|T5114|T5115|T5116|T5117|T5118|T5119|T512|T5121|T5122|T5123|T5124|T5125|T5127|T5128|T5129|T513|T5130|T5131|T5132|T5133|T5134|T5135|T5136|T5137|T5138|T5139|T514|T5140|T5141|T5142|T5143|T5144|T5145|T5147|T5148|T5149|T515|T5150|T5152|T5153|T5154|T5155|T5156|T5157|T5158|T5159|T5160|T5161|T5162|T5163|T5164|T5165|T5166|T5168|T5169|T517|T5170|T5171|T5173|T5174|T5175|T5177|T5178|T5179|T518|T5181|T5182|T5183|T5184|T5185|T5186|T5187|T5188|T5189|T519|T5190|T5191|T5192|T5193|T5194|T5195|T5196|T5197|T5198|T5199|T52|T520|T5200|T5201|T5202|T5203|T5204|T5205|T5206|T5207|T5208|T5209|T521|T5210|T5211|T5212|T5213|T5215|T5216|T5217|T5218|T5219|T522|T5220|T5221|T5222|T5223|T5224|T5225|T5226|T5227|T5228|T5229|T523|T5230|T5231|T5232|T5233|T5234|T5235|T5236|T5237|T5238|T5239|T524|T5240|T5241|T5242|T5243|T5244|T5245|T5247|T5248|T5249|T525|T5250|T5251|T5252|T5253|T5254|T5255|T5256|T5257|T5258|T5259|T526|T5260|T5262|T5263|T5264|T5265|T5266|T5267|T5268|T5269|T527|T5270|T5271|T5272|T5273|T5274|T5275|T5276|T5277|T5278|T5279|T528|T5280|T5281|T5282|T5283|T5284|T5285|T5286|T5287|T5288|T5289|T529|T5291|T5292|T5293|T5294|T5295|T5296|T5297|T5298|T5299|T53|T530|T5300|T5301|T5302|T5303|T5304|T5305|T5306|T5307|T5308|T5309|T531|T5310|T5311|T5312|T5313|T5314|T5316|T5317|T5318|T5319|T532|T5320|T5321|T5322|T5323|T5324|T5325|T5326|T5327|T5328|T5329|T533|T5330|T5331|T5332|T5333|T5334|T5335|T5336|T5337|T5338|T5339|T534|T5340|T5341|T5342|T5343|T5344|T5345|T5346|T5348|T5349|T535|T5350|T5352|T5353|T5354|T5356|T5357|T5358|T5359|T536|T5360|T5361|T5362|T5363|T5364|T5365|T5366|T5367|T5368|T5369|T537|T5372|T5374|T5375|T5376|T5377|T538|T5380|T5383|T5385|T5386|T5387|T5388|T5389|T539|T5391|T5392|T5393|T5394|T5395|T5397|T5398|T5399|T54|T540|T5400|T5406|T5407|T5408|T541|T5410|T5412|T5413|T5414|T5415|T5417|T5418|T5419|T542|T5420|T5421|T5422|T5423|T5424|T5425|T5426|T5428|T5429|T543|T5430|T5431|T5432|T5433|T5434|T5435|T5436|T5437|T5438|T5439|T544|T5440|T5441|T5442|T5443|T5444|T5445|T5446|T5447|T5448|T5449|T545|T5450|T5451|T5452|T5453|T5454|T5455|T5456|T5457|T5458|T5459|T5460|T5461|T5463|T5464|T5465|T5466|T5467|T5468|T5469|T547|T5470|T5471|T5472|T5473|T5474|T5475|T5476|T5477|T5478|T5479|T548|T5480|T5481|T5482|T5483|T5484|T5485|T5486|T5488|T549|T5490|T5491|T5492|T5493|T5494|T5495|T5496|T5497|T5498|T5499|T55|T550|T5501|T5502|T5503|T5505|T5506|T551|T5510|T5511|T5512|T5513|T5514|T5515|T5516|T5517|T5518|T5519|T552|T5520|T5521|T5522|T5523|T5524|T5525|T5526|T5527|T5528|T5529|T553|T5530|T5531|T5532|T5534|T5535|T5536|T5537|T5538|T5539|T5540|T5541|T5542|T5543|T5544|T5545|T5546|T5547|T5549|T555|T5550|T5551|T5552|T5553|T5554|T5555|T5556|T5557|T5558|T5559|T556|T5560|T5561|T5562|T5563|T5564|T5565|T5566|T5567|T5568|T5569|T557|T5570|T5571|T5572|T5573|T5574|T5576|T5577|T5578|T5579|T558|T5580|T5581|T5582|T5583|T5584|T5585|T5586|T5587|T5588|T5589|T559|T5590|T5592|T5593|T5594|T5595|T5597|T5598|T5599|T56|T560|T5600|T5602|T5603|T5604|T5605|T5608|T5609|T561|T5610|T5611|T5612|T5613|T5614|T5615|T5616|T5617|T5618|T5619|T562|T5621|T5623|T5624|T5627|T5628|T5629|T563|T5631|T5632|T5634|T5635|T5637|T5638|T564|T5641|T5642|T5647|T5648|T5649|T5650|T5651|T5652|T5653|T5655|T5656|T5658|T566|T5660|T5661|T5662|T5663|T5664|T5665|T5666|T5667|T5668|T5669|T5670|T5671|T5672|T5673|T5674|T5675|T5676|T5677|T5678|T5679|T568|T5680|T5681|T5683|T5684|T5685|T5687|T5689|T569|T5690|T5691|T5692|T5693|T5695|T5697|T5698|T57|T570|T5700|T5701|T5703|T5704|T5705|T5706|T5707|T5708|T5709|T571|T5710|T5711|T5712|T5713|T5715|T5716|T5717|T5718|T5719|T572|T5720|T5722|T5723|T5724|T5726|T5727|T5728|T5729|T573|T5730|T5731|T5732|T5733|T5734|T5735|T5736|T5737|T5738|T574|T5740|T5741|T5742|T5743|T5744|T5746|T5747|T5749|T575|T5750|T5751|T5752|T5753|T5754|T5755|T5756|T5757|T5758|T5759|T576|T5760|T5761|T5762|T5763|T5764|T5765|T5766|T5767|T5768|T5769|T577|T5770|T5772|T5773|T5774|T5775|T5776|T5777|T5778|T5779|T578|T5780|T5782|T5783|T5784|T5785|T5786|T5788|T5789|T579|T5790|T5791|T5792|" +
+                "T5793|T5794|T5796|T5797|T5798|T5799|T58|T580|T5800|T5801|T5802|T5804|T5805|T5806|T5807|T5808|T5809|T581|T5810|T5812|T5815|T5816|T5817|T5818|T5819|T582|T5820|T5821|T5822|T5823|T5825|T5826|T5827|T5828|T5829|T583|T5830|T5831|T5832|T5833|T5834|T5835|T5836|T5837|T5838|T5839|T584|T5840|T5841|T5842|T5843|T5844|T5847|T5848|T585|T5850|T5851|T5853|T5855|T5856|T5857|T5858|T586|T5860|T5862|T5863|T5864|T5865|T5866|T5867|T5868|T5869|T587|T5871|T5872|T5873|T5874|T5875|T5876|T5878|T5879|T588|T5880|T5881|T5882|T5883|T5884|T5885|T5886|T5887|T5888|T589|T5890|T5891|T5892|T5893|T5894|T5895|T5896|T5897|T5898|T5899|T590|T5900|T5901|T5902|T5903|T5904|T5905|T5906|T5907|T5908|T5909|T591|T5910|T5912|T5913|T5916|T5917|T5919|T592|T5921|T5922|T5923|T5924|T5925|T5926|T5927|T5929|T593|T5931|T5933|T5934|T5937|T594|T5941|T5942|T5944|T5946|T5947|T5948|T5949|T595|T5950|T5951|T5952|T5953|T5954|T5958|T5959|T596|T5960|T5961|T5962|T5966|T597|T5974|T5975|T5976|T5977|T5978|T5979|T598|T5980|T5982|T5984|T5985|T5987|T5988|T5989|T599|T5990|T5991|T5992|T5994|T5996|T5997|T6|T60|T600|T602|T6022|T6029|T603|T6030|T6031|T6032|T6034|T6035|T6036|T6037|T6038|T6039|T604|T6040|T6041|T6042|T6043|T6044|T6047|T6048|T6049|T605|T6050|T6051|T6052|T6053|T6054|T6055|T6056|T6057|T6058|T6059|T606|T6060|T6061|T6063|T6064|T6065|T6066|T6067|T6068|T6069|T607|T6071|T6073|T6074|T6075|T6076|T6077|T6078|T6079|T608|T6080|T6081|T6082|T6083|T6084|T6085|T6086|T6087|T6088|T6089|T6090|T6091|T6092|T6093|T6094|T6096|T6097|T6098|T6099|T61|T610|T6101|T6103|T6104|T6106|T6108|T6109|T6110|T6113|T6115|T6116|T6117|T6118|T612|T6120|T6121|T6122|T6123|T6124|T6125|T6126|T6127|T6128|T6129|T613|T6130|T6132|T6133|T6134|T6135|T6136|T6137|T6138|T614|T6140|T6141|T6142|T6143|T6144|T6145|T6147|T615|T6150|T6151|T6152|T6153|T6154|T6155|T6156|T6158|T6159|T616|T6161|T6162|T6163|T6164|T6166|T6167|T617|T6170|T6171|T6172|T6174|T6175|T6176|T6178|T6179|T618|T6180|T6181|T6182|T6183|T6186|T6187|T6188|T6189|T6190|T6191|T6192|T6194|T6197|T6199|T620|T6200|T6201|T6202|T6204|T6205|T6207|T6208|T621|T6211|T6212|T6213|T6214|T6216|T6217|T6218|T6219|T622|T6220|T6221|T6222|T6223|T6224|T6225|T6226|T6227|T6228|T6229|T623|T6230|T6232|T6233|T6234|T6236|T6237|T6238|T6239|T624|T6240|T6241|T6242|T6243|T6245|T6246|T6247|T6248|T6249|T625|T6250|T6252|T6253|T6254|T6255|T6258|T6259|T626|T6260|T6262|T6264|T6265|T6266|T6269|T627|T6270|T6271|T6272|T6273|T6274|T6275|T6279|T628|T6281|T6282|T6284|T6285|T6288|T6289|T6294|T6295|T6296|T6298|T63|T630|T6301|T6303|T6306|T6308|T6309|T6310|T6311|T6312|T6313|T6314|T6315|T6316|T6317|T6318|T6319|T632|T6321|T6322|T6323|T6324|T6325|T6326|T6327|T6328|T6329|T6330|T6331|T6332|T6333|T6334|T6335|T6336|T6337|T6338|T6339|T634|T6340|T6341|T6342|T6343|T6344|T6345|T6346|T6348|T6349|T635|T6350|T6351|T6352|T6354|T6355|T6357|T6358|T6359|T636|T6360|T6362|T6363|T6365|T6366|T6367|T6368|T6369|T637|T6370|T6371|T6372|T6373|T6374|T6375|T6376|T6377|T6378|T638|T6380|T6381|T6382|T6383|T6384|T6385|T6386|T6387|T6388|T6389|T639|T6391|T6392|T6394|T6395|T6397|T6398|T6399|T64|T640|T6401|T6402|T6403|T6404|T6405|T6407|T6408|T6409|T641|T6410|T6412|T6413|T6414|T6415|T6417|T6418|T6419|T642|T6420|T6421|T6422|T6423|T6424|T6425|T6426|T6428|T6429|T643|T6430|T6431|T6436|T6439|T6440|T6441|T6444|T6446|T6447|T6448|T645|T6452|T6453|T6457|T6458|T646|T6460|T6462|T6463|T6464|T6465|T6466|T6467|T6468|T6469|T647|T6470|T6471|T6473|T6475|T6476|T6477|T6479|T648|T6480|T6481|T6482|T6483|T6484|T6485|T6486|T6487|T6489|T649|T6491|T6492|T6493|T6495|T6496|T6497|T6498|T6499|T65|T650|T6500|T6501|T6502|T6503|T6507|T6508|T6509|T651|T6510|T6511|T6513|T6514|T6516|T6517|T6518|T652|T6522|T6524|T6525|T6526|T6527|T6528|T6529|T653|T6530|T6531|T6532|T6533|T6534|T6535|T6536|T6537|T654|T6540|T6541|T6542|T6543|T6544|T6545|T6546|T6547|T6548|T6549|T655|T6550|T6553|T6554|T6555|T6556|T6557|T6558|T6559|T656|T6561|T6562|T6563|T6564|T6565|T6566|T6567|T657|T6570|T6571|T6572|T6573|T6574|T6575|T6576|T6578|T6579|T658|T6581|T6582|T6583|T6584|T6585|T6586|T6589|T659|T6591|T6593|T6594|T6595|T6596|T6599|T66|T660|T6602|T6604|T6605|T6606|T6607|T6609|T661|T6610|T6611|T6612|T6613|T6614|T6615|T6616|T6617|T6618|T6619|T662|T6620|T6621|T6622|T6623|T6624|T6625|T6626|T6628|T6629|T663|T6630|T6631|T6632|T6633|T6636|T6637|T6638|T6639|T664|T6640|T6641|T6642|T6643|T6644|T6645|T6646|T6647|T6648|T6649|T665|T6650|T6651|T6652|T6653|T6654|T6655|T6656|T6658|T6659|T666|T6660|T6662|T6664|T6665|T6667|T6668|T6669|T667|T6671|T6674|T6676|T6677|T6678|T668|T6682|T6685|T6686|T6687|T6688|T6689|T669|T6690|T6691|T6693|T6695|T6696|T6697|T6698|T6699|T67|T670|T6700|T6701|T6702|T6703|T6704|T6705|T6708|T6709|T671|T6712|T6713|T6714|T6715|T6716|T6717|T672|T6720|T6721|T6722|T6724|T6725|T6726|T6727|T6728|T673|T6730|T6733|T6734|T6736|T6737|T6738|T6739|T674|T6740|T6741|T6742|T6743|T6744|T6745|T6746|T6747|T6748|T675|T6750|T6751|T6752|T6753|T6754|T6755|T6756|T6757|T6759|T676|T6760|T6761|T6762|T6763|T6764|T6766|T677|T6770|T6771|T6772|T6773|T6774|T6775|T6776|T6777|T6778|T6779|T678|T6780|T6782|T6783|T6784|T6785|T6788|T6789|T679|T6792|T6793|T6796|T6797|T6799|T68|T680|T6801|T6803|T6804|T6805|T6806|T6807|T6808|T681|T6810|T6812|T6813|T6814|T6816|T6817|T6818|T682|T6820|T6821|T6822|T6823|T6824|T6825|T6827|T6828|T683|T6831|T6832|T6834|T6835|T6836|T6837|T6838|T684|T6840|T6841|T6842|T6843|T6844|T6845|T6846|T6847|T6848|T685|T6853|T6856|T6858|T6859|T686|T6860|T6861|T6862|T6864|T6865|T6866|T6867|T6869|T687|T6870|T6872|T6873|T6874|T6875|T6878|T688|T6881|T6884|T6885|T6887|T689|T6890|T6895|T6896|T6897|T6898|T6899|T69|T690|T6901|T6902|T6903|T6904|T6905|T6906|T6908|T691|T6910|T6911|T6912|T6913|T6917|T6918|T6919|T692|T6921|T6923|T6924|T693|T6936|T6939|T694|T6944|T6945|T6946|T6949|T695|T6950|T6952|T6953|T6954|T6956|T6957|T6958|T6959|T696|T6960|T6961|T6962|T6963|T6964|T6965|T6966|T6967|T697|T6971|T6974|T6975|T6976|T6978|T698|T6981|T6983|T6984|T6987|T6988|T6989|T6991|T6992|T6993|T6995|T6996|T6997|T6998|T7|T700|T7001|T7002|T7003|T7006|T7007|T701|T7013|T7014|T7015|T7017|T7019|T702|T7020|T7021|T7022|T7025|T7026|T7027|T7028|T703|T7034|T7035|T7037|T704|T7041|T7043|T7044|T7045|T7047|T7";
+            str = "999|3"
+            let strArray = str.split("|");
+            /*// let select = document.getElementById("site-select")*/
+            $(".js-example-basic-single").select2({
+                data: strArray
+            });
+        }
+
+        function populateData(resp) {
+            let siteId = document.getElementById("site-id");
+            let siteName = document.getElementById("site-name");
+            let region = document.getElementById("region");
+            let cluster = document.getElementById("cluster");
+            let priority = document.getElementById("priority");
+            let vvs = document.getElementById("vvs");
+            let intrusion = document.getElementById("intrusion");
+            let coordinates = document.getElementById("coordinates");
+            let accessRef = document.getElementById("access-ref");
+            let contractor = document.getElementById("contractor");
+            let siteType = document.getElementById("site-type");
+
+            let dataElements = document.getElementsByClassName("data");
+            for (let index = 0; index < dataElements.length; index++) {
+                const element = dataElements[index];
+                element.value = "";
+            }
+
+            siteId.value = resp.GetParam("id");
+            siteName.value = resp.GetParam("name");
+            region = resp.GetParam("region");
+            cluster.value = resp.GetParam("siteCluster");
+            priority.value = resp.GetParam("tier");
+            vvs.value = resp.GetParam("VVS");
+            intrusion.value = resp.GetParam("Alarm");
+            coordinates.value = resp.GetParam("coordinates");
+            accessRef.value = resp.GetParam("icrypto_ref");
+            contractor.value = resp.GetParam("subcontractor");
+            siteType.value = resp.GetParam("type");
+        }
+
+        function populateGrid(resp) {
+            isLive = resp.GetParam("isLive").toString() === "true";
+            var towerId = resp.GetParam("towerId").toString();
+            let header = document.getElementById("header");
+            header.textContent = "Signal Grid: " + towerId;
+            let stGridInfo = resp.GetParam("stGridInfo").toString();
+            let stArray = stGridInfo.split("|");
+
+            var operatorActions = document.getElementById("grid-table").innerHTML = "<tr><th>Date/Time</th><th>Last Event Description</th><th>Zone/User</th><th>Count</th></tr>";
+            var table = document.getElementById("grid-table");
+            for (let i = 0; i < stArray.length; i++) {
+                var row = table.insertRow(-1);
+                const step = stArray[i];
+                let stepArray = step.split(';');
+                stepArray.pop()
+                for (let j = 0; j < stepArray.length; j++) {
+                    var cell = row.insertCell(j);
+                    cell.innerText = stepArray[j];
+                }
+            }
+        }
+
+        function setAllInfo(resp) {
+            document.getElementById("tower").value = "T" + resp.GetParam("towerCode").toString();
+            document.getElementById("popTime").value = resp.GetParam("popTime").toString();
+
+            if (checkIfEmpty(resp.GetParam("state").toString())) {
+                var state = "Not dispatched";
+            } else {
+                var state = getFriendlyName(resp.GetParam("state").toString());
+            }
+            document.getElementById("state").value = state;
+
+        };
+
+        function setDispatchTime(resp) {
+            if (!checkIfEmpty(resp.GetParam("dispatchTime").toString())) {
+                var dispatchedTimeValue = resp.GetParam("dispatchTime").toString();
+                var n = new Date();
+                var year = n.getFullYear();
+                var month = n.getMonth() + 1;
+                var day = n.getDate();
+                var dTime = day + '/' + month + '/' + year;
+                document.getElementById("dispatchTime").value = dTime + " " + dispatchedTimeValue;
+
+                var expectedTime = document.getElementById("popTime").textContent;
+                var expectedTimeValue = expectedTime.replace(/^\D+/g, '');
+                var finalTime = addMinutes(dispatchedTimeValue, expectedTimeValue.toString());
+                document.getElementById("expectedTime").value = dTime + " " + finalTime.toString();
+
+                var fullTimestamp = resp.GetParam("fullTimestamp").toString();
+                var fullTimestampSplit = fullTimestamp.split(" ");
+                var fullTimestampSecondSplit = fullTimestampSplit[0].split("-");
+                var datePrepared = "20" + fullTimestampSecondSplit[2] + "-" + fullTimestampSecondSplit[1] + "-" +
+                    fullTimestampSecondSplit[0];		/*// transforming to yyyy-mm-dd hh:mm:ss*/
+                var fullTimestampWithFinal = datePrepared + " " + finalTime.toString();
+
+                countingDown(fullTimestampWithFinal.toString());
+            }
+        };
+
+        /*// Clears the extra messages displayed after dispatch. Currently occurs when Acknowledging an event*/
+        function clearDispatchTimes(resp) {
+            document.getElementById("dispatchTime").value = "";
+            document.getElementById("expectedTime").value = "";
+            document.getElementById("countdown").value = "";
+            document.getElementById("message").value = "";
+            /*// Reset countdown timer*/
+            if (x !== null) {
+                clearInterval(x);
+            }
+        }
+
+        function setState(resp) {
+            document.getElementById("state").value = getFriendlyName(resp.GetParam("state").toString());
+
+            var messages = resp.GetParam("message").toString();
+            var messagesSplit = messages.split("|");
+            var newline = "\r\n";
+            var completeMessage = "";
+
+            for (i = 0; i < messagesSplit.length - 1; i++) {
+                if (isValidURL(messagesSplit[i])) {
+                    messagesSplit[i] = "<a href=" + messagesSplit[i] + " target='_blank' rel='noopener noreferrer'>R24 photo link</a>";
+                }
+                completeMessage += (i + 1).toString() + ". " + messagesSplit[i] + newline;
+            }
+            document.getElementById("message").value = completeMessage;
+        };
+
+        /*// When a dispatch is called, call this function to request an update from R24 every 1 minute*/
+        function autoUpdate(resp) {
+            if (!autoUpdateInitialized) {
+                autoUpdateInitialized = true;
+                var count = 0;
+                var z = setInterval(function () {
+
+                    let completed = document.getElementById("state").value.toLowerCase().includes("completed");
+                    if (!completed) {
+                        window.external.DoReactStr("MACRO", "1200", "RUN", "computer<" + resp.GetParam("computer").toString() + ">,number<" + document.getElementById("tower").textContent.substring(1) + ">,update<true>");
+                    }
+
+                    if (document.getElementById("state").value.toLowerCase().includes("moved to history") || completed) {
+                        autoUpdateInitialized = false;
+                        clearInterval(z);
+                    }
+                }, 60000);
+            }
+        };
+
+        function addMinutes(time, minsToAdd) {
+            function D(J) {
+                return (J < 10 ? '0' : '') + J;
+            };
+            var piece = time.split(':');
+            var mins = piece[0] * 60 + +piece[1] + +minsToAdd;
+            return D(mins % (24 * 60) / 60 | 0) + ':' + D(mins % 60) + ':' + piece[2];
+        };
+
+        function addMinutes2(date, minutes) {
+            return new Date(date.getTime() + minutes * 60000);
+        };
+
+        function countingDown(timestamp) {
+            /*// Set the date we're counting down to*/
+            if (checkIfEmpty(timestamp)) {
+                alert("This object is: " + timestamp);
+            }
+            var countDownDate = getNormalisedDatetime(timestamp).getTime();
+
+            /*// Reset any existing timer before starting another one*/
+            if (x !== null) {
+                clearInterval(x);
+            }
+            /*// Update the count down every 1 second*/
+            x = setInterval(function () {
+
+                /*// Get todays date and time*/
+                var now = new Date().getTime();
+
+                /*// Find the distance between now an the count down date*/
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("countdown").value = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
+
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").value = "EXPIRED!";
+                } else if (document.getElementById("state").value == "Moved to history") {
+                    clearInterval(x);
+                }
+            }, 1000);
+        };
+
+        function getNormalisedDatetime(dString) { /*// yyyy-mm-dd hh:mm:ss*/
+            var parts = dString.split(" ");
+            var dParts = parts[0].split("-");
+            var tParts = parts[1].split(":");
+            return new Date(dParts[0], dParts[1] - 1, dParts[2], tParts[0], tParts[1], tParts[2]);
+        };
+
+        function pad(num) {
+            return ("0" + num).slice(-2);
+        };
+
+        function checkIfEmpty(str) {
+            if (typeof str == 'undefined' || !str || str.length === 0 || str === "" || !/[^\s]/.test(str) || /^\s*$/.test(str) || str.replace(/\s/g, "") === "")
+                return true;
+            else
+                return false;
+        };
+
+        function isValidURL(string) {
+            var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+            return (res !== null);
+        };
+
+        /*// Get a more user friendly name to display on the R24 HTML.*/
+        function getFriendlyName(state) {
+            const origState = state;
+            state = state.toLowerCase();
+            switch (state) {
+                case "open":
+                    return "Request Initiated";
+                case "pickedup":
+                    return "Picked Up";
+                case "awaitresponderpickup":
+                    return "Awaiting Pickup";
+                case "completed":
+                    return "Completed";
+                case "terminated":
+                    return "Terminated";
+                case "stale":
+                    return "Stale";
+                case "awaitnoccompletionconfirmation":
+                    return "Completed";
+                case "phoned":
+                    return "Phoned";
+                case "responding":
+                    return "Responding";
+                case "completedbyhandler":
+                    return "Completed By Handler";
+                case "transferred":
+                    return "Transferred";
+                case "not dispatched":
+                    return "Not Dispatched";
+                case "moved to history":
+                    return "Moved to history";
+                case "imagetaken":
+                    return "Image Taken";
+                case "responderOnSite":
+                    return "Responder Arrived";
+                default:
+                    return origState;
+            }
+        };
+
+        function showSiteInfo() {
+            let siteId = document.getElementById("site-id").value;
+            window.external.DoReactStr("MACRO", "502", "RUN", "computer<AXXONDEMO1>,towerId<" + siteId + ">");
+        }
+
+        function showCoordinates() {
+            let coordinates = document.getElementById("coordinates").value;
+            window.external.DoReactStr("MACRO", "500", "RUN", "slave_id<AXXONDEMO1>,number<" + coordinates + ">");
+        }
+
+        function searchSite() {
+            let tower = document.getElementById("select2-site-select-container").innerText;
+            let computer = "AXXONDEMO1"
+            window.external.DoReactStr("MACRO", "1004", "RUN", "slave_id<" + computer + ">,number<" + tower + ">");
+        }
+
+        function showVideowall() {
+            let tower = document.getElementById("select2-site-select-container").innerText;
+            window.external.DoReactStr("MACRO", "502", "RUN", "slave_id<AXXONDEMO1>,number<" + tower + ">");
+        }
+
+        function expandWindow() {
+            window.external.DoReactStr("MACRO", "722", "RUN", "action<expand>");
+        };
+
+        function minimizeWindow() {
+            window.external.DoReactStr("MACRO", "722", "RUN", "action<minimize>");
+        };
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

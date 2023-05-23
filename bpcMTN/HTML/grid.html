@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Grid</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial;
+        margin: 2px;
+        overflow-x: hidden;
+    }
+
+    #message {
+        white-space: pre-line;
+    }
+
+    .inner {
+        width: 860px;
+        margin: auto;
+    }
+
+    .inner.top {
+        width: 910px;
+    }
+
+    h2 {
+        margin-bottom: 6px;
+        margin-top: 0;
+        color: white;
+        border-bottom: 2px solid #ba9653;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+
+    button {
+        width: 190px;
+        height: 30px;
+        color: white;
+        background-color: #ba9653;
+        border-radius: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 18px;
+    }
+
+    button:hover {
+        color: #ba9653;
+        background-color: white;
+        transition: 0.5s;
+    }
+
+    button:active {
+        outline: none;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    .grid-date-time {
+        border: 2px solid #ba9653;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 6px;
+        color: white;
+        margin-right: 5px;
+        width: 200px;
+        text-align: center;
+    }
+
+    .grid-row {
+        border: 2px solid #ba9653;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 6px;
+        color: white;
+        margin-right: 5px;
+        text-align: center;
+    }
+
+    .grid-zone {
+        width: 147px;
+    }
+
+    .grid-count {
+        width: 50px;
+    }
+
+    .grid-event {
+        width: 107px;
+    }
+
+    .grid-description {
+        width: 350px;
+    }
+
+    .button-wrapper {
+        width: 60%;
+        margin: auto;
+        border: 2px solid #ba9653;
+        border-radius: 5px;
+        padding: 6px 0;
+        text-align: center;
+    }
+
+    #container {
+        width: 945px;
+        background: #211d52;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+    #date-time-header,
+    #event-header {
+        text-align: center;
+    }
+
+    .message-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* @media (max-width: 652px) {
+    } */
+</style>
+
+<body>
+    <div id="container">
+        <div class="inner top">
+            <h2 id="header">Signal Grid</h2>
+            <div class="button-wrapper">
+                <button title="Close this HTML window" type="button" onClick="closeWindow()">Close</button>
+            </div>
+        </div>
+        <div class="inner" id="message-grid">
+            <div class="message-wrapper">
+                <div class="grid-date-time" id="date-time-header">Date/Time</div>
+                <div class="grid-row grid-zone" id="zone-header">Zone</div>
+                <div class="grid-description grid-row" id="description-header">Last Event Description</div>
+                <div class="grid-count grid-row" id="count-header">Count</div>
+            </div>
+        </div>
+    </div>
+    <div id="key"></div>
+    <!-- Use the elements below to log within the HTML -->
+    <div id="log"></div>
+    <div id="key-log"></div>
+    <div id="update-log"></div>
+    <div id="log-count"></div>
+
+    <script>
+
+        var isLive = false;
+
+        // Function can be used to test certain functionality. Most recently used to test info received from R24
+        function test() {
+            let str = "2022-06-09 13:36:42,Unauthorized Vibration Sensor 3 Tamper|2022-06-09 12:55:41,Unauthorized Vibration Sensor 3 Tamper|2022-06-09 07:10:25,Unauthorized Vibration Sensor 3 Tamper|2022-06-08 09:24:38,Unauthorized Vibration Sensor 3 Tamper|2022-06-08 05:22:51,Unauthorized Vibration Sensor 3 Tamper|2022-06-07 10:23:46,Unauthorized Vibration Sensor 3 Tamper|2022-06-07 05:14:40,Unauthorized Vibration Sensor 3 Tamper|"
+            let array = str.split("|")
+            array.pop()
+            var grid = document.getElementById("message-grid");
+            grid.innerHTML = "<div class=\"message-wrapper\"><div class=\"grid-date-time\">Date/Time</div><div class=\"grid-row grid-zone\" id=\"zone-header\">Zone</div><div class=\"grid-description grid-row\" id=\"description-header\">Description</div><div class=\"grid-count grid-row\" id=\"count-header\">Count</div></div>"
+
+            for (let i = 0; i < array.length; i++) {
+                var messageWrapper = document.createElement("div")
+                messageWrapper.className = "message-wrapper"
+                var dateTime = document.createElement("div")
+                dateTime.className = "grid-date-time"
+                var event = document.createElement("div")
+                event.className = "grid-event"
+                messageWrapper.append(dateTime, event)
+
+                const message = array[i];
+                let messageArray = message.split(',');
+                dateTime.textContent = messageArray[0];
+                event.textContent = messageArray[1];
+                grid.append(messageWrapper);
+            }
+        }
+
+        function setIsLive(resp) {
+            isLive = resp.GetParam("isLive").toString() === "true";
+        }
+
+        function populateGrid(resp) {
+            var towerId = resp.GetParam("towerId").toString()
+            let header = document.getElementById("header");
+            header.textContent = "Signal Grid: " + towerId
+            // alert("Grid Info is: " + resp.GetParam("stGridInfo").toString())
+            // alert("VMDA Info is: " + resp.GetParam("vmdaGridInfo").toString())
+            let stGridInfo = resp.GetParam("stGridInfo").toString();
+            let stArray = stGridInfo.split("|");
+            let vmdaGridInfo = resp.GetParam("vmdaGridInfo").toString();
+            let vmdaArray = vmdaGridInfo.split("|");
+
+            // Remake the grid header to clear initial empty grid
+            let grid = document.createElement("div");
+            grid.innerHTML = "<div class=\"message-wrapper\"><div class=\"grid-date-time\">Date/Time</div><div class=\"grid-row grid-zone\" id=\"zone-header\">Zone</div><div class=\"grid-description grid-row\" id=\"description-header\">Last Event Description</div><div class=\"grid-count grid-row\" id=\"count-header\">Count</div></div>"
+
+            // Loop through the array of events.
+            for (let i = 0; i < stArray.length; i++) {
+                // Create a row in the grid
+                let messageWrapper = document.createElement("div")
+                messageWrapper.className = "message-wrapper"
+
+                // Create all the elements to place in the row, and give appropriate class names
+                let dateTime = document.createElement("div")
+                dateTime.className = "grid-date-time"
+                let zone = document.createElement("div")
+                zone.className = "grid-zone grid-row"
+                let description = document.createElement("div")
+                description.className = "grid-description grid-row"
+                let count = document.createElement("div")
+                count.className = "grid-count grid-row"
+
+                // Add the elements to the row
+                messageWrapper.append(dateTime, zone, description, count)
+
+                // Split the message by the ';' into an array
+                let message = stArray[i];
+                let messageArray = message.split(';');
+                // Place the array values into a respective variable
+                let dateTimeValue = messageArray[0]
+                let descriptionValue = messageArray[1]
+                let countValue = messageArray[2]
+                let zoneValue = messageArray[3]
+                // If we have a valid message with the date/time, description and count, then add the text to that row
+                if (messageArray.length > 2) {
+                    dateTime.textContent = dateTimeValue
+                    zone.textContent = "00" + zoneValue
+                    description.textContent = descriptionValue
+                    count.textContent = countValue
+                    grid.append(messageWrapper)
+                }
+            }
+
+            for (let i = 0; i < vmdaArray.length; i++) {
+                // Create a row in the grid
+                let messageWrapper = document.createElement("div")
+                messageWrapper.className = "message-wrapper"
+
+                // Create all the elements to place in the row, and give appropriate class names
+                let dateTime = document.createElement("div")
+                dateTime.className = "grid-date-time"
+                let zone = document.createElement("div")
+                zone.className = "grid-zone grid-row"
+                let description = document.createElement("div")
+                description.className = "grid-description grid-row"
+                let count = document.createElement("div")
+                count.className = "grid-count grid-row"
+
+                // Add the elements to the row
+                messageWrapper.append(dateTime, zone, description, count)
+
+                // Split the message by the ';' into an array
+                let message = vmdaArray[i];
+                let messageArray = message.split(';');
+
+                // vmdaZone should look like: 2022-06-29 10:49:13; T012741 TC3 Motion; 634;
+                // vmdaZone should look like: 2022-06-29 10:49:13; T012741 TC3 Loitering; 634;
+
+                // Place the array values into a respective variable
+                let dateTimeValue = messageArray[0]
+                let descriptionValue = messageArray[1]
+                let countValue = messageArray[2]
+
+                // If we don't have a date/time of the event then state as such
+                if (!checkIfEmpty(messageArray[0])) {
+                    dateTime.textContent = dateTimeValue
+                    description.textContent = "Unauthorized Movement"
+                } else {
+                    dateTime.textContent = "No Time!"
+                    description.textContent = "No Event!"
+                }
+
+                // Add the relevant zone to the grid row
+                if (descriptionValue.includes("CC1")) {
+                    zone.textContent = "CC1"
+                } else if (descriptionValue.includes("CC2")) {
+                    zone.textContent = "CC2"
+                } else if (descriptionValue.includes("TC1")) {
+                    zone.textContent = "TC1"
+                } else if (descriptionValue.includes("TC2")) {
+                    zone.textContent = "TC2"
+                } else if (descriptionValue.includes("TC3")) {
+                    zone.textContent = "TC3"
+                }
+                if (descriptionValue.includes("Motion")) {
+                    zone.textContent = zone.textContent + " Motion"
+                } else if (descriptionValue.includes("Loitering")) {
+                    zone.textContent = zone.textContent + " Loitering"
+                }
+
+                count.textContent = countValue
+                grid.append(messageWrapper)
+            }
+        }
+
+        function checkIfEmpty(str) {
+            if (typeof str == 'undefined' || !str || str.length === 0 || str === "" || !/[^\s]/.test(str) || /^\s*$/.test(str) || str.replace(/\s/g, "") === "")
+                return true;
+            else
+                return false;
+        };
+
+        function closeWindow() {
+            window.close()
+        };
+
+    </script>
+</body>
+
+</html>

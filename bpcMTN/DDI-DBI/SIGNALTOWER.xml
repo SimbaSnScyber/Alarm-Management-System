@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<objects xmlns="http://tempuri.org/objects.xsd">
+  <object>
+    <object_type>SIGNALTOWER</object_type>
+    <parent_type>TOWERS</parent_type>
+  </object>
+  <object>
+    <object_type>TOWERS</object_type>
+    <parent_type>SLAVE</parent_type>
+    <has_child>1</has_child>
+  </object>
+  <object>
+    <object_type>SIGNALTOWER_ZONE</object_type>
+    <parent_type>SIGNALTOWER</parent_type>
+  </object>
+</objects>

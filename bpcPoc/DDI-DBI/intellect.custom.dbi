@@ -1,0 +1,143 @@
+[OBJ_SIGNALTOWER]
+id, CHAR, 16 //  
+name, CHAR, 60 //  
+parent_id, CHAR, 16 //  
+flags, INTEGER
+guid, UNIQUEIDENTIFIER
+region_id, CHAR, 40
+priority, CHAR, 10
+region_name, CHAR, 40
+cluster_name, CHAR, 40
+tier, CHAR, 10
+response_time, CHAR, 10
+intrusion, BIT
+vvs, BIT
+r24, CHAR, 25
+icrypto, CHAR, 20
+site_type, CHAR, 20
+subcontractor, CHAR, 60
+transmitter, CHAR, 10
+coordinates, CHAR, 60
+r24key, CHAR, 25
+last_message, CHAR, 60
+r24_dispatch, CHAR, 25
+r24_arrival, CHAR, 25
+zone1state, SMALLINT
+zone1timestamp, CHAR, 25
+zone2state, SMALLINT
+zone2timestamp, CHAR, 25
+zone3state, SMALLINT
+zone3timestamp, CHAR, 25
+zone4state, SMALLINT
+zone4timestamp, CHAR, 25
+zone5state, SMALLINT
+zone5timestamp, CHAR, 25
+last_timestamp, CHAR, 25
+last_state_timestamp, CHAR, 25
+last_operator_action, CHAR, 25
+cc1state, SMALLINT
+cc1timestamp, CHAR, 25
+cc2state, SMALLINT
+cc2timestamp, CHAR, 25
+tc1state, SMALLINT
+tc1timestamp, CHAR, 25
+tc2state, SMALLINT
+tc2timestamp, CHAR, 25
+tc3state, SMALLINT
+tc3timestamp, CHAR, 25
+cc1lastmessage, CHAR, 25
+cc2lastmessage, CHAR, 25
+tc1lastmessage, CHAR, 25
+tc2lastmessage, CHAR, 25
+tc3lastmessage, CHAR, 25
+im_zone1, SMALLINT
+im_zone2, SMALLINT
+im_zone3, SMALLINT
+im_zone4, SMALLINT
+im_zone5, SMALLINT
+im_zone6, SMALLINT
+im_zone7, SMALLINT
+im_zone8, SMALLINT
+im_zone9, SMALLINT
+im_zone10, SMALLINT
+im_zone11, SMALLINT
+im_zone12, SMALLINT
+im_zone13, SMALLINT
+im_zone14, SMALLINT
+im_zone15, SMALLINT
+im_zone16, SMALLINT
+im_zone17, SMALLINT
+im_zone18, SMALLINT
+im_zone19, SMALLINT
+im_zone20, SMALLINT
+im_zone21, SMALLINT
+im_zone22, SMALLINT
+im_zone23, SMALLINT
+im_zone24, SMALLINT
+im_zone25, SMALLINT
+im_zone26, SMALLINT
+im_zone27, SMALLINT
+im_zone28, SMALLINT
+im_zone29, SMALLINT
+im_zone30, SMALLINT
+im_zone31, SMALLINT
+im_zone32, SMALLINT
+im_zone33, SMALLINT
+im_zone34, SMALLINT
+im_zone35, SMALLINT
+im_zone36, SMALLINT
+im_zone37, SMALLINT
+im_zone38, SMALLINT
+im_zone39, SMALLINT
+im_zone40, SMALLINT
+im_zone41, SMALLINT
+im_zone42, SMALLINT
+im_zone43, SMALLINT
+im_zone44, SMALLINT
+im_zone45, SMALLINT
+im_zone46, SMALLINT
+im_zone47, SMALLINT
+im_zone48, SMALLINT
+im_zone49, SMALLINT
+im_zone50, SMALLINT
+im_zone51, SMALLINT
+im_zone52, SMALLINT
+im_zone53, SMALLINT
+im_zone54, SMALLINT
+im_zone55, SMALLINT
+im_zone56, SMALLINT
+im_zone57, SMALLINT
+im_zone58, SMALLINT
+im_zone59, SMALLINT
+im_zone60, SMALLINT
+im_zone61, SMALLINT
+im_zone62, SMALLINT
+im_zone63, SMALLINT
+im_zone64, SMALLINT
+im_zone1_bypass, SMALLINT
+im_zone2_bypass, SMALLINT
+im_zone3_bypass, SMALLINT
+im_zone4_bypass, SMALLINT
+im_zone5_bypass, SMALLINT
+im_zone1_tamper, SMALLINT
+im_zone2_tamper, SMALLINT
+im_zone3_tamper, SMALLINT
+im_zone4_tamper, SMALLINT
+im_zone5_tamper, SMALLINT
+
+[OBJ_TOWERS]
+id, CHAR, 16 //  
+name, CHAR, 60 //  
+parent_id, CHAR, 16 //  
+guid, UNIQUEIDENTIFIER
+flags, INTEGER
+
+[OBJ_SIGNALTOWER_ZONE]
+id, CHAR, 16 //  
+name, CHAR, 60 //  
+parent_id, CHAR, 16 //  
+type, CHAR, 16
+guid, UNIQUEIDENTIFIER
+region_id, CHAR, 40
+flags, INTEGER
+

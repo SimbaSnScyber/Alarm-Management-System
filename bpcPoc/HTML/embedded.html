@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-family: verdana;
+            font-size: 20px;
+            color: #002E6D;
+        }
+
+        div {
+            padding-left: 30%;
+            font-family: verdana;
+            font-size: 18px;
+            font-weight: bold;
+            color: #EB7700;
+        }
+
+        input {
+            width: 60%;
+            overflow-wrap: break-word;
+            resize: both;
+            border: 2px solid #002E6D;
+            border-radius: 4px;
+            min-height: 30px;
+            line-height: 20px;
+
+        }
+
+        input[type="text"] {
+            display: block;
+            padding: 5px;
+            font-size: 15px;
+            color: #002E6D;
+            overflow-wrap: break-word;
+            resize: both;
+        }
+
+        button {
+            background-color: #3BAD2A;
+            border-color: #3BAD2A;
+            color: white;
+            font-family: verdana;
+            font-size: 14px;
+            border-radius: 4px;
+            text-align: left;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <script>
+
+        const opcieId = "62";
+
+        function changeIframceSource(info) {
+            let src = document.getElementById('iframe').src;
+            alert("Current src is: " + src);
+
+            src = info.GetParam("source").toString();
+
+            alert("New src is: " + src);
+
+            document.getElementById('iframe').contentDocument.location.reload(true);
+
+            alert("reloaded");
+        };
+
+        function sendMessage(info) {
+            let camera = info.GetParam("camera").toString();
+            let node = info.GetParam("node").toString();
+            //alert("sendMessage() was called! Params are: "+camera+", "+node);
+            console.log("sendMessage() was called! Params are: " + camera + ", " + node);
+
+            //document.getElementById('iframe').contentWindow.postMessage({type: 'init', mode: 'live', origin: 'hosts/'+node+'/DeviceIpint.'+camera+'/SourceEndpoint.video:0:0', option: {archivePane: true}}, '*');
+
+            document.getElementById('iframe').contentWindow.postMessage({ type: 'init', mode: 'archive', archive: { storage: 'hosts/' + node + '/MultimediaStorage.AliceBlue/MultimediaStorage' }, origin: 'hosts/' + node + '/DeviceIpint.' + camera + '/SourceEndpoint.video:0:0', option: { archivePane: true } }, '*')
+
+
+            //document.getElementById('iframe').contentWindow.postMessage({type: 'setTime', mode: 'archive', archive: {storage: 'hosts/'+node+'/MultimediaStorage.AliceBlue/MultimediaStorage'}, origin: 'hosts/'+node+'/DeviceIpint.'+camera+'/SourceEndpoint.video:0:0', time: new Date("2022-08-04 22:45:00"), option: {archivePane: true}}, '*');
+        };
+
+        function changeCamera(info) {
+            let camera = info.GetParam("camera").toString();
+            let node = info.GetParam("node").toString();
+            console.log("changeCamera() was called! Params are: " + camera + ", " + node);
+
+            document.getElementById('iframe').contentWindow.postMessage({ type: 'reInit', mode: 'archive', archive: { storage: 'hosts/' + node + '/MultimediaStorage.AliceBlue/MultimediaStorage' }, origin: 'hosts/' + node + '/DeviceIpint.' + camera + '/SourceEndpoint.video:0:0', option: { archivePane: true } }, '*')
+        };
+
+        function setTime(info) {
+            let camera = info.GetParam("camera").toString();
+            let node = info.GetParam("node").toString();
+            let received_time = info.GetParam("received_time").toString();
+            document.getElementById('iframe').contentWindow.postMessage({ type: 'setTime', mode: 'archive', archive: { storage: 'hosts/' + node + '/MultimediaStorage.AliceBlue/MultimediaStorage' }, origin: 'hosts/' + node + '/DeviceIpint.' + camera + '/SourceEndpoint.video:0:0', time: new Date(received_time), option: { archivePane: true } }, '*');
+        };
+
+        function expandWindow(id) {
+            window.external.DoReactStr("MACRO", "723", "RUN", "action<expand>,opcieId<" + id + ">");
+        };
+
+        function minimizeWindow(id) {
+            window.external.DoReactStr("MACRO", "723", "RUN", "action<minimize>,opcieId<" + id + ">");
+        };
+
+    </script>
+</head>
+
+<body>
+    <div class="buttons">
+        <button type="button" onClick="expandWindow(opcieId)">Expand</button>
+        <button type="button" onClick="minimizeWindow(opcieId)">Minimize</button>
+        <!-- <button type="button" onClick="test()">Test</button> -->
+    </div>
+    <h1>Archive</h1>
+    <iframe src="http://172.24.0.228:80/embedded.html" width="640px" height="480px" id="iframe"> test </iframe>
+</body>
+
+</html>

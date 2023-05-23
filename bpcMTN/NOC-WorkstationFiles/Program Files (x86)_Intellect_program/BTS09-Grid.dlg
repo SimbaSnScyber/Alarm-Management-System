@@ -1,0 +1,47 @@
+[settings]
+title=SignalGrid
+details=
+page=0
+form=1
+numerate=1
+
+[title]
+
+-s 'Time' -x0 -y0 -w,19 -h1.8 -t 'Cambria,24' -b -G '0,140,200' -<
+-f 'str1' -x0 -y2.2 -w,64 -h1.4 -t 'Cambria,18' -G '0,140,200' -<
+-f 'signal2' -x0 -y3.8 -w,64 -h1.4 -t 'Cambria,18' -G '0,140,200' -<
+-f 'smth3' -x0 -y5.4 -w,64 -h1.4 -t 'Cambria,18' -G '0,140,200' -<
+-f 'next4' -x0 -y7 -w,64 -h1.4 -t 'Cambria,18' -G '0,140,200' -<
+-f 'next5' -x0 -y8.6 -w,64 -h1.4 -t 'Cambria,18' -G '0,140,200' -<
+-f 'next6' -x0 -y10.19 -w,64 -h1.4 -t 'Cambria,18' -G '0,140,200' -<
+-f 'next7' -x0 -y11.8 -w,64 -h1.4 -t 'Cambria,18' -G '0,140,200' -<
+-s 'Zone' -x19 -y0 -w,14 -h1.8 -t 'Cambria,24' -b -G '0,140,200' -<
+-s 'Event' -x33 -y0 -w,15.4 -h1.8 -t 'Cambria,24' -b -G '0,140,200' -<
+
+[header]
+
+
+[details]
+
+
+[footer]
+
+
+[summary]
+
+
+[form]
+
+
+[form_sub]
+
+
+[form_sub1]
+
+
+[form_sub2]
+
+
+[form_sub3]
+
+

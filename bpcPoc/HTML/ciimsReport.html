@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> CiiMS Incident REPORT </title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: verdana;
+            font-size: 20px;
+            color: #002E6D;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: verdana;
+            font-size: 11px;
+            color: #002E6D;
+        }
+
+        p {
+            text-align: center;
+            font-family: verdana;
+            font-size: 14px;
+            color: #002E6D;
+        }
+
+        div {
+            padding-left: 30%;
+            font-family: verdana;
+            font-size: 18px;
+            font-weight: bold;
+            color: #EB7700;
+        }
+
+
+        input {
+            width: 60%;
+            overflow-wrap: break-word;
+            resize: both;
+            border: 2px solid #002E6D;
+            border-radius: 4px;
+            min-height: 30px;
+            line-height: 20px;
+
+        }
+
+        input[type="text"] {
+            display: block;
+            padding: 5px;
+            font-size: 15px;
+            color: #002E6D;
+            overflow-wrap: break-word;
+            resize: both;
+        }
+
+        button {
+            background-color: #3BAD2A;
+            border-color: #3BAD2A;
+            color: white;
+            font-family: verdana;
+            font-size: 14px;
+            padding: px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid;
+            text-align: center;
+        }
+
+        td {
+            width: 22%;
+            line-height: 16px;
+        }
+
+        td:last-child {
+            display: block;
+            width: 100%;
+            height: 30px;
+            overflow-y: scroll;
+        }
+
+        #siteR24OutcomeTable td:last-child {
+            width: 98.5%;
+            height: 32px;
+        }
+
+        .table-div {
+            width: 60%;
+            border: 2px solid #002E6D;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        #operatorActionsTable,
+        #siteR24OutcomeTable {
+            width: 100%;
+            font-size: 14px;
+            color: #002E6D;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="buttons">
+        <button type="button" onClick="expandWindow(opcieId)">Expand</button>
+        <button type="button" onClick="minimizeWindow(opcieId)">Minimize</button>
+        <button type="button" onClick="getReport()">Close</button>
+        <!-- <button type="button" onClick="test()">Test</button> -->
+    </div>
+    <h1>CiiMS Incident Report </h1>
+    <p style="font-family:verdana; font-size:18px;"><b>Please confirm if the following information is correct:</b></p>
+    <div id="titleHeader"></div>
+    <p></p>
+    <div id="siteId2"> Site ID:
+        <input type="text" name="siteId" id="siteId" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="userName2"> Operator:
+        <input type="text" name="userName" id="userName" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="siteiCryptoRef2"> iCrypto Ref:
+        <input type="text" name="siteiCryptoRef" id="siteiCryptoRef" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="siteiCryptoPhone2"> iCrypto Phone:
+        <input type="text" name="siteiCryptoPhone" id="siteiCryptoPhone" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="eventFullTimestamp2"> Timestamp:
+        <input type="text" name="eventFullTimestamp" id="eventFullTimestamp" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="siteR24Timestamp2"> Dispatch Date & Time:
+        <input type="text" name="siteR24Timestamp" id="siteR24Timestamp" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="subcontractorDispatched2"> Subcontractor Dispatched:
+        <input type="text" name="subcontractorDispatched" id="subcontractorDispatched" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="arrirvalDateTime2"> Arrival Date & Time:
+        <input type="text" name="arrirvalDateTime" id="arrirvalDateTime" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="siteR24Outcome2"> Dispatch Outcome:
+        <input type="text" name="siteR24Outcome" id="siteR24Outcome" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="responseReferenceNumber2"> Response Ref Number:
+        <input type="text" name="responseReferenceNumber" id="responseReferenceNumber" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="category2"> Category:
+        <input type="text" name="category" id="category" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="investigator2"> Investigator:
+        <input type="text" name="investigator" id="investigator" value="" class="input" readonly>
+    </div>
+    <p></p>
+    <div id="operatorActions2"> Operator Actions:
+        <div class="table-div">
+            <table id="operatorActionsTable">
+                <tbody>
+                    <tr>
+                        <th>Date/Time</th>
+                        <th>Step</th>
+                        <th>Value</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+        const opcieId = "62";
+
+        function test() {
+            var string = "Jun 21 2022 12:17PM;awaitResponderPickup;|Jun 21 2022 12:18PM;completed;Service Action Completed - DS Testing|Jun 21 2022 12:18PM;completed;Service Action Completed - DS Testing|Jun 21 2022 12:18PM;completed;Service Action Completed - DS Testing|Jun 21 2022 12:19PM;completed;Service Action Completed - DS Testing|Jun 21 2022 12:20PM;completed;Service Action Completed - DS Testing|Jun 21 2022 12:21PM;completed;Service Action Completed - DS Testing|Jun 21 2022 12:22PM;completed;Service Action Completed - DS Testing|Jun 21 2022 12:57PM;awaitResponderPickup;|Jun 21 2022 12:57PM;awaitResponderPickup;New Request initiated by T444 - Belfast Abattoir - Battery Tracking|"
+            var string2 = "R24 dispatched by operator: "
+            if (string2.includes("|")) {
+                setupDispatchOutcomesTable(string2)
+            } else {
+                document.getElementById("siteR24Outcome2").innerHTML = "Dispatch Outcome: <input type=\"text\" name=\"siteR24Outcome\" id=\"siteR24Outcome\" value=\"" + string2 + "\" class=\"input\" readonly>"
+            }
+        }
+
+        function setAllInfo(resp) {
+            document.getElementById("siteId").value = resp.GetParam("siteId").toString();
+            //alert(resp.GetParam("siteId").toString());
+            document.getElementById("eventFullTimestamp").value = resp.GetParam("eventFullTimestamp").toString();
+            //document.getElementById("eventDate").value = resp.GetParam("eventDate").toString();
+            //document.getElementById("eventTime").value = resp.GetParam("eventTime").toString();
+            document.getElementById("siteiCryptoRef").value = resp.GetParam("siteiCryptoRef").toString();
+            document.getElementById("siteiCryptoPhone").value = resp.GetParam("siteiCryptoPhone").toString();
+            document.getElementById("siteR24Timestamp").value = resp.GetParam("siteR24Timestamp").toString();
+            var string = " Timestamp: Jun 21 2022 12:17PM; State: awaitResponderPickup; Message: | Timestamp: Jun 21 2022 12:18PM; State: completed; Message: Service Action Completed - DS Testing| Timestamp: Jun 21 2022 12:18PM; State: completed; Message: Service Action Completed - DS Testing| Timestamp: Jun 21 2022 12:18PM; State: completed; Message: Service Action Completed - DS Testing| Timestamp: Jun 21 2022 12:19PM; State: completed; Message: Service Action Completed - DS Testing| Timestamp: Jun 21 2022 12:20PM; State: completed; Message: Service Action Completed - DS Testing| Timestamp: Jun 21 2022 12:21PM; State: completed; Message: Service Action Completed - DS Testing| Timestamp: Jun 21 2022 12:22PM; State: completed; Message: Service Action Completed - DS Testing| Timestamp: Jun 21 2022 12:57PM; State: awaitResponderPickup; Message: | Timestamp: Jun 21 2022 12:57PM; State: awaitResponderPickup; Message: New Request initiated by T444 - Belfast Abattoir - Battery Tracking| Timestamp: Jun 21 2022 12:57PM; State: awaitResponderPickup; Message: New Request initiated by T444 - Belfast Abattoir - Battery Tracking| Timestamp: Jun 21 2022 12:57PM; State: awaitResponderPickup; Message: New Request initiated by T444 - Belfast Abattoir - Battery Tracking| Timestamp: Jun 21 2022 12:58PM; State: awaitResponderPickup; Message: New Request initiated by T444 - Belfast Abattoir - Battery Tracking| Timestamp: Jun 21 2022 12:58PM; State: completed; Message: Service Action Completed - DS Test PSIM| Timestamp: Jun 21 2022 12:58PM; State: completed; Message: Service Action Completed - DS Test PSIM| Timestamp: Jun 21 2022 12:58PM; State: completed; Message: Service Action Completed - DS Test PSIM| Timestamp: Jun 21 2022 12:59PM; State: completed; Message: Service Action Completed - DS Test PSIM| Timestamp: Jun 21 2022  1:00PM; State: completed; Message: Service Action Completed - DS Test PSIM|"
+            if (resp.GetParam("siteR24Outcome").toString().includes("|")) {
+                setupDispatchOutcomesTable(resp.GetParam("siteR24Outcome").toString())
+            } else {
+                document.getElementById("siteR24Outcome2").innerHTML = "Dispatch Outcome: <input type=\"text\" name=\"siteR24Outcome\" id=\"siteR24Outcome\" value=\"" + resp.GetParam("siteR24Outcome").toString() + "\" class=\"input\" readonly>"
+            }
+            document.getElementById("subcontractorDispatched").value = resp.GetParam("subcontractorDispatched").toString();
+            document.getElementById("responseReferenceNumber").value = resp.GetParam("responseReferenceNumber").toString();
+            document.getElementById("category").value = resp.GetParam("category").toString();
+            document.getElementById("userName").value = resp.GetParam("userName").toString();
+            document.getElementById("investigator").value = resp.GetParam("investigator").toString();
+            document.getElementById("arrirvalDateTime").value = resp.GetParam("arrirvalDateTime").toString();
+            setupOperatorActionsTable(resp.GetParam("operatorActions").toString());
+        };
+
+
+        function getReport() {
+            var siteId = document.getElementById("siteId").innerText = "";
+            var eventFullTimestamp = document.getElementById("eventFullTimestamp").innerText = "";
+            //var eventDate = document.getElementById("eventDate").value;
+            //var eventTime = document.getElementById("eventTime").value;
+            var siteiCryptoRef = document.getElementById("siteiCryptoRef").innerText = "";
+            var siteiCryptoPhone = document.getElementById("siteiCryptoPhone").innerText = "";
+            var siteR24Timestamp = document.getElementById("siteR24Timestamp").innerText = "";
+            var siteR24Outcome = document.getElementById("siteR24Outcome").innerText = "";
+            var subcontractorDispatched = document.getElementById("subcontractorDispatched").innerText = "";
+            var responseReferenceNumber = document.getElementById("responseReferenceNumber").innerText = "";
+            var category = document.getElementById("category").innerText = "";
+            var userName = document.getElementById("userName").innerText = "";
+            var investigator = document.getElementById("investigator").innerText = "";
+            var arrirvalDateTime = document.getElementById("arrirvalDateTime").innerText = "";
+            var operatorActions = document.getElementById("operatorActionsTable").innerHTML = "<tbody><tr><th>Date/Time</th><th>Step</th><th>Value</th></tr></tbody>";
+
+            //alert("Function getReport() called");
+
+            //window.external.DoReactStr("MACRO", "256", "RUN", "opcie<"+id+>,eventUuid<"+eventUuid+">,siteId<"+siteId+">,transmitterId<"+transmitterId+">,eventFullTimestamp<"+eventFullTimestamp+">,eventType<"+eventType+">,sitePriority<"+sitePriority+">,siteState<"+siteState+">,regionName<"+regionName+">,siteiCryptoRef<"+siteiCryptoRef+">,siteiCryptoPhone<"+siteiCryptoPhone+">,siteR24Timestamp<"+siteR24Timestamp+">,siteR24Outcome<"+siteR24Outcome+">,subcontractorDispatched<"+subcontractorDispatched+">,responseReferenceNumber<"+responseReferenceNumber+">,category<"+category+">,siteCameras<"+siteCameras+">,interfaceName<"+interfaceName+">,computerName<"+computerName+">,userId<"+userId+">,userName<"+userName+">,investigator<"+investigator+">,processedTime<"+processedTime+">,processedDate<"+processedDate+">,arrirvalDateTime<"+arrirvalDateTime+">,operatorActions<"+operatorActions+">");
+
+            window.external.DoReactStr("MACRO", "256", "RUN", "opcie<" + opcieId + ">");
+
+            minimizeWindow(opcieId);
+
+            //alert("CIIMS Incident report has been sent!");     
+        };
+
+        function setupOperatorActionsTable(actions) {
+            var operatorActions = document.getElementById("operatorActionsTable").innerHTML = "<tbody><tr><th>Date/Time</th><th>Step</th><th>Value</th></tr></tbody>";
+            let actionsArray = actions.split('|')
+            actionsArray.pop()
+            var table = document.getElementById("operatorActionsTable");
+            for (let i = 0; i < actionsArray.length; i++) {
+                var row = table.insertRow(-1);
+                const step = actionsArray[i];
+                let stepArray = step.split(';');
+                for (let j = 0; j < stepArray.length; j++) {
+                    var cell = row.insertCell(j)
+                    cell.innerText = stepArray[j]
+                }
+            }
+        }
+
+        function setupDispatchOutcomesTable(outcomes) {
+            var operatorActions = document.getElementById("siteR24Outcome2").innerHTML = "Dispatch Outcome: <div class=\"table-div\"><table id=\"siteR24OutcomeTable\"><tbody><tr><th>Date/Time</th><th>State</th><th>Message</th></tr></tbody></table></div>";
+            // alert("operatorActions is: " + operatorActions)
+            let outcomesArray = outcomes.split('|')
+            outcomesArray.pop()
+            // alert("outcomes array is: " + outcomesArray + "\nWith length: " + outcomesArray.length)
+            outcomesArray = [...new Set(outcomesArray)];
+            // alert("outcomes array is now: " + outcomesArray + "\nWith length: " + outcomesArray.length)
+            var table = document.getElementById("siteR24OutcomeTable");
+            for (let i = 0; i < outcomesArray.length; i++) {
+
+                const step = outcomesArray[i]; // Get the date; state; message
+                let outcomeArray = step.split(';'); // Split the step into an array
+
+                let emptyField = false;
+                for (let k = 0; k < outcomeArray.length; k++) {
+                    if (checkIfEmpty(outcomeArray[k])) {
+                        emptyField = true;
+                    }
+                }
+
+                let repeatField = false;
+                for (let k = 0; k < outcomeArray.length; k++) {
+                    if (i > 0) {
+                        const previousStep = outcomesArray[i - 1];
+                        // alert("Current step is: " + step + "\nPrevious step is: " + previousStep)
+                        let prevOutcomeArray = previousStep.split(';');
+                        for (let l = 1; l < prevOutcomeArray.length; l++) {
+                            if (prevOutcomeArray[l] === outcomeArray[l]) {
+                                repeatField = true;
+                            }
+                        }
+                    }
+                }
+
+                if (!emptyField || !repeatField) {
+                    var row = table.insertRow(-1); // Make a new row
+
+                    for (let j = 0; j < outcomeArray.length; j++) {
+                        var cell = row.insertCell(j); // Insert a new cell
+                        cell.innerText = outcomeArray[j]; // Insert the date/state/message into the respective row
+                    }
+                }
+            }
+        }
+
+        function checkIfEmpty(str) {
+            if (typeof str == 'undefined' || !str || str.length === 0 || str === "" || !/[^\s]/.test(str) || /^\s*$/.test(str) || str.replace(/\s/g, "") === "")
+                return true;
+            else
+                return false;
+        };
+
+        function expandWindow(id) {
+            window.external.DoReactStr("MACRO", "721", "RUN", "action<expand>,opcieId<" + id + ">");
+        };
+
+        function minimizeWindow(id) {
+            window.external.DoReactStr("MACRO", "721", "RUN", "action<minimize>,opcieId<" + id + ">");
+        };
+    </script>
+</body>
+
+</html>

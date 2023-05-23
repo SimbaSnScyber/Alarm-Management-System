@@ -1,0 +1,59 @@
+[settings]
+title=
+details=
+page=0
+form=1
+numerate=1
+
+[title]
+
+-f ':Site ID:' -x0 -y0 -w,6.7 -h1.3 -t 'Cambria,17' -b -G '0,140,200' -< -E'"MACRO"|"507"|"RUN"|computer<"BTS09">,towerId<id>.'
+-f 'id' -x12.8 -y0 -w,26.2 -h1.1 -t 'Cambria,17' -G '0,140,200' -! -F1
+-s 'Site Name:' -x0.2 -y1.2 -w,12 -h1.1 -t 'Cambria,17' -b -G '0,140,200' -<
+-f 'name' -x12.8 -y1.2 -w,26.2 -h1.1 -t 'Cambria,17' -G '0,140,200' -! -F1
+-s 'Region:' -x0.2 -y2.6 -w,12 -h1.1 -t 'Cambria,17' -b -G '0,140,200' -<
+-f 'region' -x12.8 -y2.6 -w,26.2 -h1.1 -t 'Cambria,17' -G '0,140,200' -! -F1
+-s 'Cluster:' -x0.2 -y4 -w,12 -h1.1 -t 'Cambria,17' -b -G '0,140,200' -<
+-f 'siteCluster' -x12.8 -y4 -w,26.2 -h1.1 -t 'Cambria,17' -G '0,140,200' -! -F1
+-s 'Priority:' -x0.2 -y5.4 -w,12 -h1.1 -t 'Cambria,17' -b -G '0,140,200' -<
+-f 'tier' -x12.8 -y5.4 -w,26.2 -h1.1 -t 'Cambria,17' -G '0,140,200' -! -F1
+-f ':Coordinates' -x0 -y8.4 -w,12 -h1 -t 'Cambria,17' -b -G '108,182,255' -< -E'"MACRO"|"500"|"RUN"|slave_id<"BTS09">,number<coordinates>.'
+-f 'coordinates' -x12.8 -y8.4 -w,26.2 -h1 -t 'Cambria,17' -!
+-s 'VVS:' -x0.2 -y7 -w,4 -h1.1 -t 'Cambria,17' -b -G '0,140,200' -<
+-f 'VVS' -x4 -y7 -w,8 -h1.1 -t 'Cambria,17' -G '0,140,200' -! -F1
+-s 'Intrusion:' -x13 -y7 -w,8 -h1.1 -t 'Cambria,17' -b -G '0,140,200' -<
+-f 'Alarm' -x22 -y7 -w,17 -h1.1 -t 'Cambria,17' -G '0,140,200' -! -F1
+-f ':Access Ref' -x0 -y9.8 -w,12 -h1 -t 'Cambria,17' -b -G '255,255,128' -< -E'"MACRO"|"501"|"RUN"|slave_id<"BTS09">,number<icrypto_ref>,site_id<id>.'
+-f 'icrypto_ref' -x12.8 -y9.8 -w,26.1 -h1 -t 'Cambria,17' -!
+-s 'Contractor:' -x0 -y11.2 -w,12 -h1.1 -t 'Cambria,17' -b -G '0,140,200' -<
+-f 'subcontractor' -x12.8 -y11.2 -w,26.2 -h1.1 -t 'Cambria,17' -G '0,140,200' -! -F1
+-s 'Site Type:' -x0 -y12.4 -w,12 -h1.2 -t 'Cambria,17' -b -G '0,140,200' -<
+-f 'type' -x12.8 -y12.4 -w,26.2 -h1.2 -t 'Cambria,17' -G '0,140,200' -! -F1
+
+[header]
+
+
+[details]
+
+
+[footer]
+
+
+[summary]
+
+
+[form]
+
+
+[form_sub]
+
+
+[form_sub1]
+
+
+[form_sub2]
+
+
+[form_sub3]
+
+

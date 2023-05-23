@@ -1,0 +1,27 @@
+{
+    "transactionId": "F3AAE581-1708-ED11-8822-F8F21EAC9B11",
+    "sourceIdentifier": "PSIM",
+    "eventDetails": {
+        "uuid": "93957A9C-8505-ED11-881F-F8F21EAC9B11",
+        "eventFullTimestamp": "2022-07-17 06:05:00",
+        "siteId": "T769",
+        "zoneId": "1",
+        "eventType": "Burglary",
+        "transmitterId": "8821",
+        "responseDispatched": "2022-07-20 12:32:09.283",
+        "subcontractorDispatched": "BEYERS SECURITY - WESTERN CAPE",
+        "responseReferenceNumberReceived": "Yes",
+        "responseReferenceNumber": "45235",
+        "acknowledgeDateTime": "2022-07-20 10:05:35.810",
+        "dispatchDateTime": "2022-07-20 12:32:09.283",
+        "arrivalDateTime": "test date",
+        "category": "GUARD PLACEMENT (GENERATOR)",
+        "discoveryMethod": "ALARM",
+        "reportedBy": "PSIM ALARM",
+        "rootCause": "SIGNAL TOWER - UNAUTHORIZED INTRUSION",
+        "investigatorRequired": "Yes",
+        "investigator": "JOHN WRIGHT",
+        "reactions": "2022-07-20 12:05:33.920 1.start 0 2022-07-20 12:05:35.810 dispatch_choice 0 2022-07-20 12:05:39.047 no_dispatch_comment 0 test2022-07-20 12:32:05.683 1.start 0 2022-07-20 12:32:07.297 dispatch_choice 1 2022-07-20 12:32:09.283 r24_choice 0 2022-07-20 12:32:",
+        "response24": "test"
+    }
+}

@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Timer</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial;
+        margin: 2px;
+        overflow-x: hidden;
+    }
+
+    .inner {
+        width: 350px;
+        margin: auto;
+    }
+
+    button {
+        width: 130px;
+        height: 30px;
+        color: white;
+        background-color: #ba9653;
+        border-radius: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 18px;
+    }
+
+    button:hover {
+        color: #ba9653;
+        background-color: white;
+        transition: 0.5s;
+    }
+
+    button:active {
+        outline: none;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    .grid-date-time {
+        border: 2px solid #ba9653;
+        border-radius: 5px;
+        padding: 0 10px;
+        color: white;
+        margin-right: 5px;
+        width: 100px;
+    }
+
+    .grid-event {
+        border: 2px solid #ba9653;
+        border-radius: 5px;
+        padding: 0 10px;
+        color: white;
+        width: 197px;
+    }
+
+    .button-wrapper {
+        width: 60%;
+        margin: auto;
+        border: 2px solid #ba9653;
+        border-radius: 5px;
+        padding: 6px 0;
+        text-align: center;
+    }
+
+    #container {
+        width: 360px;
+        background: #211d52;
+        padding: 5px 0;
+        border-radius: 10px;
+    }
+
+    .message-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* When the screen is minimized. 501px to check styling on normal browser outside of Intellect */
+    @media (max-width: 501px) {}
+</style>
+
+<body>
+    <div id="container">
+        <div class="inner" id="message-grid">
+            <div class="message-wrapper">
+                <div class="grid-date-time">KPI Timer</div>
+                <div class="grid-event" id="kpi-timer">00-00-00 00:00:00</div>
+            </div>
+        </div>
+    </div>
+    <!-- <button type="button" onclick="test()">Test</button> -->
+    <div id="key"></div>
+    <!-- Use the elements below to log within the HTML -->
+    <div id="log"></div>
+    <div id="key-log"></div>
+    <div id="update-log"></div>
+    <div id="log-count"></div>
+
+    <script>
+
+        var z = null
+        // Function can be used to test certain functionality. Most recently used to test info received from R24
+        function test() {
+            let timeDiff = Number("10");
+            let timer = document.getElementById("kpi-timer")
+            if (timeDiff <= 0) {
+                timer.innerText = "KPI Expired"
+            } else {
+                timer.innerText = timeDiff
+                var z = setInterval(function () {
+
+                    timer.innerText = --timeDiff
+
+                    if (timeDiff === 0) {
+                        timer.innerText = "KPI Expired"
+                        clearInterval(z);
+                    }
+                }, 1000);
+            }
+        }
+
+        function startTimer(resp) {
+            let timeDiff = Number(resp.GetParam("diff").toString());
+            timeDiff = 120 - timeDiff
+            let timer = document.getElementById("kpi-timer")
+            if (timeDiff <= 0) {
+                timer.innerText = "KPI Expired"
+            } else {
+                timer.innerText = timeDiff
+                if (z !== null) {
+                    clearInterval(z);
+                }
+                z = setInterval(function () {
+
+                    timer.innerText = --timeDiff
+
+                    if (timeDiff === 0) {
+                        timer.innerText = "KPI Expired"
+                        clearInterval(z);
+                    }
+                }, 1000);
+            }
+        }
+
+        function stopTimer(resp) {
+            let timer = document.getElementById("kpi-timer")
+            let timerValue = timer.innerText
+            clearInterval(z)
+            timer.innerText = timerValue
+        }
+
+        function checkIfEmpty(str) {
+            if (typeof str == 'undefined' || !str || str.length === 0 || str === "" || !/[^\s]/.test(str) || /^\s*$/.test(str) || str.replace(/\s/g, "") === "")
+                return true;
+            else
+                return false;
+        };
+
+    </script>
+</body>
+
+</html>
